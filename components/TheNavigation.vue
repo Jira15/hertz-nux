@@ -40,8 +40,7 @@ export default {
                         <li><NuxtLink to="/paginas/operativo">Leasing Operativo</NuxtLink></li>
                         <li><NuxtLink to="/paginas/corporativo">Planes Corporativos</NuxtLink></li> 
                     </ul>
-                </li> 
-                <li><NuxtLink href="https://wa.link/n4yy20" target="_blank">Reservas a USA</NuxtLink></li> 
+                </li>  
                 <li><NuxtLink to="/clientes">Maneja tu Reserva</NuxtLink></li>
                 <li>  
                     <button @click="storeLenguaje.setEN()"> EN </button> |

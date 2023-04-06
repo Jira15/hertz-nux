@@ -52,7 +52,7 @@ const opciones = computed(() => {
     display: flex;
     justify-content: space-around; 
     button {
-        background-color: #047EFF;
+        background-color: #282828;
         padding: 5px;
         border-radius:5px;
         color:white;

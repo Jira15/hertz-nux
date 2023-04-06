@@ -4,11 +4,10 @@
       <!-- <router-link to="/"><img src="../assets/images/logo.png"/></router-link> --> 
       <h3>Contacto</h3>
       <p> 
-          Reservaciones: (507) 204-9555 <br /> 
+          Reservaciones: (507) 260-0000 <br /> 
           Asistencia 24 H: (507) 204-9550<br /> 
-          Whatsapp: (507) 6678-5406
-      </p> 
-
+          Whatsapp: (507) 6768-9626
+      </p>  
     </section>
 
   <section>
@@ -45,7 +44,7 @@
       </span>  
     </section>
 
-    <p class="copyright">Copyright © 2023 Thrifty Panamá</p>
+    <p class="copyright">Copyright © 2023 Hertz Panamá</p>
 
   </footer>
 </template>
@@ -53,7 +52,7 @@
 <style lang="scss" scoped> 
 .footer {
   width: 100%;
-  background-color: #001e36; 
+  background-color: #1d1d1d; 
   display: flex;
   flex-direction: column;
   color: white;  

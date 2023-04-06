@@ -31,7 +31,7 @@ onMounted(() => {
     padding-left: 5px;
 }
 .prompt {   
-    background: #FFD115;
+    background: #282828;
     padding: 15px;
     box-sizing: border-box;   
     width: 100%;    
@@ -83,9 +83,9 @@ onMounted(() => {
 .verificar { 
     padding: 10px;  
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     background:#FFD115;
-    color: white; 
+    color: black; 
     align-self: flex-end; 
 }  
 

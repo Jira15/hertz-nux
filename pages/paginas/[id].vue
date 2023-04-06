@@ -19,18 +19,18 @@ onMounted(() => {
 })
 
 useHead({
-        title: route.params.id + ' | Thrifty Car Rental Panamá'
+        title: route.params.id + ' | Hertz Rent a car Panamá'
     });
 
 </script> 
 <template> 
     <ThePrompt/>
     <article class="page-content">    
-        <img :src="getAssetURL(pagina.banner)"  loading="lazy" />  
+        <img :src="getAssetURL(pagina.banner_hertz)"  loading="lazy" />  
             <h2>
                 {{pagina.titulo }}
             </h2> 
-            <div class="format-content"  v-html="pagina.contenido"></div> 
+            <div class="format-content"  v-html="pagina.contenido_hertz"></div> 
     </article> 
 </template>
 

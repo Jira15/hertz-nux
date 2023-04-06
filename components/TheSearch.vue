@@ -206,20 +206,21 @@ const minutesArray = [
           </date-picker>
         </div>
       </section>
-
       <div class="verificar-wrap">
         <button
           class="verificar"
           type="submit"
           @click="storeSearch.searchIs = 'TheProgress'"
         >
-          Buscar
+          Siguiente
         </button>
       </div>
+ 
       <!-- <ErrorMessage name="sucursal" >
                 <p class="warn">Todos los Campos son requeridos</p> 
             </ErrorMessage>   -->
     </article>
+ 
   </form>
 </template>
 <style lang="scss">
@@ -352,7 +353,7 @@ const minutesArray = [
     .fechas {
       display: flex;
       justify-content: space-between;
-      flex-direction: row;
+      flex-direction: row; 
       .dpicker {
         padding-right: 20px;
       }
@@ -361,7 +362,7 @@ const minutesArray = [
         flex-direction: column;
       }
       input {
-        width: 272px;
+        width: 100%;
       }
     }
     footer {
