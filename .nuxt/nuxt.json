@@ -1,7 +1,7 @@
 {
-  "_hash": "veJEJxmMVS",
+  "_hash": "vfe9F7o3cQ",
   "project": {
-    "rootDir": "C:/laragon/www/hertz-nux"
+    "rootDir": "/home/jiradev/Documents/web/hertz-nux"
   },
   "versions": {
     "nuxt": "3.3.2"

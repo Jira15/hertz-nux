@@ -215,7 +215,7 @@ onMounted(() => {
             }
 
             button {
-                background-color: #047EFF;
+                background-color: #FFD115;
                 padding: 5px 15px;
                 border-radius: 5px; 
                 text-transform: uppercase;

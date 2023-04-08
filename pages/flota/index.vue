@@ -31,7 +31,7 @@ onMounted(() => {
 
 
 useHead({
-        title: 'Flota | Thrifty Car Rental Panamá'
+        title: 'Flota | Hertz Car Rental Panamá'
     });
 
 

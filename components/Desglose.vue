@@ -221,20 +221,20 @@ onMounted(() => {
 .desglose {
     display: flex;
     flex-direction: column; 
-    line-height: 1.5;
+    line-height: 1.5; 
     .warn {
         font-weight: bold;
         font-size:14px;
 
     }
     h6 {
-        font-weight:bold;
-        background-color: #cde4ff;
+        font-weight:bold; 
+        border-top: 3px solid #FFD115;
     }
     dl {
         display: flex;
         justify-content: space-between;
-        background-color: #f8fbff; 
+        background-color: #fff; 
     }
     .extras { 
         flex-direction: column; 
@@ -244,7 +244,7 @@ onMounted(() => {
         }
     }
     button {
-        background-color: #047EFF;
+        background-color: #FFD115;
         padding: 5px 15px;
         border-radius: 5px; 
         text-transform: uppercase;

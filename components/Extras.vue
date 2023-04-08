@@ -81,7 +81,7 @@ function addSelectedExtras() {
     justify-content: space-around; 
     display: flex;
     width: 100%;
-    background-color: #b3d7ff;
+    background-color: #FFD115;
     padding: 10px;
         h4 {
             font-size: 18px;

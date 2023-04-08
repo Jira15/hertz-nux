@@ -154,8 +154,7 @@ useHead({
 
 
         <section class="precios"  v-if="auto.status === 'published' || auto.status === 'promocion'"> 
-            <div>
-                <em>Por día</em> 
+            <div> 
             <NuxtLink   
                 @click="checkBuscar(storeSearch.sucursal, storeSearch.sucursalRetorno, storeSearch.fechaRetiro, storeSearch.fechaRetorno, auto.id)" >
                 Reservar   
@@ -165,8 +164,7 @@ useHead({
             </div> 
 
 
-            <div>
-                <em>Prepago</em> 
+            <div> 
                 <NuxtLink  
                 :to="'/flota/' +
                 'prepago/' +
@@ -175,11 +173,6 @@ useHead({
                 <h4> {{  precioPrepago(auto.precio_hertz) }}</h4> 
                 </NuxtLink> 
             </div> 
-
-        </section> 
-
-        
-
             <section class="warning" v-if="storeSearch.mostrarWarning === true">
                 <!-- {{ storeSearch.sucursal }} -->
                 <strong>Necesitas especificar la fecha y sucursal antes de continuar</strong>  
@@ -187,6 +180,11 @@ useHead({
             </section>
 
 
+        </section> 
+
+        
+
+ 
             
             <!-- <section class="warning" v-if="storeSearch.sucursal  === undefined || storeSearch.sucursalRetorno === undefined">
             {{ storeSearch.sucursal }}  
@@ -204,7 +202,7 @@ useHead({
 <style scoped lang="scss">
 
 
-.auto {
+.auto { 
     .warning{
         color: red;
         font-size: 13px;
@@ -218,11 +216,12 @@ useHead({
         border-radius: 2px;  
         border: 1px solid rgb(145, 145, 145); 
         max-height: 400px;
-        width:390px;
-        margin: 10px;
+        width:390px; 
+        margin: 0 auto;
+        margin-bottom: 10px;
         display: grid; 
         grid-template-columns: 1fr 1fr;
-        grid-template-rows:50px 1fr 1fr; 
+        grid-template-rows:auto 1fr auto; 
         grid-template-areas: 
             "title title"
             "modelo modelo"
@@ -233,8 +232,7 @@ useHead({
                 grid-area: title; 
                 display: flex;  
                 justify-content: space-around;
-                text-align: center; 
-                z-index: 888888;
+                text-align: center;   
                 h1 {
                     font-weight: bold;
                     font-size: 28px; 
@@ -259,7 +257,7 @@ useHead({
                 grid-area: precios;
                 width: 0; 
                 height: 0;  
-                border-bottom: 100px solid #FFD115; 
+                border-bottom: 80px solid #FFD115; 
                 border-left: 388px solid transparent;  
             } 
  
@@ -267,7 +265,7 @@ useHead({
             .precios { 
                 grid-area: precios; 
                 display: flex;
-                z-index: 1;
+                z-index: 1; 
                 div{
                     
                     text-align: center;
@@ -400,19 +398,31 @@ useHead({
 
 // Desktop  
   @media screen and (min-width: 768px) {
-.auto { 
+.auto {  
         .car-card{
             margin: 0 auto;
             width: 1000px;
+            margin-bottom: 20px;
+            padding-top:10px;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows:1fr 1fr 1fr; 
+            grid-template-rows:1fr 1fr 0.5fr; 
             grid-template-areas: 
                 "title modelo"
                 "specs modelo"
                 "precios precios"; 
                 gap: 5px;
             .specs{
-                display: flex;
+                display: flex;  
+                align-content: start;
+                justify-content: space-between;
+                flex-wrap: wrap; 
+                text-align: center;
+                padding: 10px;
+                div {
+                    width: 33%;
+                    padding: 5px;
+                }
+                
             }
 
             
@@ -420,8 +430,7 @@ useHead({
                 grid-area: title; 
                 display: flex;  
                 justify-content: space-around;
-                text-align: center; 
-                z-index: 888888; 
+                text-align: center;  
                 padding: 10px 0;
                 h1 {
                     font-weight: bold;
@@ -448,31 +457,59 @@ useHead({
                 width: 0; 
                 height: 0;  
                 border-bottom: 100px solid #FFD115; 
-                border-left: 388px solid transparent;  
+                border-left:998px solid transparent;  
             } 
  
 
             .precios { 
                 grid-area: precios; 
                 display: flex;
-                z-index: 1;
-                div{
-                    
-                    text-align: center;
-                    justify-content: space-between;
+                z-index: 1; 
+                justify-content: space-around;
+                align-items: end;  
+                div{  
+                    justify-content: space-around;
                     display: flex;
-                    flex-direction: column;
-                    width: 100%;  
+                    flex-direction: row;
+                    width:auto;
+                    height: 80px; 
                 }
                 h4 {
+                    align-content: center; 
                     font-size: 40px;
                     font-weight: bold;
+
                 }
         
-                em {
-                    font-size: 24px;
-                    color: rgb(3, 3, 3);
-                    font-style: normal;
+ 
+                a { 
+                    width: 300px;
+                    background-color: #282828;
+                    padding: 5px 15px;
+                    border-radius: 5px;
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: white;
+                    text-align: center;
+                    margin-bottom:2px;
+                    cursor: pointer;
+                } 
+            }
+            
+            
+
+            .disponibilidad { 
+                grid-area: precios; 
+                display: flex;
+                flex-direction: column;
+                z-index: 1;
+                section{
+                    
+                    text-align: center;
+                    justify-content: space-around;
+                    display: flex; 
+                    width: 100%;  
                 } 
                 a {
                     
@@ -484,10 +521,10 @@ useHead({
                     font-weight: 600;
                     color: white;
                     text-align: center;
-                    cursor: pointer;
-                    margin: 1px;
+                    cursor: pointer; 
                 } 
             } 
+
 
 
         } 
