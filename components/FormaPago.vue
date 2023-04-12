@@ -57,7 +57,6 @@ async function submitForm() {
 
 <template>
 <section class="metodos" > 
-    
     <form class="tarjeta" @submit.prevent="submitForm">
         <p>
             <label>Número de la Tarjeta</label>  
@@ -89,153 +88,40 @@ async function submitForm() {
 .metodos {
     margin-top: 10px; 
     button {
-        background-color: #047EFF;
+        background-color: #000000;
         padding: 5px 15px;
         border-radius: 5px; 
         text-transform: uppercase;
         font-size: 16px;
         font-weight: 600;
-        color: white;   
+        color: #FFD115;   
         width: 100%;
         text-align: center;
         margin-top: 10px;
         margin-bottom: 40px;
-    }
-}
-
-  /* autos flota id */ 
-
-.auto {  
-    article {
-        background-color: white;
-        border-radius: 5px; 
-        padding: 5px;
-        display: flex;
-        flex-direction: column; 
-        margin:5px; 
-        
-    }
-    h2 {
-        font-weight: bold;
-        font-size: 32px; 
-        margin-top: 20px;
-        margin: 10px;
-        width: 100%; 
-    }
-    header { 
-        display: flex;
-        text-align: center;
-        margin-bottom: 10px;
-        align-items: center;
-    }
-    h3 {
-        font-weight: bold;
-        font-size: 34px;  
-        width: 100%; 
-    } 
-    em {
-        font-size: 24px;
-        color: gray;
-        font-style: italic; 
-    }
+    }  
     p {  
         font-size: 15px; 
-        padding: 3px; 
-    }  
-    img {
-        object-fit:contain;
-        width: 100%;
-        height: 160px;
-        padding: 5px;
-        border-radius: 5px;
-    } 
-    footer {
-        text-align: center;
+        padding: 3px;  
+        display: flex; 
+        flex-direction: column;
         justify-content: space-between; 
-        display: flex;
-        width: 100%;
-        h4 {
-        font-size: 40px;
-        font-weight:bold;
-        } 
-        em {
-        font-size: 24px;
-        color: rgb(3, 3, 3);
-        font-style:normal;
-        } 
-
-    }
-    .specs {
-        display: none;    
-        padding: 5px; 
-        div {
-            text-align: center; 
-            text-transform:capitalize;
-            width: 50px; 
-        }
-        dl {
-            display: flex;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        dd {  
-            font-size: 12px; 
-        } 
-        dt {
-            object-fit:contain;
-        } 
-        img{ 
-            max-width:  15px;  
-        } 
-    }
-    .detalles-conductor{
-        background-color:white;
-        border-radius: 5px; 
-        padding: 5px; 
-        min-width: 350px; 
-        margin:5px;
-        line-height: 1.5;
-            form {
-                margin-bottom: 10px;  
-            p { 
-                display: flex; 
-                flex-direction: column;
-                justify-content: space-between; 
-            } 
-            button {
-                background-color: #047EFF;
-                padding: 5px 15px;
-                border-radius: 5px; 
-                text-transform: uppercase;
-                font-size: 16px;
-                font-weight: 600;
-                color: white;    
-                text-align: center;
-                cursor:pointer;
-            } 
-        }
-    }
+    }  
 }   
 // Desktop  
 @media screen and (min-width: 768px) { 
-    .tarjeta{
-        margin-top: 50px;
-    }
+
     .metodos {
         display:flex;
-        justify-content: space-evenly;
-       
-    }
-    .auto {
-        display: flex;
-        .detalles-conductor{
-            background-color: white;
-            border-radius: 5px; 
-            padding: 5px; 
-            width: 100%; 
-            margin:5px;
-            line-height: 1.5;
-            
+        justify-content: space-around;
+        div { 
+            width: 400px;
+        }
+        .tarjeta{ 
+            background-color: #c7c7c7; 
+            padding: 10px;
+            border-radius: 5px;
+            width:400px;
             form { 
                 display: flex;
                 flex-wrap: wrap; 
@@ -243,70 +129,20 @@ async function submitForm() {
                 input {
                     padding: 10px 20px;
                     border: none;
-                    border-radius: 3px; 
-                    width: 100%;
+                    border-radius: 3px;  
                     box-sizing: border-box;
                     background-color: rgb(245, 245, 245);
                 } 
                 p {
                     flex: 1 0 calc(50% - 10px);
                     font-size: 18px;
-                    max-width: 500px;
+                    max-width: 400px;
                     display: flex; 
                     flex-direction: column;
                     justify-content: space-between; 
                 }
-            }
-        }
-        
-        article {
-            background-color: white;
-            border-radius: 5px; 
-            padding: 5px;
-            display: flex;
-            flex-direction: column;
-            min-width: 400px; 
-            margin:10px; 
-            // justify-content: space-around;
-        }
-        header { 
-            display: flex;
-            flex-direction: column;  
-        } 
-        img {
-            object-fit:contain;
-            width: 100%;
-            height: 400px;
-            padding: 5px;
-            border-radius: 5px; 
-        } //650 x 411
-        .specs { 
-            display:flex;
-            flex-wrap: wrap; 
-            div {
-                text-align: center; 
-                text-transform:capitalize;
-                width: 90px; 
-                margin-top: 3px;
-            }
-            dl {
-                display: flex;
-                font-size: 14px;
-                font-weight: bold;
-            }
-            dd {  
-                font-size: 12px; 
             } 
-            dt {
-                object-fit:contain;
-            } 
-            img{ 
-                max-width: 25px;
-                max-height: 25px;
-                object-fit:contain; 
-                padding: 2px;  
-            }  
         }
-    } 
+    }  
 }
 </style> 

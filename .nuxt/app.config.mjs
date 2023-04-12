@@ -1,5 +1,5 @@
 
-import { defuFn } from '/home/jiradev/Documents/web/hertz-nux/node_modules/defu/dist/defu.mjs'
+import { defuFn } from 'C:/laragon/www/hertz-nux/node_modules/defu/dist/defu.mjs'
 
 const inlineConfig = {}
 

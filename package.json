@@ -8,9 +8,10 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/devtools": "^0.3.2",
     "@nuxt/test-utils": "^3.1.1",
     "node-sass": "^7.0.3",
-    "nuxt": "^3.3.2",
+    "nuxt": "^3.4.0",
     "sass": "^1.55.0",
     "sass-loader": "^13.0.2",
     "vitest": "^0.28.3"
@@ -38,6 +39,7 @@
     "typescript": "^4.8.4",
     "v-money": "^0.8.1",
     "vee-validate": "^4.7.3",
+    "vue": "^3.2.47",
     "vue-money-format": "^1.2.4",
     "vue-ssr-carousel": "^1.4.2",
     "vue3-google-map": "^0.15.0",

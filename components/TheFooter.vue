@@ -35,10 +35,10 @@
     <section class="sociales"> 
       <h3>Siguenos en</h3> 
       <span>
-        <NuxtLink to="https://www.instagram.com/thriftypanama/" taget="_blank">
+        <NuxtLink to="https://www.instagram.com/hertzpanama/" taget="_blank">
           <img class="social" src="../assets/images/instagram.svg"/>
         </NuxtLink>
-        <NuxtLink to="https://www.facebook.com/thrifty.panama/" taget="_blank">
+        <NuxtLink to="https://www.facebook.com/HertzPanama" taget="_blank">
           <img class="social" src="../assets/images/facebook.png"/>
         </NuxtLink>  
       </span>  
@@ -82,7 +82,7 @@
     font-size: 14px;
   } 
   a:hover {
-    color:#0693e3; 
+    color:#ffd115; 
   } 
   section {
     display: flex;

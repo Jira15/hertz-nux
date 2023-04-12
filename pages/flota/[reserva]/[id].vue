@@ -20,21 +20,16 @@ onMounted(() => {
 </script> 
 <template>
     <main class="auto" >   
-        <!-- <h1> {{ storePedido.pedido.reserva  }}</h1>   -->
             <article> 
-                <CarroSeleccionado />
-                <Desglose />  
-                <footer v-if="storePedido.pedido.cobertura.precio > 0">
-                    
-                    <NuxtLink :to="'/flota/' +
-                    'reserva/' +
-                    'checkout/'"
-                    >
-                        <button>Siguiente</button>
-                    </NuxtLink>  
-                </footer> 
-            </article> 
-            <section class="coberturas">
+                <CarroSeleccionado /> 
+                <Desglose />   
+            </article>
+            <span class="siguiente" v-if="storePedido.pedido.cobertura.precio > 0"> 
+                <NuxtLink :to="'/flota/' +  'reserva/' + 'checkout/'" >
+                    <button>Siguiente</button>
+                </NuxtLink>  
+            </span>  
+            <section class="addons">
                 <Coberturas rules="required"  /> 
                 <Extras /> 
             </section>  
@@ -43,6 +38,10 @@ onMounted(() => {
 <style scoped lang="scss">  
   /* autos flota id */ 
 .auto {  
+    .addons {
+        display: flex;
+        flex-direction: column; 
+    }
     article {
         background-color: white;
         border-radius: 5px; 
@@ -87,7 +86,7 @@ onMounted(() => {
         border-radius: 5px;
     }
 
-    footer {
+    .siguiente {
         text-align: center;
         justify-content: space-between; 
         display: flex;
@@ -102,19 +101,20 @@ onMounted(() => {
         font-style:normal;
         } 
         button {
-            background-color: #FFD115;
+            background-color: #000000;
             padding: 5px 15px;
             border-radius: 5px; 
             text-transform: uppercase;
             font-size: 16px;
             font-weight: 600;
-            color: white;    
+            color: #FFD115;    
             text-align: center;
         } 
     }
     .specs {
         display: none;    
         padding: 5px; 
+        
         div {
             text-align: center; 
             text-transform:capitalize;
@@ -138,17 +138,27 @@ onMounted(() => {
 }   
 // Desktop  
 @media screen and (min-width: 768px) { 
+
 .auto {
+    .addons { 
+        margin:  0 auto;
+        width: 900px;    
+        justify-content: space-around;
+        flex-direction: row; 
+    }
     display: flex; 
+    flex-direction: column;
     article {
-        background-color: white;
-        border-radius: 5px; 
+        background-color:#ffffff;
+        border-radius: 2px;  
+        border: 1px solid rgb(145, 145, 145); 
         padding: 5px;
-        display: flex;
-        flex-direction: column;
+        display: flex; 
+        flex-direction: row-reverse;
         min-width: 400px; 
-        margin:10px; 
-        // justify-content: space-around;
+        margin:0 auto; 
+        margin-top: 10px; 
+         width: 900px;  
     }
     header { 
         display: flex;
@@ -160,34 +170,25 @@ onMounted(() => {
         height: 400px;
         padding: 5px;
         border-radius: 5px; 
-    } //650 x 411
-    .specs { 
-        display:flex;
-        flex-wrap: wrap; 
-        div {
-            text-align: center; 
-            text-transform:capitalize;
-            width: 90px; 
-            margin-top: 3px;
-        }
-        dl {
-            display: flex;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        dd {  
-            font-size: 12px; 
+    } 
+
+    .siguiente {
+        text-align: center;
+        justify-content: space-around; 
+        display: flex;    
+        button {
+            background-color: #000000;
+            padding: 5px 15px;
+            border-radius: 5px; 
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 600;
+            color: #FFD115;    
+            text-align: center;
         } 
-        dt {
-            object-fit:contain;
-        } 
-        img{ 
-            max-width: 25px;
-            max-height: 25px;
-            object-fit:contain; 
-            padding: 2px;  
-        }  
     }
-} 
+
+        
+    } 
 }
 </style> 

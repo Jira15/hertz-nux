@@ -48,7 +48,7 @@ async function onSubmit(values, origin) {
     console.log('Submit', JSON.stringify(values, null, 2));
     //   console.log("Values", values);   
     const paramsQ = {
-        'security_key': 'wjHj4Ku8wtTwH7s4v2W6Fx298A5Q56x4',
+        'security_key': 'MDYevJ49jVF5cA8zzZ3ySYaC5A5G7AdH',
         'first_name': storePedido.pedido.cliente.nombre,
         'last_name': storePedido.pedido.cliente.apellido,
         'address1': storePedido.pedido.sucursal.name,
@@ -62,13 +62,12 @@ async function onSubmit(values, origin) {
         'shipping_state': 'PTY',
         'shipping_zip' : '98765', 
         'type': 'sale',
-        'amount': storePedido.pedido.total,
+        'amount': storePedido.pedido.total, 
         'ccnumber': this.tarjeta.ccnumber,  
         'ccexp': this.tarjeta.ccexp,
         'cvv': this.tarjeta.cvv
     }     
-// Create a URL object with the base API endpoint
- 
+// Create a URL object with the base API endpoint 
 
 const url = new URL('/api/tarjeta',origin);
 
@@ -141,7 +140,7 @@ console.log('Final URL:', url.toString()); // Log the final URL
                       tipo_pago: 'Tarjeta',
                       total: totalPedido
                   } ];   
-                  createItems<Pedido>({ collection: "pedidos", items });
+                  createItems<Pedido>({ collection: "pedidos_hertz", items });
                   router.push('/thanks/'); 
               }
   

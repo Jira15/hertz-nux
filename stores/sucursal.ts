@@ -38,7 +38,7 @@ actions: {
                 try {
                     const { getItems } = useDirectusItems(); 
                     const sucursales = await getItems(
-                        { collection: "sucursal", params : { fields: ["*","picture.*"] }});
+                        { collection: "sucursal_hertz", params : { fields: ["*","picture.*"] }});
                         this.sucursales = sucursales
                 } catch (error) {
                         console.error(error); 

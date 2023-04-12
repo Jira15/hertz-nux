@@ -7,7 +7,9 @@ const storePedido = usePedidoStore();
 </script>
 
 <template> 
-
+    <figure>
+        <img src="@/assets/images/paga2.png" loading="lazy" />  
+    </figure>
     <article class="pagar-pedido">
         <h2> Para pagar o ver tu reserva,  sólo ingresa el número de la reserva:</h2>
         <form  @submit="toReserva">  
@@ -28,7 +30,15 @@ const storePedido = usePedidoStore();
     
 </template>
 <style scoped lang="scss">
-
+figure { 
+    img {
+        object-fit:cover;
+        width: 100%;
+        height: 320px; 
+        padding: 0;
+        margin: 0;
+    }
+}
 .pagar-pedido { 
     display: flex;
     flex-direction: column; 
@@ -69,13 +79,13 @@ const storePedido = usePedidoStore();
         margin-bottom: 10px;
     } 
     button {
-        background-color: #047EFF;
+        background-color: #000000;
         padding: 5px 15px;
         border-radius: 5px; 
         text-transform: uppercase;
         font-size: 16px;
         font-weight: 600;
-        color: white;   
+        color: #FFD115;   
         width: 100%;
         text-align: center;
     }

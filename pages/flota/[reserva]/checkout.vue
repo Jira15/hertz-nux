@@ -99,7 +99,8 @@ onMounted(() => {
             </div>
 
             <div  v-if="storeCheckout.metodos === 'metodos'">
-                <h2>Metodos de Pago</h2>
+                
+    <h2>Metodos de Pago</h2>
                 <FormaPago />
             </div>  
         </div>   
@@ -171,28 +172,9 @@ onMounted(() => {
         } 
 
     }
-    .specs {
-        display: none;    
-        padding: 5px; 
-        div {
-            text-align: center; 
-            text-transform:capitalize;
-            width: 50px; 
-        }
-        dl {
-            display: flex;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        dd {  
-            font-size: 12px; 
-        } 
-        dt {
-            object-fit:contain;
-        } 
-        img{ 
-            max-width:  15px;  
-        } 
+    .reserva { 
+        display: flex;
+        flex-direction: row-reverse;  
     }
     .detalles-conductor{
         background-color:white;
@@ -201,8 +183,19 @@ onMounted(() => {
         min-width: 350px; 
         margin:5px;
         line-height: 1.5;
-            form {
+            .forma {
                 margin-bottom: 10px;  
+                button {
+                    background-color: #000000;
+                    padding: 5px 15px;
+                    border-radius: 5px; 
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #FFD115;    
+                    text-align: center;
+                    cursor:pointer; 
+                }  
             p { 
                 display: flex; 
                 flex-direction: column;
@@ -212,18 +205,6 @@ onMounted(() => {
                 font-size: 12px; 
                 color: red;
                 font-weight: bold;
-            }
-
-            button {
-                background-color: #FFD115;
-                padding: 5px 15px;
-                border-radius: 5px; 
-                text-transform: uppercase;
-                font-size: 16px;
-                font-weight: 600;
-                color: white;    
-                text-align: center;
-                cursor:pointer;
             } 
         }
     }
@@ -232,12 +213,17 @@ onMounted(() => {
 @media screen and (min-width: 768px) {  
     .auto {
         display: flex;
+        flex-direction: column;
         .detalles-conductor{
-            background-color: white;
-            border-radius: 5px; 
+            
+            border-radius: 2px;  
+            border: 1px solid rgb(145, 145, 145); 
+            background-color: white; 
             padding: 5px; 
-            width: 100%; 
-            margin:5px;
+            max-width: 900px; 
+            margin:0 auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
             line-height: 1.5;
             fieldset {
                 display: flex; 
@@ -248,12 +234,14 @@ onMounted(() => {
                 flex-direction: column;
                 margin-bottom: 10px; 
                 input {
-                    padding: 10px 20px;
-                    border: none;
+                    padding: 10px 20px; 
                     border-radius: 3px; 
                     width: 100%;
                     box-sizing: border-box;
-                    background-color: rgb(245, 245, 245);
+                    background-color: rgb(245, 245, 245); 
+                    border-radius: 2px;  
+                    border: 1px solid rgb(145, 145, 145); 
+               
                 } 
                 p {
                     flex: 1 0 calc(50% - 10px);
@@ -264,28 +252,30 @@ onMounted(() => {
                     justify-content: space-between; 
                 } 
                 button {
-                    background-color: #047EFF;
+                    background-color: #000000;
                     padding: 5px 15px;
                     border-radius: 5px; 
                     text-transform: uppercase;
                     font-size: 16px;
                     font-weight: 600;
-                    color: white;    
+                    color: #FFD115;    
                     text-align: center;
-                    cursor:pointer;
+                    cursor:pointer; 
                 }  
             }
         }
         
         article {
-            background-color: white;
-            border-radius: 5px; 
+            background-color:#ffffff;
+            border-radius: 2px;  
+            border: 1px solid rgb(145, 145, 145); 
             padding: 5px;
-            display: flex;
-            flex-direction: column;
+            display: flex; 
+            flex-direction: row-reverse;
             min-width: 400px; 
-            margin:10px; 
-            // justify-content: space-around;
+            margin:0 auto; 
+            margin-top: 10px; 
+             width: 900px;  
         }
         header { 
             display: flex;

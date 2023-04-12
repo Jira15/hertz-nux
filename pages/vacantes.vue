@@ -16,7 +16,7 @@ onMounted(() => {
     storeVacantes.fetchVacantes(); 
 })  
 useHead({
-        title: 'Lista de Vacantes | Thrifty Car Rental Panamá'
+        title: 'Lista de Vacantes | Hertz Rent a Car Panamá'
     });
 </script> 
 <template>
@@ -128,8 +128,8 @@ main {
             margin-bottom:5px;
         }
         button {
-            background-color:#006FB4;
-            color: white;
+            background-color:#000000;
+            color: #FFD115;
             padding: 5px;
             border-radius: 5px;
         }

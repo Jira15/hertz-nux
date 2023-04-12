@@ -1,1 +1,1 @@
-export { default } from "file:///home/jiradev/Documents/web/hertz-nux/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
+export { default } from "file:///C:/laragon/www/hertz-nux/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"

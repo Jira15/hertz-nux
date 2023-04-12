@@ -31,7 +31,7 @@ onMounted(() => {
 
 
 useHead({
-        title: 'Flota | Hertz Car Rental Panamá'
+        title: 'Flota | Hertz Rent a Car Panamá'
     });
 
 
@@ -225,31 +225,31 @@ useHead({
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 600;
-    color: white;   
+    color: #ffd115;   
     width: 100%;
     text-align: center; 
 }
 
 .verificar { 
     
-        background-color: #047EFF;
+        background-color: #212121;
         padding: 5px 15px;
         border-radius: 5px; 
         text-transform: uppercase;
         font-size: 16px;
         font-weight: 600;
-        color: white;   
+        color: #ffd115;   
         width: 100%;
         text-align: center; 
 
         a {
-            background-color: #047EFF;
+            background-color: #212121;
             padding: 5px 15px;
             border-radius: 5px; 
             text-transform: uppercase;
             font-size: 16px;
             font-weight: 600;
-            color: white;   
+            color: #ffd115;   
             width: 100%;
             text-align: center;
             

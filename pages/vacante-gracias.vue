@@ -1,6 +1,6 @@
 <script setup>    
 useHead({
-        title: 'Vacante solicitada | Thrifty Car Rental Panamá'
+        title: 'Vacante solicitada | Hertz Rent a Car Panamá'
     });
  
 

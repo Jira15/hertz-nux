@@ -34,9 +34,9 @@ export const usePaypalStore = defineStore('paypal',  () => {
                       description: 'Renta de Auto '
                                     + storePedido.pedido.carro.modelo + ' o '+ storePedido.pedido.carro.clasificacion 
                                     + ' - '+ storePedido.pedido.cobertura.nombre,
-                      custom_id: 'Thrifty Car Rental',
+                      custom_id: 'Hertz Rent a Car',
                       // // invoice_id: 'INV-0001',
-                      soft_descriptor: 'Thrifty Car Rental',
+                      soft_descriptor: 'Hertz Rent a Car',
                       // items: [
                       //     {
                       //         name: 'Renta de Auto',
@@ -96,13 +96,13 @@ export const usePaypalStore = defineStore('paypal',  () => {
                       console.log('Transacción Aprobada' + storePedido.pedido.pedidos_id)    
                       var status = { status: 'Pagado', tipo_pago: 'Paypal' }   
                       updateItem<Pedido>({ 
-                          collection: "pedidos",
+                          collection: "pedidos_hertz",
                           id: storePedido.pedido.pedidos_id,
                           item: status });  
                       
                       router.push('/thanks/'); 
                     }
-                    createItems<Pedido>({ collection: "pedidos", items }); 
+                    createItems<Pedido>({ collection: "pedidos_hertz", items }); 
                     router.push('/thanks/');  
                     });
                   },

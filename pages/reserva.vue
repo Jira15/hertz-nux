@@ -401,7 +401,8 @@ useHead({
 .auto {  
         .car-card{
             margin: 0 auto;
-            width: 1000px;
+            width: 900px;
+            height: 325px;
             margin-bottom: 20px;
             padding-top:10px;
             grid-template-columns: 1fr 1fr;
@@ -412,8 +413,7 @@ useHead({
                 "precios precios"; 
                 gap: 5px;
             .specs{
-                display: flex;  
-                align-content: start;
+                display: flex;   
                 justify-content: space-between;
                 flex-wrap: wrap; 
                 text-align: center;
@@ -430,25 +430,28 @@ useHead({
                 grid-area: title; 
                 display: flex;  
                 justify-content: space-around;
-                text-align: center;  
-                padding: 10px 0;
+                text-align: center;   
                 h1 {
                     font-weight: bold;
-                    font-size: 38px; 
+                    font-size: 28px; 
                 } 
                 em {
-                    font-size: 32px;
+                    font-size: 24px;
                     color: gray;
                     font-style: italic;
                 }
             } 
 
             .modelo { 
-                grid-area: modelo;   
-                img {
+                grid-area: modelo; 
+                display: flex; 
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                img { 
                     width: 100%;
-                    max-height: 250px;
-                    object-fit: contain;
+                    max-height: 200px;
+                    object-fit: contain; 
                 }
             }
             .shape
@@ -457,7 +460,7 @@ useHead({
                 width: 0; 
                 height: 0;  
                 border-bottom: 100px solid #FFD115; 
-                border-left:998px solid transparent;  
+                border-left:898px solid transparent;  
             } 
  
 
@@ -476,16 +479,16 @@ useHead({
                 }
                 h4 {
                     align-content: center; 
-                    font-size: 40px;
+                    font-size: 34px;
                     font-weight: bold;
 
                 }
         
  
                 a { 
-                    width: 300px;
+                    width: 250px;
                     background-color: #282828;
-                    padding: 5px 15px;
+                    padding: 9px 12px;
                     border-radius: 5px;
                     text-transform: uppercase;
                     font-size: 16px;
@@ -523,10 +526,7 @@ useHead({
                     text-align: center;
                     cursor: pointer; 
                 } 
-            } 
-
-
-
+            }   
         } 
     }
 }

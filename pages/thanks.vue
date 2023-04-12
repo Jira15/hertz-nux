@@ -1,7 +1,7 @@
 <script setup>   
 import { usePedidoStore } from '@/stores/pedido';    
 useHead({
-        title: 'Gracias | Thrifty Car Rental Panamá'
+        title: 'Gracias | Hertz Rent a Car Panamá'
     });
 
 

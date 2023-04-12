@@ -229,12 +229,13 @@ onMounted(() => {
     }
     h6 {
         font-weight:bold; 
-        border-top: 3px solid #FFD115;
+        border-bottom: 2px solid #747474;
     }
     dl {
         display: flex;
         justify-content: space-between;
-        background-color: #fff; 
+        background-color: #fff;
+        border-bottom: 1px solid #e6e6e6; 
     }
     .extras { 
         flex-direction: column; 
@@ -253,6 +254,18 @@ onMounted(() => {
         color: white;   
         width: 100%;
         text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) {  
+ 
+    .desglose {
+        flex: 1;
+        display: flex;
+        flex-direction: column; 
+        line-height: 1.0;  
+        padding: 3px;
+        justify-content: space-between; 
     }
 }
 </style>

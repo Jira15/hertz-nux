@@ -1,35 +1,28 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
- 
- // Global page headers:  
+    // Global page headers:  
 
- app:{
-    head: {
-        title: 'Hertz Rent a car Panamá', 
-        meta: [
-            { charset: 'utf-8' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: '' },
-            { name: 'Hertz Rent a car Panamá', content: 'Hertz. Estamos aquí para llevarlo allá. Disfrute de nuestra mejor flota hasta ahora y de velocidad, innovación y servicio galardonados en más de 10 000 localidades en todo el mundo.' }
-            
-        ],
-        script: [{ 
-            children:"  !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';    n.queue=[];t=b.createElement(e);t.async=!0;     t.src=v;s=b.getElementsByTagName(e)[0];     s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');    fbq('init', '683665672969341');   fbq('track', 'PageView');" }],
-        noscript: [{ 
-            children: ' <img height="1" width="1" style="display:none"   src="https://www.facebook.com/tr?id=683665672969341&ev=PageView&noscript=1"/>' 
-        }],
+    app:{
+       head: {
+           title: 'Hertz Rent a car Panamá', 
+           meta: [
+               { charset: 'utf-8' },
+               { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+               { hid: 'description', name: 'description', content: '' },
+               { name: 'Hertz Rent a car Panamá', content: 'Hertz. Estamos aquí para llevarlo allá. Disfrute de nuestra mejor flota hasta ahora y de velocidad, innovación y servicio galardonados en más de 10 000 localidades en todo el mundo.' }
+               
+           ],
+           script: [{ 
+               children:"  !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';    n.queue=[];t=b.createElement(e);t.async=!0;     t.src=v;s=b.getElementsByTagName(e)[0];     s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');    fbq('init', '341027038002326');   fbq('track', 'PageView');" }],
+           noscript: [{ 
+               children: ' <img height="1" width="1" style="display:none"   src="https://www.facebook.com/tr?id=341027038002326&ev=PageView&noscript=1"/>' 
+           }], 
+           link: [
+               { rel: 'icon', type: 'image/x-icon', href: './favicon.ico' }
+           ]
+       },
+   },
 
-        // script:[    
-        //     {
-        //     src: "https://secure.networkmerchants.com/token/Collect.js",
-        //     'data-tokenization-key': "4S33Nz-Zsrp9B-qz2679-kUZAAQ" 
-        //     }
-        // ],
-        link: [
-            { rel: 'icon', type: 'image/x-icon', href: './favicon.ico' }
-        ]
-    },
-},
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
         // CSS file in the project
@@ -41,7 +34,8 @@ export default defineNuxtConfig({
         // https://vue3datepicker.com/installation/#nuxt
         '@vuepic/vue-datepicker/dist/main.css', 
         "@/layout/global.css"
-    ], 
+    ],
+
     // hace que nuxt busque en la direccion para importar
     imports: {
         dirs: ['stores'],
@@ -52,10 +46,12 @@ export default defineNuxtConfig({
         '@/plugins/vue-datepicker.js', 
         '@/plugins/vee-validate.js',
         '@/plugins/vue-gtm.client.js' 
-    ],   
+    ],
+
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [ 
             'nuxt-directus', 
+            '@nuxt/devtools',
             // 'nuxt-proxy',  
             [
                 '@pinia/nuxt',
@@ -69,7 +65,8 @@ export default defineNuxtConfig({
                     ],
                 },
             ],
-        ], 
+        ],
+
     // serverMiddleware: [
     //     {
     //         path: '/api/tarjeta',
@@ -83,6 +80,7 @@ export default defineNuxtConfig({
             },
         }
     },
+
     // proxy: {
     //     options: {
     //         target: 'https://secure.networkmerchants.com/api/transact.php',
@@ -95,12 +93,14 @@ export default defineNuxtConfig({
     //           ]
     //     },
     // },
-	directus: {
+    directus: {
 		url: "https://admin.intermarketing.com.pa",
-	},  
+	},
+
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
         transpile: ['@vuepic/vue-datepicker', 'moment' ]
     },
- 
-}) 
+
+    devtools: true
+})

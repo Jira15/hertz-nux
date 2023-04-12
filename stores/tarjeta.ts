@@ -15,9 +15,8 @@ export const useTarjetaStore = defineStore
         async onSubmit() {  
             const orderId = this.orden.pedidos_id 
             // console.log(orderId)
-            const bodyData = {
-                // wjHj4Ku8wtTwH7s4v2W6Fx298A5Q56x4 TEST API
-                'security_key': 'wjHj4Ku8wtTwH7s4v2W6Fx298A5Q56x4',
+            const bodyData = { 
+                'security_key': 'MDYevJ49jVF5cA8zzZ3ySYaC5A5G7AdH',
                 'first_name': this.orden.nombre,
                 'last_name': this.orden.apellido,
                 'address1': this.orden.retiro,
@@ -58,7 +57,7 @@ export const useTarjetaStore = defineStore
                     console.log('Transacción Aprobada' + orderId)    
                     var status = { status: 'Pagado' }   
                     updateItem<Pedido>({ 
-                        collection: "pedidos",
+                        collection: "pedidos_hertz",
                         id: orderId,
                         item: status });  
                     

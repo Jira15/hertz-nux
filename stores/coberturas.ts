@@ -13,15 +13,20 @@ getters: {
     },   
 }, 
 actions: {
-        async fetchCoberturas(){
-                try {
-                    const { getItems } = useDirectusItems(); 
-                    const coberturas = await getItems(
-                        { collection: "coberturas"}); 
-                    this.coberturas = coberturas  
-                } catch (error) {
-                        console.error(error); 
-                }
-            }, 
-    },
+    async fetchCoberturas(){
+            try {
+                const { getItems } = useDirectusItems(); 
+                var filters = { marca: "Hertz"  };
+                const coberturas = await getItems(
+                    { collection: "coberturas",
+                            params: {
+                                filter: filters,
+                            },
+                }); 
+                this.coberturas = coberturas  
+            } catch (error) {
+                    console.error(error); 
+            }
+        }, 
+},
 })  

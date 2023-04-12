@@ -52,12 +52,15 @@ function addSelectedExtras() {
 <style scoped lang="scss">  
 .extras {  
     ul li article {
-        background-color: rgba(255, 255, 255, 0.644);
+        background-color:white;
         border-radius: 5px;  
         display: flex;
         flex-direction: column; 
         margin:10px;
         padding: 0px; 
+        
+        border-radius: 2px;  
+        border: 1px solid rgb(145, 145, 145); 
     } 
     header { 
         display: flex;
@@ -92,23 +95,29 @@ function addSelectedExtras() {
   // Desktop  
 @media screen and (min-width: 768px) { 
 
-    .extras {  
+    .extras { 
+        max-width: 200px;
         footer h4 {
             font-size: 16px;
         }
         ul li article { 
             border-radius: 5px;  
-            display: flex; 
+            display: flex;
             margin:2px;
             padding: 0px;
             justify-content: space-between;
             width: 100%;
+            
+        border-radius: 2px;  
+        border: 1px solid rgb(145, 145, 145); 
         } 
         ul {     
             padding: 10px;
         } 
         ul li   { 
             display: flex; 
+            
+            flex-direction: column;
             
         } 
     } 

@@ -90,7 +90,7 @@ const horaFormat = function(value) {
         font-weight: bold;
         font-size: 14px;
         background:#ffd115;
-        color: white;
+        color: black;
         border-radius:10px;
         align-self: flex-end; 
         cursor: pointer;

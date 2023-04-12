@@ -25,8 +25,10 @@ useHead({
 </script> 
 <template> 
     <ThePrompt/>
-    <article class="page-content">    
+    <figure>
         <img :src="getAssetURL(pagina.banner_hertz)"  loading="lazy" />  
+    </figure>
+    <article class="page-content">     
             <h2>
                 {{pagina.titulo }}
             </h2> 
@@ -40,12 +42,11 @@ useHead({
     display: flex;
     flex-direction: column; 
     padding: 10px; 
-    margin: auto;
+    margin: auto;  
     margin-top: 20px;
     margin-bottom: 20px;
     background-color:white;
-    box-shadow: 5px 5px 5px rgba(65, 65, 65, 0.308);
-    border-radius: 5px; 
+    box-shadow: 5px 5px 5px rgba(65, 65, 65, 0.308); 
     line-height: 20px;   
     section {
         margin: 20px;
@@ -59,21 +60,23 @@ useHead({
         font-weight: bold;
         font-size: 22px;
         margin-bottom: 20px;
-    }
-
-    img {
-        object-fit: cover;
-        width: 100%;
-        height: 250px;
-        border-radius: 5px;
-    }
-
-
+    }  
 }  
+figure { 
+    img {
+        object-fit:cover;
+        width: 100%;
+        height: 320px; 
+        padding: 0;
+        margin: 0;
+    }
+}
+
 // Desktop  
 @media screen and (min-width: 768px) { 
     .page-content {
         max-width: 1000px; 
     }
+    
 }
 </style>

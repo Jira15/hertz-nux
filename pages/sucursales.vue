@@ -20,7 +20,7 @@ const sucursalABuscador = function(value) {
     storeSearch.searchIs = 'TheSearch';
 }
 useHead({
-        title: 'Sucursales | Thrifty Car Rental Panamá'
+        title: 'Sucursales | Hertz Rent a Car Panamá'
     });
 </script> 
 <template>
@@ -114,13 +114,13 @@ useHead({
         border-radius: 5px;
     }
     .verificar {
-        background-color: #006fb4;
+        background-color: #000;
         padding: 5px 15px;
         border-radius: 5px; 
         text-transform: uppercase;
         font-size: 16px;
         font-weight: 600;
-        color: white;  
+        color: #ffd115;  
         margin-top: 20px;
         width: 100%;
         text-align: center;

@@ -10,7 +10,7 @@ const storeActualizar = useActualizarStore();
 const storePedido = usePedidoStore();
 const route = useRoute()
 const pedido = await  getItemById({
-        collection: "pedidos",
+        collection: "pedidos_hertz",
         id: '6d1ced9e-ae42-43a8-a736-a601f44c2d00',
     });   
 onMounted(() => {  
@@ -23,6 +23,7 @@ const fechaFormat = function(value) {
 }
 </script> 
 <template>  
+    
     <article class="manage-pedido"> 
         <h2>
             Tu reserva:
@@ -288,13 +289,13 @@ const fechaFormat = function(value) {
             }
         }
         button {
-            background-color: #047EFF;
+            background-color: #ffd115;
             padding: 5px 15px;
             border-radius: 5px; 
             text-transform: uppercase;
             font-size: 16px;
             font-weight: 600;
-            color: white;   
+            color: rgb(0, 0, 0);   
             width: 100%;
             text-align: center;
         }
@@ -372,13 +373,13 @@ const fechaFormat = function(value) {
                 }
             }
             button {
-                background-color: #047EFF;
+                background-color: #ffd115;
                 padding: 5px 15px;
                 border-radius: 5px; 
                 text-transform: uppercase;
                 font-size: 16px;
                 font-weight: 600;
-                color: white;   
+                color: rgb(0, 0, 0);   
                 width: 100%;
                 text-align: center;
             }

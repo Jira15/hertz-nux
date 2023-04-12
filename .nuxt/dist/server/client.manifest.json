@@ -6,10 +6,10 @@
     "module": true,
     "resourceType": "script"
   },
-  "/home/jiradev/Documents/web/hertz-nux/node_modules/nuxt/dist/app/entry.js": {
+  "C:/laragon/www/hertz-nux/node_modules/nuxt/dist/app/entry.js": {
     "resourceType": "script",
     "module": true,
     "isEntry": true,
-    "file": "/home/jiradev/Documents/web/hertz-nux/node_modules/nuxt/dist/app/entry.js"
+    "file": "C:/laragon/www/hertz-nux/node_modules/nuxt/dist/app/entry.js"
   }
 }

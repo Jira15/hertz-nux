@@ -231,7 +231,7 @@ const minutesArray = [
   --dp-hover-text-color: #212121;
   --dp-hover-icon-color: #959595;
   --dp-primary-color: #ffd115;
-  --dp-primary-text-color: #f8f5f5;
+  --dp-primary-text-color: #000000;
   --dp-secondary-color: #c0c4cc;
   --dp-border-color: #ddd;
   --dp-menu-border-color: #ddd;
@@ -243,7 +243,7 @@ const minutesArray = [
   --dp-success-color-disabled: #a3d9b1;
   --dp-icon-color: #000000a1;
   --dp-danger-color: #ff6f60;
-  --dp-highlight-color: #135a5fa1;
+  --dp-highlight-color: #be7d7d;
 }
 
 .custom-time-picker-component {
@@ -327,11 +327,12 @@ const minutesArray = [
   padding: 10px;
   font-weight: bold;
   font-size: 14px;
-  background: #282828;
-  color: white;
+  background: #FFD115;
+  color: rgb(0, 0, 0);
   margin-top: 5px;
   align-self: end;
   cursor: pointer;
+  border-radius: 3px;
 }
 .verificar-wrap {
   width: 100%;

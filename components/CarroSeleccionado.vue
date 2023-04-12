@@ -170,7 +170,7 @@ const auto = computed(() => {
         border-radius: 5px; 
         padding: 5px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         min-width: 400px; 
         margin:10px; 
         height:100%;
@@ -181,11 +181,10 @@ const auto = computed(() => {
         flex-direction: column;  
     } 
     img {
-        object-fit:contain;
- 
+        object-fit:contain; 
         padding: 0px;
         border-radius: 5px; 
-    } //650 x 411
+    }  
     .specs { 
         display:flex; 
         div {
@@ -208,7 +207,7 @@ const auto = computed(() => {
             max-width: 25px;
             max-height: 25px;
             object-fit:contain; 
-            padding: 2px;  
+            padding: 2px;   
         }  
     }
 }  

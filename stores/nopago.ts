@@ -65,7 +65,7 @@ export const useNoPagoStore = defineStore('nopago',  () => {
                     impuesto: impuesto,
                     total: totalPedido
                 } ]; 
-                createItems<Pedido>({ collection: "pedidos", items });
+                createItems<Pedido>({ collection: "pedidos_hertz", items });
                 router.push('/thanks/'); 
                  
     } 

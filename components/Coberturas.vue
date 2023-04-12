@@ -15,7 +15,7 @@ onMounted(() => {
 <template>
 <main class="coberturas">   
 <h2>Coberturas</h2>
-<section>  
+<section >  
     <ul>
         <li v-for="cobertura in coberturas" :key="cobertura.id">
             <article> 
@@ -32,12 +32,14 @@ onMounted(() => {
                 </div>
                
                 <footer v-if="storePedido.pedido.carro.tipo != 'Sedan'"> 
-                    <input required  type="radio" name="cobertura" v-model="storePedido.pedido.cobertura" :value="cobertura">
+                 
                     <h4>B/. {{ cobertura.precio_2 }} / por día</h4>  
+                    <input required  type="radio" name="cobertura" v-model="storePedido.pedido.cobertura" :value="cobertura">
                 </footer>
                 <footer  v-else> 
-                    <input required  type="radio" name="cobertura" v-model="storePedido.pedido.cobertura" :value="cobertura">
                     <h4>B/. {{ cobertura.precio }} / por día</h4>  
+                    
+                    <input required  type="radio" name="cobertura" v-model="storePedido.pedido.cobertura" :value="cobertura">
                 </footer>
         
             </article>
@@ -71,13 +73,16 @@ onMounted(() => {
         min-width: 350px; 
         margin:10px;
         padding: 0px;
+        
+        border-radius: 2px;  
+        border: 1px solid rgb(145, 145, 145); 
     } 
     header { 
         display: flex;
         text-align: center;  
             cursor: pointer;
             span{ 
-                background-color: #8aacc5;
+                background-color: #464747;
                 border: none;
                 border-radius: 15px 15px 15px 0px;
                 color: white;
@@ -97,7 +102,7 @@ onMounted(() => {
     h3 {
         margin-top:10px;
         font-weight: bold;
-        font-size: 24px;  
+        font-size: 22px;  
         width: 100%; 
     } 
     em {
@@ -136,23 +141,45 @@ onMounted(() => {
 } 
   // Desktop  
 @media screen and (min-width: 768px) {
-    .coberturas {  
-        ul li article {
-            background-color: rgba(255, 255, 255, 0.644);
-            border-radius: 5px;  
+    .coberturas {
+        max-width: 500px; 
+        ul li article { 
+            background-color:white; 
             display: flex; 
-            flex-direction: row-reverse; 
+            flex-direction: row; 
             margin:10px;
             padding: 0px;
-            justify-content: space-between;
+            justify-content: space-between; 
+            border-radius: 2px;  
+            border: 1px solid rgb(145, 145, 145); 
+        } 
+        section ul { 
+            display: flex;
+            flex-direction: column;  
         } 
         div{
             width: 100%; 
     
         } 
+        h3 {
+            margin-top:10px;
+            font-weight: bold;
+            font-size: 18px;  
+            width: 100%; 
+        } 
         footer {  
             align-items: center;
-            max-width: 150px;
+            max-width:150px;
+ 
+                    h4 {
+                        font-size: 18px;
+                        font-weight:bold;
+                    } 
+                    em {
+                        font-size: 14px;
+                        color: rgb(3, 3, 3);
+                        font-style:normal;
+                    }   
         } 
     } 
 }
