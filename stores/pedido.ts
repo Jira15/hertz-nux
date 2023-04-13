@@ -147,68 +147,71 @@ export const usePedidoStore = defineStore(
                 }  
                 // tier 2  
                 if (  
-                    sucursalDeRetiro === 'TORREMOLIN' && sucursalDeRetorno === 'ALBROOK' 
-                    || sucursalDeRetiro === 'ALBROOK' && sucursalDeRetorno === 'TORREMOLIN'  
-                    || sucursalDeRetiro === 'ALBROOK' && sucursalDeRetorno === 'TOCUMEN' 
-                    || sucursalDeRetiro === 'TOCUMEN' && sucursalDeRetorno === 'ALBROOK' 
+                    sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HALBROOK' 
+                    || sucursalDeRetiro === 'HALBROOK' && sucursalDeRetorno === 'HZ TORRE'  
+                    || sucursalDeRetiro === 'HALBROOK' && sucursalDeRetorno === 'HZ TORRE' 
+                    || sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HALBROOK' 
                     )
                     { dropoff = tier.dos; }  
 
                 // tier tres: 25.00
-                if ( sucursalDeRetiro === 'ALBROOK' && sucursalDeRetorno === 'CHORRERA' 
-                    ||  sucursalDeRetiro === 'CHORRERA' && sucursalDeRetorno === 'ALBROOK' 
+                if ( sucursalDeRetiro === 'HALBROOK' && sucursalDeRetorno === 'HCHORRER' 
+                    ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'HALBROOK' 
 
-                    ||  sucursalDeRetiro === 'V ESPANA' && sucursalDeRetorno === 'CHORRERA' 
-                    ||  sucursalDeRetiro === 'CHORRERA' && sucursalDeRetorno === 'V ESPANA' 
+                    ||  sucursalDeRetiro === 'VPORRAS' && sucursalDeRetorno === 'HCHORRER' 
+                    ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'VPORRAS' 
 
-                    ||  sucursalDeRetiro === 'THVENETTO' && sucursalDeRetorno === 'CHORRERA' 
-                    ||  sucursalDeRetiro === 'CHORRERA' && sucursalDeRetorno === 'THVENETTO' 
+                    ||  sucursalDeRetiro === 'VVENETTO' && sucursalDeRetorno === 'HCHORRER' 
+                    ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'VVENETTO' 
 
-                    ||  sucursalDeRetiro === 'THCDELESTE' && sucursalDeRetorno === 'CHORRERA' 
-                    ||  sucursalDeRetiro === 'CHORRERA' && sucursalDeRetorno === 'THCDELESTE' 
+                    ||  sucursalDeRetiro === 'HZCDELESTE' && sucursalDeRetorno === 'HCHORRER' 
+                    ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'HZCDELESTE' 
                     ) 
                     { dropoff = tier.tres;  } 
 
                 // tier cuatro: 30.00,
-                if ( sucursalDeRetiro === 'TORREMOLIN' && sucursalDeRetorno === 'CHORRERA' 
-                    ||  sucursalDeRetiro === 'CHORRERA' && sucursalDeRetorno === 'TORREMOLIN'  
-                    ||  sucursalDeRetiro === 'TOCUMEN' && sucursalDeRetorno === 'CHORRERA' 
-                    ||  sucursalDeRetiro === 'CHORRERA' && sucursalDeRetorno === 'TOCUMEN'  
+                if ( sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HCHORRER' 
+                    ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'HZ TORRE'  
+                    ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HCHORRER' 
+                    ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'HZ TORRE'  
                     ) 
                 { dropoff = tier.cuatro; } 
 
                 //tier cinco: 52.00,
-                if ( sucursalDeRetiro === 'ALBROOK' && sucursalDeRetorno === 'COLON' 
-                ||  sucursalDeRetiro === 'COLON' && sucursalDeRetorno === 'ALBROOK' 
+                if ( sucursalDeRetiro === 'HALBROOK' && sucursalDeRetorno === 'HCOLON' 
+                ||  sucursalDeRetiro === 'HCOLON' && sucursalDeRetorno === 'HALBROOK' 
 
-                ||  sucursalDeRetiro === 'COLON' && sucursalDeRetorno === 'V ESPANA'
-                ||  sucursalDeRetiro === 'V ESPANA' && sucursalDeRetorno === 'COLON'
+                ||  sucursalDeRetiro === 'HCOLON' && sucursalDeRetorno === 'VPORRAS'
+                ||  sucursalDeRetiro === 'VPORRAS' && sucursalDeRetorno === 'HCOLON'
 
-                ||  sucursalDeRetiro === 'COLON' && sucursalDeRetorno === 'THCDELESTE'
-                ||  sucursalDeRetiro === 'THCDELESTE' && sucursalDeRetorno === 'COLON'
+                ||  sucursalDeRetiro === 'HCOLON' && sucursalDeRetorno === 'HZCDELESTE'
+                ||  sucursalDeRetiro === 'HZCDELESTE' && sucursalDeRetorno === 'HCOLON'
 
-                ||  sucursalDeRetiro === 'COLON' && sucursalDeRetorno === 'THVENETTO'
-                ||  sucursalDeRetiro === 'THVENETTO' && sucursalDeRetorno === 'COLON' 
+                ||  sucursalDeRetiro === 'HCOLON' && sucursalDeRetorno === 'VVENETTO'
+                ||  sucursalDeRetiro === 'VVENETTO' && sucursalDeRetorno === 'HCOLON' 
                 )
                 {  dropoff = tier.cinco;  } 
 
                 // tier seis: 55
                 if (
-                    sucursalDeRetiro === 'CHITRE' && sucursalDeRetorno === 'SANTIAGO' 
-                ||  sucursalDeRetiro === 'SANTIAGO' && sucursalDeRetorno === 'CHITRE'  )
+                    sucursalDeRetiro === 'HCHITRE' && sucursalDeRetorno === 'HSANTIAG' 
+                ||  sucursalDeRetiro === 'HSANTIAG' && sucursalDeRetorno === 'HCHITRE'  
+                
+                ||  sucursalDeRetiro === 'HAPOCHI' && sucursalDeRetorno === 'HSANTIAG' 
+                ||  sucursalDeRetiro === 'HSANTIAG' && sucursalDeRetorno === 'HAPOCHI'  )
                 {  dropoff = tier.seis; } 
 
 
                 // tier siete: 85
                 if ( 
-                        sucursalDeRetiro === 'COLON' && sucursalDeRetorno === 'CHORRERA'
-                    ||  sucursalDeRetiro === 'CHORRERA' && sucursalDeRetorno === 'COLON'
+                        sucursalDeRetiro === 'HCOLON' && sucursalDeRetorno === 'HCHORRER'
+                    ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'HCOLON'
     
-                    ||  sucursalDeRetiro === 'COLON' && sucursalDeRetorno === 'TORREMOLIN'
-                    ||  sucursalDeRetiro === 'TORREMOLIN' && sucursalDeRetorno === 'COLON'
+                    ||  sucursalDeRetiro === 'HCOLON' && sucursalDeRetorno === 'HZ TORRE'
+                    ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HCOLON'
     
-                    ||  sucursalDeRetiro === 'COLON' && sucursalDeRetorno === 'TOCUMEN'
-                    ||  sucursalDeRetiro === 'TOCUMEN' && sucursalDeRetorno === 'COLON' 
+                    ||  sucursalDeRetiro === 'HCOLON' && sucursalDeRetorno === 'HZ TORRE'
+                    ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HCOLON' 
                     )
                 {  dropoff = tier.siete; } 
 
@@ -216,17 +219,24 @@ export const usePedidoStore = defineStore(
 
                 // tier ocho: 90  
                 if ( 
-                    sucursalDeRetiro === 'CHITRE' && sucursalDeRetorno === 'CHORRERA'
-                ||  sucursalDeRetiro === 'CHORRERA' && sucursalDeRetorno === 'CHITRE'
+                    sucursalDeRetiro === 'HCHITRE' && sucursalDeRetorno === 'HCHORRER'
+                ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'HCHITRE'
 
-                ||  sucursalDeRetiro === 'TDAVIDC' && sucursalDeRetorno === 'SANTIAGO'
-                ||  sucursalDeRetiro === 'SANTIAGO' && sucursalDeRetorno === 'TDAVIDC'
 
-                ||  sucursalDeRetiro === 'APODAVID' && sucursalDeRetorno === 'SANTIAGO'
-                ||  sucursalDeRetiro === 'SANTIAGO' && sucursalDeRetorno === 'APODAVID'
+                || sucursalDeRetiro === 'HAPOCHI' && sucursalDeRetorno === 'HCHORRER'
+                ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'HAPOCHI'
 
-                ||  sucursalDeRetiro === 'CHORRERA' && sucursalDeRetorno === 'SANTIAGO'
-                ||  sucursalDeRetiro === 'SANTIAGO' && sucursalDeRetorno === 'CHORRERA' 
+
+
+
+                ||  sucursalDeRetiro === 'DAVIDC' && sucursalDeRetorno === 'HSANTIAG'
+                ||  sucursalDeRetiro === 'HSANTIAG' && sucursalDeRetorno === 'DAVIDC'
+
+                ||  sucursalDeRetiro === 'EMALEK' && sucursalDeRetorno === 'HSANTIAG'
+                ||  sucursalDeRetiro === 'HSANTIAG' && sucursalDeRetorno === 'EMALEK'
+
+                ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'HSANTIAG'
+                ||  sucursalDeRetiro === 'HSANTIAG' && sucursalDeRetorno === 'HCHORRER' 
                 )
                 { dropoff = tier.ocho; } 
 
@@ -234,46 +244,77 @@ export const usePedidoStore = defineStore(
 
                 // tier nueve: 125   
                 if ( 
-                    sucursalDeRetiro === 'CHITRE' && sucursalDeRetorno === 'TDAVIDC'
-                ||  sucursalDeRetiro === 'TDAVIDC' && sucursalDeRetorno === 'CHITRE'
+                    sucursalDeRetiro === 'HCHITRE' && sucursalDeRetorno === 'DAVIDC'
+                ||  sucursalDeRetiro === 'DAVIDC' && sucursalDeRetorno === 'HCHITRE'
 
-                ||  sucursalDeRetiro === 'CHITRE' && sucursalDeRetorno === 'ALBROOK'
-                ||  sucursalDeRetiro === 'ALBROOK' && sucursalDeRetorno === 'CHITRE'
+                ||  sucursalDeRetiro === 'HCHITRE' && sucursalDeRetorno === 'HALBROOK'
+                ||  sucursalDeRetiro === 'HALBROOK' && sucursalDeRetorno === 'HCHITRE'
 
 
-                ||  sucursalDeRetiro === 'CHITRE' && sucursalDeRetorno === 'TOCUMEN'
-                ||  sucursalDeRetiro === 'TOCUMEN' && sucursalDeRetorno === 'CHITRE' 
+                ||  sucursalDeRetiro === 'HCHITRE' && sucursalDeRetorno === 'HZ TORRE'
+                ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HCHITRE' 
 
-                ||  sucursalDeRetiro === 'CHITRE' && sucursalDeRetorno === 'V ESPANA'
-                ||  sucursalDeRetiro === 'V ESPANA' && sucursalDeRetorno === 'CHITRE'
+                ||  sucursalDeRetiro === 'HCHITRE' && sucursalDeRetorno === 'VPORRAS'
+                ||  sucursalDeRetiro === 'VPORRAS' && sucursalDeRetorno === 'HCHITRE'
 
-                ||  sucursalDeRetiro === 'CHITRE' && sucursalDeRetorno === 'THCDELESTE'
-                ||  sucursalDeRetiro === 'THCDELESTE' && sucursalDeRetorno === 'CHITRE'
+                ||  sucursalDeRetiro === 'HCHITRE' && sucursalDeRetorno === 'HZCDELESTE'
+                ||  sucursalDeRetiro === 'HZCDELESTE' && sucursalDeRetorno === 'HCHITRE'
 
-                ||  sucursalDeRetiro === 'CHITRE' && sucursalDeRetorno === 'THVENETTO'
-                ||  sucursalDeRetiro === 'THVENETTO' && sucursalDeRetorno === 'CHITRE'  
+                ||  sucursalDeRetiro === 'HCHITRE' && sucursalDeRetorno === 'VVENETTO'
+                ||  sucursalDeRetiro === 'VVENETTO' && sucursalDeRetorno === 'HCHITRE'  
 
-                ||  sucursalDeRetiro === 'CHITRE' && sucursalDeRetorno === 'TORREMOLIN'
-                ||  sucursalDeRetiro === 'TORREMOLIN' && sucursalDeRetorno === 'CHITRE' 
+                ||  sucursalDeRetiro === 'HCHITRE' && sucursalDeRetorno === 'HZ TORRE'
+                ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HCHITRE' 
+
+
+
+
+                || sucursalDeRetiro === 'HAPOCHI' && sucursalDeRetorno === 'DAVIDC'
+                ||  sucursalDeRetiro === 'DAVIDC' && sucursalDeRetorno === 'HAPOCHI'
+
+                ||  sucursalDeRetiro === 'HAPOCHI' && sucursalDeRetorno === 'HALBROOK'
+                ||  sucursalDeRetiro === 'HALBROOK' && sucursalDeRetorno === 'HAPOCHI'
+
+
+                ||  sucursalDeRetiro === 'HAPOCHI' && sucursalDeRetorno === 'HZ TORRE'
+                ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HAPOCHI' 
+
+                ||  sucursalDeRetiro === 'HAPOCHI' && sucursalDeRetorno === 'VPORRAS'
+                ||  sucursalDeRetiro === 'VPORRAS' && sucursalDeRetorno === 'HAPOCHI'
+
+                ||  sucursalDeRetiro === 'HAPOCHI' && sucursalDeRetorno === 'HZCDELESTE'
+                ||  sucursalDeRetiro === 'HZCDELESTE' && sucursalDeRetorno === 'HAPOCHI'
+
+                ||  sucursalDeRetiro === 'HAPOCHI' && sucursalDeRetorno === 'VVENETTO'
+                ||  sucursalDeRetiro === 'VVENETTO' && sucursalDeRetorno === 'HAPOCHI'  
+
+                ||  sucursalDeRetiro === 'HAPOCHI' && sucursalDeRetorno === 'HZ TORRE'
+                ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HAPOCHI' 
  
-                ||  sucursalDeRetiro === 'SANTIAGO' && sucursalDeRetorno === 'ALBROOK'
-                ||  sucursalDeRetiro === 'ALBROOK' && sucursalDeRetorno === 'SANTIAGO'
 
-                ||  sucursalDeRetiro === 'SANTIAGO' && sucursalDeRetorno === 'V ESPANA'
-                ||  sucursalDeRetiro === 'V ESPANA' && sucursalDeRetorno === 'SANTIAGO'
+
+
+
+
  
-                ||  sucursalDeRetiro === 'SANTIAGO' && sucursalDeRetorno === 'TOCUMEN'
-                ||  sucursalDeRetiro === 'TOCUMEN' && sucursalDeRetorno === 'SANTIAGO'
+                ||  sucursalDeRetiro === 'HSANTIAG' && sucursalDeRetorno === 'HALBROOK'
+                ||  sucursalDeRetiro === 'HALBROOK' && sucursalDeRetorno === 'HSANTIAG'
+
+                ||  sucursalDeRetiro === 'HSANTIAG' && sucursalDeRetorno === 'VPORRAS'
+                ||  sucursalDeRetiro === 'VPORRAS' && sucursalDeRetorno === 'HSANTIAG'
  
-                ||  sucursalDeRetiro === 'SANTIAGO' && sucursalDeRetorno === 'TORREMOLIN'
-                ||  sucursalDeRetiro === 'TORREMOLIN' && sucursalDeRetorno === 'SANTIAGO' 
+                ||  sucursalDeRetiro === 'HSANTIAG' && sucursalDeRetorno === 'HZ TORRE'
+                ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HSANTIAG'
+ 
+                ||  sucursalDeRetiro === 'HSANTIAG' && sucursalDeRetorno === 'HZ TORRE'
+                ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HSANTIAG' 
  
 
-                ||  sucursalDeRetiro === 'SANTIAGO' && sucursalDeRetorno === 'THCDELESTE'
-                ||  sucursalDeRetiro === 'THCDELESTE' && sucursalDeRetorno === 'SANTIAGO'
+                ||  sucursalDeRetiro === 'HSANTIAG' && sucursalDeRetorno === 'HZCDELESTE'
+                ||  sucursalDeRetiro === 'HZCDELESTE' && sucursalDeRetorno === 'HSANTIAG'
 
-                ||  sucursalDeRetiro === 'SANTIAGO' && sucursalDeRetorno === 'THVENETTO'
-                ||  sucursalDeRetiro === 'THVENETTO' && sucursalDeRetorno === 'SANTIAGO'   
+                ||  sucursalDeRetiro === 'HSANTIAG' && sucursalDeRetorno === 'VVENETTO'
+                ||  sucursalDeRetiro === 'VVENETTO' && sucursalDeRetorno === 'HSANTIAG'   
 
  
                 )
@@ -281,64 +322,71 @@ export const usePedidoStore = defineStore(
 
                 // tier diez: 177   
                 if ( 
-                    sucursalDeRetiro === 'CHITRE' && sucursalDeRetorno === 'COLON'
-                ||  sucursalDeRetiro === 'COLON' && sucursalDeRetorno === 'CHITRE' 
-                ||  sucursalDeRetiro === 'SANTIAGO' && sucursalDeRetorno === 'COLON'
-                ||  sucursalDeRetiro === 'COLON' && sucursalDeRetorno === 'SANTIAGO' 
+                    sucursalDeRetiro === 'HCHITRE' && sucursalDeRetorno === 'HCOLON'
+                ||  sucursalDeRetiro === 'HCOLON' && sucursalDeRetorno === 'HCHITRE' 
+
+
+                || sucursalDeRetiro === 'HAPOCHI' && sucursalDeRetorno === 'HCOLON'
+                ||  sucursalDeRetiro === 'HCOLON' && sucursalDeRetorno === 'HAPOCHI' 
+
+
+
+                ||  sucursalDeRetiro === 'HSANTIAG' && sucursalDeRetorno === 'HCOLON'
+                ||  sucursalDeRetiro === 'HCOLON' && sucursalDeRetorno === 'HSANTIAG' 
                 )
                 { dropoff = tier.diez; }  
                 // tier once: 190   
                 if ( 
                     
-                    sucursalDeRetiro === 'APODAVID' && sucursalDeRetorno === 'ALBROOK'
-                ||  sucursalDeRetiro === 'ALBROOK' && sucursalDeRetorno === 'APODAVID' 
-                ||  sucursalDeRetiro === 'ALBROOK' && sucursalDeRetorno === 'TDAVIDC'
-                ||  sucursalDeRetiro === 'TDAVIDC' && sucursalDeRetorno === 'ALBROOK'
+                    sucursalDeRetiro === 'EMALEK' && sucursalDeRetorno === 'HALBROOK'
+                ||  sucursalDeRetiro === 'HALBROOK' && sucursalDeRetorno === 'EMALEK' 
+                ||  sucursalDeRetiro === 'HALBROOK' && sucursalDeRetorno === 'DAVIDC'
+                ||  sucursalDeRetiro === 'DAVIDC' && sucursalDeRetorno === 'HALBROOK'
 
-                ||  sucursalDeRetiro === 'APODAVID' && sucursalDeRetorno === 'TOCUMEN'
-                ||  sucursalDeRetiro === 'TOCUMEN' && sucursalDeRetorno === 'APODAVID' 
-                ||  sucursalDeRetiro === 'TOCUMEN' && sucursalDeRetorno === 'TDAVIDC'
-                ||  sucursalDeRetiro === 'TDAVIDC' && sucursalDeRetorno === 'TOCUMEN'
-
-
-                ||  sucursalDeRetiro === 'APODAVID' && sucursalDeRetorno === 'CHORRERA'
-                ||  sucursalDeRetiro === 'CHORRERA' && sucursalDeRetorno === 'APODAVID' 
-                ||  sucursalDeRetiro === 'CHORRERA' && sucursalDeRetorno === 'TDAVIDC'
-                ||  sucursalDeRetiro === 'TDAVIDC' && sucursalDeRetorno === 'CHORRERA'
+                ||  sucursalDeRetiro === 'EMALEK' && sucursalDeRetorno === 'HZ TORRE'
+                ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'EMALEK' 
+                ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'DAVIDC'
+                ||  sucursalDeRetiro === 'DAVIDC' && sucursalDeRetorno === 'HZ TORRE'
 
 
-                ||  sucursalDeRetiro === 'APODAVID' && sucursalDeRetorno === 'TORREMOLIN'
-                ||  sucursalDeRetiro === 'TORREMOLIN' && sucursalDeRetorno === 'APODAVID' 
-                ||  sucursalDeRetiro === 'TORREMOLIN' && sucursalDeRetorno === 'TDAVIDC'
-                ||  sucursalDeRetiro === 'TDAVIDC' && sucursalDeRetorno === 'TORREMOLIN'
+                ||  sucursalDeRetiro === 'EMALEK' && sucursalDeRetorno === 'HCHORRER'
+                ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'EMALEK' 
+                ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'DAVIDC'
+                ||  sucursalDeRetiro === 'DAVIDC' && sucursalDeRetorno === 'HCHORRER'
+
+
+                ||  sucursalDeRetiro === 'EMALEK' && sucursalDeRetorno === 'HZ TORRE'
+                ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'EMALEK' 
+                ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'DAVIDC'
+                ||  sucursalDeRetiro === 'DAVIDC' && sucursalDeRetorno === 'HZ TORRE'
 
 
 
-                ||  sucursalDeRetiro === 'TDAVIDC' && sucursalDeRetorno === 'V ESPANA'
-                ||  sucursalDeRetiro === 'V ESPANA' && sucursalDeRetorno === 'TDAVIDC'
-                ||  sucursalDeRetiro === 'APODAVID' && sucursalDeRetorno === 'V ESPANA'
-                ||  sucursalDeRetiro === 'V ESPANA' && sucursalDeRetorno === 'APODAVID' 
-                ||  sucursalDeRetiro === 'TDAVIDC' && sucursalDeRetorno === 'THCDELESTE'
-                ||  sucursalDeRetiro === 'THCDELESTE' && sucursalDeRetorno === 'TDAVIDC'
-                ||  sucursalDeRetiro === 'APODAVID' && sucursalDeRetorno === 'THCDELESTE'
-                ||  sucursalDeRetiro === 'THCDELESTE' && sucursalDeRetorno === 'APODAVID'
+                ||  sucursalDeRetiro === 'DAVIDC' && sucursalDeRetorno === 'VPORRAS'
+                ||  sucursalDeRetiro === 'VPORRAS' && sucursalDeRetorno === 'DAVIDC'
+                ||  sucursalDeRetiro === 'EMALEK' && sucursalDeRetorno === 'VPORRAS'
+                ||  sucursalDeRetiro === 'VPORRAS' && sucursalDeRetorno === 'EMALEK' 
+                ||  sucursalDeRetiro === 'DAVIDC' && sucursalDeRetorno === 'HZCDELESTE'
+                ||  sucursalDeRetiro === 'HZCDELESTE' && sucursalDeRetorno === 'DAVIDC'
+                ||  sucursalDeRetiro === 'EMALEK' && sucursalDeRetorno === 'HZCDELESTE'
+                ||  sucursalDeRetiro === 'HZCDELESTE' && sucursalDeRetorno === 'EMALEK'
 
 
-                ||  sucursalDeRetiro === 'TDAVIDC' && sucursalDeRetorno === 'THVENETTO'
-                ||  sucursalDeRetiro === 'THVENETTO' && sucursalDeRetorno === 'TDAVIDC'  
-                ||  sucursalDeRetiro === 'APODAVID' && sucursalDeRetorno === 'THVENETTO'
-                ||  sucursalDeRetiro === 'THVENETTO' && sucursalDeRetorno === 'APODAVID'   
+                ||  sucursalDeRetiro === 'DAVIDC' && sucursalDeRetorno === 'VVENETTO'
+                ||  sucursalDeRetiro === 'VVENETTO' && sucursalDeRetorno === 'DAVIDC'  
+                ||  sucursalDeRetiro === 'EMALEK' && sucursalDeRetorno === 'VVENETTO'
+                ||  sucursalDeRetiro === 'VVENETTO' && sucursalDeRetorno === 'EMALEK'   
                 
                 )
                 { dropoff = tier.once; } 
 
 
-                // tier doce: 290  APODAVID TDAVIDC SANTIAGO CHORRERA CHITRE ALBROOK TORREMOLIN TOCUMEN ALBROOK
+                // tier doce: 290  EMALEK DAVIDC HSANTIAG HCHORRER HCHITRE HALBROOK HZ TORRE HZ TORRE HALBROOK
                 if (  
-                        sucursalDeRetiro === 'TDAVIDC' && sucursalDeRetorno === 'COLON'
-                    ||  sucursalDeRetiro === 'COLON' && sucursalDeRetorno === 'TDAVIDC'  
-                    ||  sucursalDeRetiro === 'APODAVID' && sucursalDeRetorno === 'COLON'
-                    ||  sucursalDeRetiro === 'COLON' && sucursalDeRetorno === 'APODAVID'   
+                        sucursalDeRetiro === 'DAVIDC' && sucursalDeRetorno === 'HCOLON'
+                    ||  sucursalDeRetiro === 'HCOLON' && sucursalDeRetorno === 'DAVIDC'  
+                    ||  sucursalDeRetiro === 'EMALEK' && sucursalDeRetorno === 'HCOLON'
+                    ||  sucursalDeRetiro === 'HCOLON' && sucursalDeRetorno === 'EMALEK'   
                 )
                 { dropoff = tier.doce; }  
 

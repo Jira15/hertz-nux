@@ -1,0 +1,1 @@
+{"version":3,"file":"get-asset-url-9698b8ce.js","sources":["../../../../utils/get-asset-url.js"],"sourcesContent":["export function getAssetURL(id) {\n  if (!id) return null;\n  return `https://admin.intermarketing.com.pa/assets/${id}`;\n}\n"],"names":[],"mappings":"AAAO,SAAS,YAAY,IAAI;AAC9B,MAAI,CAAC;AAAI,WAAO;AAChB,SAAO,8CAA8C;AACvD;"}

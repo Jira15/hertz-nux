@@ -27,7 +27,7 @@ const route = useRoute()
 //     });
 let filters = { order_id: route.params.id };
 const pedidos = await getItems({ 
-    collection: "pedidos",
+    collection: "pedidos_hertz",
     params: {
         filter: filters
     }
@@ -52,7 +52,7 @@ const precioFormat = function(value) {
  
 
 useHead({
-        title: 'Modificando Reserva | Thrifty Car Rental Panamá'
+        title: 'Modificando Reserva | Hertz Rent a Car Panamá'
     });
 </script> 
 <template>  
@@ -318,7 +318,7 @@ useHead({
         line-height: 1.5;
         h6 {
             font-weight:bold;
-            background-color: #cde4ff;
+            background-color: #bebebe;
         }
         dl {
             display: flex;
@@ -360,13 +360,13 @@ useHead({
             }
         }
         button {
-            background-color: #047EFF;
+            background-color: #000000;
             padding: 5px 15px;
             border-radius: 5px; 
             text-transform: uppercase;
             font-size: 16px;
             font-weight: 600;
-            color: white;   
+            color:#FFD115;  
             width: 100%;
             text-align: center;
         }
@@ -375,19 +375,19 @@ useHead({
     .metodos {
         margin-top: 10px; 
         button {
-            background-color: #047EFF;
+            background-color: #050505;
             padding: 5px 15px;
-            border-radius: 5px; 
+            border-radius: 5px;     
             text-transform: uppercase;
             font-size: 16px;
             font-weight: 600;
-            color: white;   
+            color: #FFD115;
             width: 100%;
             text-align: center;
             margin-top: 10px; 
         }
         .tarjeta {
-            background-color: #c5d4e4;
+            background-color: #bebebe;
             padding: 20px;
             border-radius: 5px;
             margin-bottom: 20px;
@@ -429,7 +429,7 @@ useHead({
             line-height: 1.5;
             h6 {
                 font-weight:bold;
-                background-color: #cde4ff;
+                background-color: #e6e6e6;
             }
             dl {
                 display: flex;
@@ -471,13 +471,13 @@ useHead({
                 }
             }
             button {
-                background-color: #047EFF;
+                background-color: #000000;
                 padding: 5px 15px;
                 border-radius: 5px; 
                 text-transform: uppercase;
                 font-size: 16px;
                 font-weight: 600;
-                color: white;   
+                color: #FFD115;   
                 width: 100%;
                 text-align: center;
             }

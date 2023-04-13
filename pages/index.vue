@@ -1,5 +1,6 @@
 <template> 
   <main> 
+    <whatsapp />
     <Banner />
     <TheSearch />
     <Content />  

@@ -1,0 +1,5 @@
+const ThePrompt_vue_vue_type_style_index_0_lang = ".slot-icon{height:12px;padding-left:5px;width:auto}.prompt{align-items:center;background:#282828;box-sizing:border-box;color:#fff;display:flex;flex-direction:column;padding:15px;text-transform:uppercase;width:100%;z-index:999999}.prompt h2{cursor:pointer;font-size:20px;font-weight:700;padding:.2rem}.prompt legend,.prompt section{font-size:14px;font-weight:700}.prompt section{padding:.5rem}.prompt select{height:40px;width:100%}.fechas{display:flex;justify-content:space-between}.fechas .hora{margin-left:30px;width:150px}.sucursales h2{font-size:16px}.siguiente{padding:8px}.verificar{align-self:flex-end;background:#ffd115;color:#000;font-size:16px;font-weight:700;padding:10px}@media screen and (min-width:768px){.siguiente{align-self:flex-end;margin-bottom:10px}.prompt{display:flex;margin-top:-5px;width:100%}.prompt footer{align-self:end}}";
+export {
+  ThePrompt_vue_vue_type_style_index_0_lang as default
+};
+//# sourceMappingURL=ThePrompt-styles-1.mjs-056a2504.js.map

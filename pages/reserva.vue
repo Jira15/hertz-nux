@@ -345,19 +345,17 @@ useHead({
         padding: 3px;
     } 
 }
-/*
+
 .promocion {
     position: absolute; 
-    opacity:80%;
-    margin-top: -5px;
-    margin-left: -5px;
+    opacity:80%; 
     display: flex; 
     img {
         max-width: 100px;
         max-height: 100px;      
     }
 }
-
+/*
 .disponibilidad
 { 
     padding: 5px 15px;
@@ -468,8 +466,7 @@ useHead({
                 grid-area: precios; 
                 display: flex;
                 z-index: 1; 
-                justify-content: space-around;
-                align-items: end;  
+                justify-content: space-around; 
                 div{  
                     justify-content: space-around;
                     display: flex;
@@ -501,6 +498,17 @@ useHead({
             }
             
             
+.promocion {
+    position: absolute; 
+    opacity:80%;
+    margin-top: -10px;
+    margin-left: 0px;
+    display: flex; 
+    img {
+        max-width: 100px;
+        max-height: 100px;      
+    }
+}
 
             .disponibilidad { 
                 grid-area: precios; 

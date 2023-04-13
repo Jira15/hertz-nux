@@ -18,7 +18,7 @@ export const useActualizarStore = defineStore
             try {
                 var status = {  status: 'Cancelado'  }   // var newItem = { status: "Draft" };
                 await updateItem<Pedido>({ 
-                    collection: "pedidos",
+                    collection: "pedidos_hertz",
                     id: storePedido.pedido.pedidos_id,
                     item: status });  
                     await refreshNuxtData()

@@ -1,0 +1,6 @@
+const FormaPago_vue_vue_type_style_index_0_scoped_8da17233_lang = ".warning[data-v-8da17233]{font-size:12px;font-weight:700}.metodos[data-v-8da17233]{margin-top:10px}.metodos button[data-v-8da17233]{background-color:#000;border-radius:5px;color:#ffd115;font-size:16px;font-weight:600;margin-bottom:40px;margin-top:10px;padding:5px 15px;text-align:center;text-transform:uppercase;width:100%}.metodos p[data-v-8da17233]{display:flex;flex-direction:column;font-size:15px;justify-content:space-between;padding:3px}@media screen and (min-width:768px){.metodos[data-v-8da17233]{display:flex;justify-content:space-around}.metodos div[data-v-8da17233]{width:400px}.metodos .tarjeta[data-v-8da17233]{background-color:#c7c7c7;border-radius:5px;padding:10px;width:400px}.metodos .tarjeta form[data-v-8da17233]{display:flex;flex-wrap:wrap;margin-bottom:10px}.metodos .tarjeta form input[data-v-8da17233]{background-color:#f5f5f5;border:none;border-radius:3px;box-sizing:border-box;padding:10px 20px}.metodos .tarjeta form p[data-v-8da17233]{display:flex;flex:1 0 calc(50% - 10px);flex-direction:column;font-size:18px;justify-content:space-between;max-width:400px}}";
+
+const FormaPagoStyles_e76514f7 = [FormaPago_vue_vue_type_style_index_0_scoped_8da17233_lang];
+
+export { FormaPagoStyles_e76514f7 as default };
+//# sourceMappingURL=FormaPago-styles.e76514f7.mjs.map
