@@ -13,6 +13,7 @@ export const usePedidoStore = defineStore(
                 reserva: '',
                 precio_prepago: Number,
                 pedidos_id: '',
+                pedidos__hertz_id: '',
                 cliente: {
                     nombre: '',
                     apellido: '',
@@ -44,7 +45,7 @@ export const usePedidoStore = defineStore(
                     precio_3: Number
                 }, 
                 cobertura_e: {
-                    nombre: String,
+                    nombre: '',
                     explicacion: String,
                     precio: 0.00,
                     precio_2: 0.00,

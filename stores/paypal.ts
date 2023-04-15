@@ -84,7 +84,7 @@ export const usePaypalStore = defineStore('paypal',  () => {
                           sucursal_detail: storePedido.pedido.sucursal,
                           sucursal_retorno_detail: storePedido.pedido.sucursalRetorno,
                           extras: JSON.stringify(storePedido.pedido.extras), 
-                          status: 'Pagado',
+                          status: 'Booking',
                           tipo_pago: 'Paypal',
                           total: totalPedido
                         } 
@@ -94,7 +94,7 @@ export const usePaypalStore = defineStore('paypal',  () => {
                     if (storePedido.pedido.pedidos_id !== ""){   
   
                       console.log('Transacción Aprobada' + storePedido.pedido.pedidos_id)    
-                      var status = { status: 'Pagado', tipo_pago: 'Paypal' }   
+                      var status = { status: 'Booking', tipo_pago: 'Paypal' }   
                       updateItem<Pedido>({ 
                           collection: "pedidos_hertz",
                           id: storePedido.pedido.pedidos_id,

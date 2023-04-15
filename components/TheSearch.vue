@@ -30,7 +30,16 @@ function minimoDeHoras(date, horas) {
   return newDate;
 }
 
-const startTime = ref({ hours: 10, minutes: 15 });
+const currentDate = new Date(); 
+const currentTime = currentDate.getTime(); 
+const oneDay = 24 * 60 * 60 * 1000;
+const newTime = currentTime + oneDay; 
+const nextDay = new Date(newTime); 
+
+
+
+
+const startTime = ref({ hours: 10, minutes: 30 });
 
 function getWorkingHours(openingTime, closingTime) {
   let workingHours = [];
@@ -107,7 +116,7 @@ const minutesArray = [
             :start-time="startTime"
             locale="es"
             v-model="storeSearch.fechaRetiro"
-            :minDate="new Date()"
+            :minDate="nextDay"
             :disabled-week-days="
               domingoCerrados(
                 storeSearch.sucursal.horario_apertura_domingo,

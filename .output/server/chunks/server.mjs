@@ -1040,7 +1040,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./clientes-fa66b3f9.mjs').then((m) => m.default || m)
+    component: () => import('./clientes-378a2acd.mjs').then((m) => m.default || m)
   },
   {
     name: "error",
@@ -1056,7 +1056,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_id_-7670ca59.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-54a35d2b.mjs').then((m) => m.default || m)
   },
   {
     name: "flota-reserva-checkout",
@@ -1064,7 +1064,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./checkout-33bfbef6.mjs').then((m) => m.default || m)
+    component: () => import('./checkout-17e95c15.mjs').then((m) => m.default || m)
   },
   {
     name: "flota",
@@ -1072,7 +1072,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./index-491b2275.mjs').then((m) => m.default || m)
+    component: () => import('./index-7f8f6a20.mjs').then((m) => m.default || m)
   },
   {
     name: "index",
@@ -1080,7 +1080,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./index-d0354da5.mjs').then((m) => m.default || m)
+    component: () => import('./index-18689eef.mjs').then((m) => m.default || m)
   },
   {
     name: "maneja",
@@ -1088,7 +1088,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./maneja-4cbe9403.mjs').then((m) => m.default || m)
+    component: () => import('./maneja-04694956.mjs').then((m) => m.default || m)
   },
   {
     name: "orden-id",
@@ -1096,7 +1096,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_id_-6ce5c033.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-a0864545.mjs').then((m) => m.default || m)
   },
   {
     name: "paginas-id",
@@ -1104,7 +1104,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_id_-22740ea8.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-2357bdb1.mjs').then((m) => m.default || m)
   },
   {
     name: "reserva",
@@ -1112,7 +1112,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./reserva-80694857.mjs').then((m) => m.default || m)
+    component: () => import('./reserva-3851981b.mjs').then((m) => m.default || m)
   },
   {
     name: "sucursales",
@@ -1120,7 +1120,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./sucursales-1ddfa294.mjs').then((m) => m.default || m)
+    component: () => import('./sucursales-2c4cb9a2.mjs').then((m) => m.default || m)
   },
   {
     name: "thanks",
@@ -1128,7 +1128,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./thanks-d2d02c67.mjs').then((m) => m.default || m)
+    component: () => import('./thanks-046f6b26.mjs').then((m) => m.default || m)
   },
   {
     name: "vacante-gracias",
