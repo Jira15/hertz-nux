@@ -16,7 +16,7 @@ const opciones = computed(() => {
 </script>
 
 <template> 
-    <fieldet class="filtros"> 
+    <fieldset class="filtros"> 
         <p>
             <label for="marca">Marca</label>
             <select  name="marca"  v-model="storeFiltro.filtros.marca"> 
@@ -44,7 +44,7 @@ const opciones = computed(() => {
         </p>
 
         <button v-on:click="storeAutos.fetchAutos()"> Filtrar</button>
-    </fieldet> 
+    </fieldset> 
 </template> 
 <style lang="scss"> 
 .filtros {

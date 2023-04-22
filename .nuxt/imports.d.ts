@@ -23,12 +23,12 @@ export { useDirectus } from '../node_modules/nuxt-directus/dist/runtime/composab
 export { useDirectusAuth } from '../node_modules/nuxt-directus/dist/runtime/composables/useDirectusAuth';
 export { useDirectusCollections } from '../node_modules/nuxt-directus/dist/runtime/composables/useDirectusCollections';
 export { useDirectusFiles } from '../node_modules/nuxt-directus/dist/runtime/composables/useDirectusFiles';
-export { useDirectusGraphQL } from '../node_modules/nuxt-directus/dist/runtime/composables/useDirectusGraphQL';
 export { useDirectusItems } from '../node_modules/nuxt-directus/dist/runtime/composables/useDirectusItems';
 export { useDirectusNotifications } from '../node_modules/nuxt-directus/dist/runtime/composables/useDirectusNotifications';
 export { useDirectusRevisions } from '../node_modules/nuxt-directus/dist/runtime/composables/useDirectusRevisions';
 export { useDirectusToken } from '../node_modules/nuxt-directus/dist/runtime/composables/useDirectusToken';
 export { useDirectusUrl } from '../node_modules/nuxt-directus/dist/runtime/composables/useDirectusUrl';
 export { useDirectusUser } from '../node_modules/nuxt-directus/dist/runtime/composables/useDirectusUser';
+export { useDirectusUsers } from '../node_modules/nuxt-directus/dist/runtime/composables/useDirectusUsers';
 export { usePinia, defineStore, storeToRefs, defineStore as definePiniaStore } from '../node_modules/@pinia/nuxt/dist/runtime/composables';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';

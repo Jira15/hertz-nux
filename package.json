@@ -31,7 +31,7 @@
     "latest": "^0.2.0",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.40",
-    "nuxt-directus": "^3.1.0",
+    "nuxt-directus": "^5.1.2",
     "nuxt-facebook-pixel-module": "^1.6.0",
     "nuxt-proxy": "^0.3.7",
     "pinia": "^2.0.32",

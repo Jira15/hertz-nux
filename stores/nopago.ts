@@ -4,12 +4,16 @@ import { usePedidoStore } from '@/stores/pedido';
 import { Pedido } from '~~/types/interfaces';
 import moment from 'moment';
 import { checkoutSchema } from '@/types/checkout-schema-yup';
+import { getUniqueOrderID } from '@/types/orderIDGenerator';
 
 
 export const useNoPagoStore = defineStore('nopago',  () => { 
 
     const { createItems } = useDirectusItems(); 
     const storePedido = usePedidoStore();
+    
+        
+    const orderID = getUniqueOrderID();
     
     const subTotal = storePedido.subTotal();    
     const impuestoAeropuerto = storePedido.impuestoAeropuerto();    
@@ -42,6 +46,7 @@ export const useNoPagoStore = defineStore('nopago',  () => {
             const router = useRouter();   
                 var items: Pedido[] = [
                 {
+                    order_id: orderID,
                     nombre: storePedido.pedido.cliente.nombre,
                     apellido: storePedido.pedido.cliente.apellido, 
                     email: storePedido.pedido.cliente.email,

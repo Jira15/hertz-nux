@@ -30,14 +30,11 @@ function minimoDeHoras(date, horas) {
   return newDate;
 }
 
-const currentDate = new Date(); 
-const currentTime = currentDate.getTime(); 
+const currentDate = new Date();
+const currentTime = currentDate.getTime();
 const oneDay = 24 * 60 * 60 * 1000;
-const newTime = currentTime + oneDay; 
-const nextDay = new Date(newTime); 
-
-
-
+const newTime = currentTime + oneDay;
+const nextDay = new Date(newTime);
 
 const startTime = ref({ hours: 10, minutes: 30 });
 
@@ -51,7 +48,7 @@ function getWorkingHours(openingTime, closingTime) {
 }
 
 function domingoCerrados(domingoApertura, domingoCierre) {
-  if (domingoApertura === 0 && domingoCierre === 0) {
+  if (domingoApertura === 24 && domingoCierre === 0) {
     return [0];
   }
 }
@@ -224,12 +221,11 @@ const minutesArray = [
           Siguiente
         </button>
       </div>
- 
+
       <!-- <ErrorMessage name="sucursal" >
                 <p class="warn">Todos los Campos son requeridos</p> 
             </ErrorMessage>   -->
     </article>
- 
   </form>
 </template>
 <style lang="scss">
@@ -336,7 +332,7 @@ const minutesArray = [
   padding: 10px;
   font-weight: bold;
   font-size: 14px;
-  background: #FFD115;
+  background: #ffd115;
   color: rgb(0, 0, 0);
   margin-top: 5px;
   align-self: end;
@@ -363,7 +359,7 @@ const minutesArray = [
     .fechas {
       display: flex;
       justify-content: space-between;
-      flex-direction: row; 
+      flex-direction: row;
       .dpicker {
         padding-right: 20px;
       }

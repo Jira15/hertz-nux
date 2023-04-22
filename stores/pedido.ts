@@ -13,7 +13,7 @@ export const usePedidoStore = defineStore(
                 reserva: '',
                 precio_prepago: Number,
                 pedidos_id: '',
-                pedidos__hertz_id: '',
+                pedidos_hertz_id: '',
                 cliente: {
                     nombre: '',
                     apellido: '',
@@ -435,7 +435,7 @@ export const usePedidoStore = defineStore(
                 return extrasSumados;
             },
             subTotal() {
-
+ 
                 let precioAuto = this.precioAuto();
                 let tipoReserva = this.pedido.reserva;
                 if(tipoReserva === 'prepago'){

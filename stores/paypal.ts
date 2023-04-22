@@ -3,11 +3,25 @@ import { usePedidoStore } from '@/stores/pedido';
 import { loadScript } from "@paypal/paypal-js";
 import { Pedido } from '~~/types/interfaces';  
 import moment from 'moment';
+import { getUniqueOrderID } from '@/types/orderIDGenerator';
+
 
 export const usePaypalStore = defineStore('paypal',  () => { 
     const { createItems, updateItem } = useDirectusItems(); 
     const storePedido = usePedidoStore(); 
-    const totalPedido = storePedido.pedido.total; 
+
+
+    
+    const orderID = getUniqueOrderID();
+    
+
+
+    const subTotal = storePedido.subTotal();    
+    const impuestoAeropuerto = storePedido.impuestoAeropuerto();    
+    const impuesto = storePedido.impuesto();     
+    const totalPedido = storePedido.total();     
+
+    
 
     const router = useRouter();
     //  SANDBOX API "client-id": "Aa2-lyJOfSxdyNqdMX_91EI24gW16qkYhzIJKxg4rq_dYC5HFDz7Sjb5FUp_UZ54dFDQ46lNQ2ykix-u",
@@ -35,7 +49,7 @@ export const usePaypalStore = defineStore('paypal',  () => {
                                     + storePedido.pedido.carro.modelo + ' o '+ storePedido.pedido.carro.clasificacion 
                                     + ' - '+ storePedido.pedido.cobertura.nombre,
                       custom_id: 'Hertz Rent a Car',
-                      // // invoice_id: 'INV-0001',
+                      invoice_id: orderID,
                       soft_descriptor: 'Hertz Rent a Car',
                       // items: [
                       //     {
@@ -68,6 +82,7 @@ export const usePaypalStore = defineStore('paypal',  () => {
                     
                       var items: Pedido[] = [
                         {
+                          order_id: orderID,
                           nombre: storePedido.pedido.cliente.nombre,
                           apellido: storePedido.pedido.cliente.apellido, 
                           email: storePedido.pedido.cliente.email,
@@ -84,8 +99,11 @@ export const usePaypalStore = defineStore('paypal',  () => {
                           sucursal_detail: storePedido.pedido.sucursal,
                           sucursal_retorno_detail: storePedido.pedido.sucursalRetorno,
                           extras: JSON.stringify(storePedido.pedido.extras), 
-                          status: 'Booking',
+                          status: 'Pagado',
                           tipo_pago: 'Paypal',
+                          sub_total: subTotal,
+                          impuesto_aeropuerto: impuestoAeropuerto,
+                          impuesto: impuesto,
                           total: totalPedido
                         } 
                     ];  
@@ -94,7 +112,7 @@ export const usePaypalStore = defineStore('paypal',  () => {
                     if (storePedido.pedido.pedidos_id !== ""){   
   
                       console.log('Transacción Aprobada' + storePedido.pedido.pedidos_id)    
-                      var status = { status: 'Booking', tipo_pago: 'Paypal' }   
+                      var status = { status: 'Pagado', tipo_pago: 'Paypal' }   
                       updateItem<Pedido>({ 
                           collection: "pedidos_hertz",
                           id: storePedido.pedido.pedidos_id,

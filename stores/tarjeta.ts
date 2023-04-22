@@ -13,10 +13,11 @@ export const useTarjetaStore = defineStore
     } ),  
     actions: { 
         async onSubmit() {  
-            const orderId = this.orden.pedidos_hertz_id 
+            const orderId = this.orden.order_id 
             // console.log(orderId)
             const bodyData = { 
                 'security_key': 'MDYevJ49jVF5cA8zzZ3ySYaC5A5G7AdH',
+                'order_id': orderId,
                 'first_name': this.orden.nombre,
                 'last_name': this.orden.apellido,
                 'address1': this.orden.retiro,

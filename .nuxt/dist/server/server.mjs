@@ -1850,7 +1850,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/clientes-378a2acd.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/clientes-745374a6.js").then((m) => m.default || m)
   },
   {
     name: "error",
@@ -1866,7 +1866,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/_id_-54a35d2b.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/_id_-fae07cc2.js").then((m) => m.default || m)
   },
   {
     name: "flota-reserva-checkout",
@@ -1874,7 +1874,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/checkout-17e95c15.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/checkout-a1324053.js").then((m) => m.default || m)
   },
   {
     name: "flota",
@@ -1882,7 +1882,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-7f8f6a20.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-41b8faa6.js").then((m) => m.default || m)
   },
   {
     name: "index",
@@ -1890,7 +1890,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-18689eef.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-15781909.js").then((m) => m.default || m)
   },
   {
     name: "maneja",
@@ -1898,7 +1898,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/maneja-04694956.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/maneja-bd29c816.js").then((m) => m.default || m)
   },
   {
     name: "orden-id",
@@ -1906,7 +1906,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/_id_-a0864545.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/_id_-d719be32.js").then((m) => m.default || m)
   },
   {
     name: "paginas-id",
@@ -1914,7 +1914,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/_id_-2357bdb1.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/_id_-4700cc71.js").then((m) => m.default || m)
   },
   {
     name: "reserva",
@@ -1922,7 +1922,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/reserva-3851981b.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/reserva-a2145745.js").then((m) => m.default || m)
   },
   {
     name: "sucursales",
@@ -1930,7 +1930,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/sucursales-2c4cb9a2.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/sucursales-4a661a78.js").then((m) => m.default || m)
   },
   {
     name: "thanks",
@@ -1938,7 +1938,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/thanks-046f6b26.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/thanks-8596f88b.js").then((m) => m.default || m)
   },
   {
     name: "vacante-gracias",
@@ -2168,29 +2168,69 @@ const router_jmwsqit4Rs = /* @__PURE__ */ defineNuxtPlugin({
 }, 1);
 const useDirectusUrl = () => {
   const config = /* @__PURE__ */ useRuntimeConfig();
-  return config.directus.url;
+  return config.public.directus.url;
 };
 const useDirectusToken = () => {
   const nuxtApp = useNuxtApp();
-  nuxtApp._cookies = nuxtApp._cookies || {};
-  if (nuxtApp._cookies.directus_token) {
-    return nuxtApp._cookies.directus_token;
-  }
-  const cookie = useCookie("directus_token");
-  nuxtApp._cookies.directus_token = cookie;
-  return cookie;
+  const baseUrl = useDirectusUrl();
+  const token = () => {
+    nuxtApp._cookies = nuxtApp._cookies || {};
+    if (nuxtApp._cookies.directus_token) {
+      return nuxtApp._cookies.directus_token;
+    }
+    const cookie = useCookie("directus_token");
+    nuxtApp._cookies.directus_token = cookie;
+    return cookie;
+  };
+  const refreshToken = () => {
+    nuxtApp._cookies = nuxtApp._cookies || {};
+    if (nuxtApp._cookies.directus_refresh_token) {
+      return nuxtApp._cookies.directus_refresh_token;
+    }
+    const cookie = useCookie("directus_refresh_token");
+    nuxtApp._cookies.directus_refresh_token = cookie;
+    return cookie;
+  };
+  const expires = () => {
+    nuxtApp._cookies = nuxtApp._cookies || {};
+    if (nuxtApp._cookies.directus_token_expired_at) {
+      return nuxtApp._cookies.directus_token_expired_at;
+    }
+    const cookie = useCookie("directus_token_expired_at");
+    nuxtApp._cookies.directus_token_expired_at = cookie;
+    return cookie;
+  };
+  const refreshTokens = async () => {
+    if (refreshToken() && refreshToken().value) {
+      const body = {
+        refresh_token: refreshToken().value
+      };
+      const data = await $fetch("/auth/refresh", {
+        baseURL: baseUrl,
+        body,
+        method: "POST"
+      });
+      expires().value = (/* @__PURE__ */ new Date()).getTime() + data.data.expires;
+      token().value = data.data.access_token;
+      refreshToken().value = data.data.refresh_token;
+      return data.data;
+    } else {
+      return null;
+    }
+  };
+  return { token: token(), refreshToken: refreshToken(), refreshTokens, expires: expires() };
 };
 const useDirectus = () => {
-  useNuxtApp();
   const baseURL2 = useDirectusUrl();
   const config = /* @__PURE__ */ useRuntimeConfig();
-  const token = useDirectusToken();
-  return async (url, fetchOptions = {}) => {
+  const { token } = useDirectusToken();
+  return async (url, fetchOptions = {}, useStaticToken = true) => {
+    var _a2, _b, _c, _d;
     const headers = {};
     if (token && token.value) {
       headers.Authorization = `Bearer ${token.value}`;
-    } else if (config.directus.token) {
-      headers.Authorization = `Bearer ${config.directus.token}`;
+    } else if (config.public.directus.token && useStaticToken) {
+      headers.Authorization = `Bearer ${config.public.directus.token}`;
     }
     try {
       return await $fetch(url, {
@@ -2202,8 +2242,15 @@ const useDirectus = () => {
         }
       });
     } catch (err) {
-      console.error("[Directus Error]: " + err);
-      throw err;
+      {
+        console.error(
+          "[Directus Error]: " + ((_a2 = err.response) == null ? void 0 : _a2.status) + ", " + ((_b = err.response) == null ? void 0 : _b.statusText)
+        );
+      }
+      throw createError({
+        statusCode: (_c = err.response) == null ? void 0 : _c.status,
+        statusMessage: (_d = err.response) == null ? void 0 : _d.statusText
+      });
     }
   };
 };
@@ -2213,30 +2260,40 @@ const useDirectusAuth = () => {
   const config = /* @__PURE__ */ useRuntimeConfig();
   const directus = useDirectus();
   const user = useDirectusUser();
-  const token = useDirectusToken();
-  const setToken = (value) => {
+  const { token, refreshToken, expires } = useDirectusToken();
+  const setToken = (value, _refreshToken, _expires) => {
     token.value = value;
+    if (_refreshToken) {
+      refreshToken.value = _refreshToken;
+      if (_expires) {
+        expires.value = _expires;
+      }
+    }
   };
   const setUser = (value) => {
     user.value = value;
   };
-  const fetchUser = async () => {
+  const fetchUser = async (useStaticToken) => {
     var _a2, _b;
     if (token.value) {
       try {
-        if ((_a2 = config.directus.fetchUserParams) == null ? void 0 : _a2.filter) {
-          config.directus.fetchUserParams.filter = JSON.stringify(config.directus.fetchUserParams.filter);
+        if ((_a2 = config.public.directus.fetchUserParams) == null ? void 0 : _a2.filter) {
+          config.public.directus.fetchUserParams.filter = JSON.stringify(
+            config.public.directus.fetchUserParams.filter
+          );
         }
-        if ((_b = config.directus.fetchUserParams) == null ? void 0 : _b.deep) {
-          config.directus.fetchUserParams.deep = JSON.stringify(config.directus.fetchUserParams.deep);
+        if ((_b = config.public.directus.fetchUserParams) == null ? void 0 : _b.deep) {
+          config.public.directus.fetchUserParams.deep = JSON.stringify(
+            config.public.directus.fetchUserParams.deep
+          );
         }
-        if (config.directus.fetchUserParams) {
+        if (config.public.directus.fetchUserParams) {
           const res = await directus("/users/me", {
-            params: config.directus.fetchUserParams
-          });
+            params: config.public.directus.fetchUserParams
+          }, useStaticToken);
           setUser(res.data);
         } else {
-          const res = await directus("/users/me");
+          const res = await directus("/users/me", useStaticToken);
           setUser(res.data);
         }
       } catch (e) {
@@ -2245,16 +2302,20 @@ const useDirectusAuth = () => {
     }
     return user;
   };
-  const login = async (data) => {
+  const login = async (data, useStaticToken) => {
     setToken(null);
-    const response = await directus("/auth/login", {
-      method: "POST",
-      body: data
-    });
+    const response = await directus(
+      "/auth/login",
+      {
+        method: "POST",
+        body: data
+      },
+      useStaticToken
+    );
     if (!response.data.access_token) {
       throw new Error("Login failed, please check your credentials.");
     }
-    setToken(response.data.access_token);
+    setToken(response.data.access_token, response.data.refresh_token, response.data.expires);
     const user2 = await fetchUser();
     return {
       user: user2,
@@ -2262,29 +2323,33 @@ const useDirectusAuth = () => {
       expires: response.data.expires
     };
   };
-  const createUser = async (data) => {
+  const createUser = async (data, useStaticToken) => {
     return await directus("/users", {
       method: "POST",
       body: data
-    });
+    }, useStaticToken);
   };
   const register = async (data) => {
     return createUser(data);
   };
-  const requestPasswordReset = async (data) => {
+  const requestPasswordReset = async (data, useStaticToken) => {
     await directus("/auth/password/request", {
       method: "POST",
       body: data
-    });
+    }, useStaticToken);
   };
-  const resetPassword = async (data) => {
+  const resetPassword = async (data, useStaticToken) => {
     await directus("/auth/password/reset", {
       method: "POST",
       body: data
-    });
+    }, useStaticToken);
   };
   const logout = async () => {
-    setToken(null);
+    await directus("/auth/logout", {
+      method: "POST",
+      body: { refresh_token: refreshToken.value }
+    });
+    setToken(null, null, null);
     setUser(null);
     await fetchUser();
   };
@@ -2303,7 +2368,7 @@ const useDirectusAuth = () => {
 const plugin_1doCGnr5OF = /* @__PURE__ */ defineNuxtPlugin(async (nuxtApp) => {
   let __temp, __restore;
   const config = /* @__PURE__ */ useRuntimeConfig();
-  if (config.directus.autoFetch) {
+  if (config.public.directus.autoFetch) {
     const { fetchUser } = useDirectusAuth();
     [__temp, __restore] = executeAsync(() => fetchUser()), await __temp, __restore();
   }
@@ -6067,10 +6132,13 @@ const useDirectusItems = () => {
     if ((_b = data.params) == null ? void 0 : _b.deep) {
       data.params.deep = JSON.stringify(data.params.deep);
     }
-    const items = await directus(`/items/${data.collection}/${data.id}`, {
-      method: "GET",
-      params: data.params
-    });
+    const items = await directus(
+      `/items/${data.collection}/${data.id}`,
+      {
+        method: "GET",
+        params: data.params
+      }
+    );
     return items.data;
   };
   const createItems = async (data) => {
@@ -6087,10 +6155,13 @@ const useDirectusItems = () => {
     });
   };
   const updateItem = async (data) => {
-    const item = await directus(`/items/${data.collection}/${data.id}`, {
-      method: "PATCH",
-      body: data.item
-    });
+    const item = await directus(
+      `/items/${data.collection}/${data.id}`,
+      {
+        method: "PATCH",
+        body: data.item
+      }
+    );
     return item.data;
   };
   return {

@@ -7,12 +7,21 @@ import { checkoutSchema } from '@/types/checkout-schema-yup';
 import { createProxyMiddleware }from 'http-proxy-middleware' 
 import axios from 'axios';
 import qs from 'qs';
+import { getUniqueOrderID } from '@/types/orderIDGenerator';
 
 
 export const useCheckoutStore = defineStore('checkout',  () => {  
     const { createItems } = useDirectusItems(); 
     const storePedido = usePedidoStore();
-    const totalPedido = storePedido.total();  
+
+    const orderID = getUniqueOrderID();
+    
+    const subTotal = storePedido.subTotal();    
+    const impuestoAeropuerto = storePedido.impuestoAeropuerto();    
+    const impuesto = storePedido.impuesto();     
+    const totalPedido = storePedido.total();     
+
+    
  
     const metodos = ref('none')
  
@@ -45,10 +54,11 @@ export const useCheckoutStore = defineStore('checkout',  () => {
 
         
 async function onSubmit(values, origin) { 
-    console.log('Submit', JSON.stringify(values, null, 2));
+    // console.log('Submit', JSON.stringify(values, null, 2));
     //   console.log("Values", values);   
     const paramsQ = {
         'security_key': 'MDYevJ49jVF5cA8zzZ3ySYaC5A5G7AdH',
+        'order_id': orderID,
         'first_name': storePedido.pedido.cliente.nombre,
         'last_name': storePedido.pedido.cliente.apellido,
         'address1': storePedido.pedido.sucursal.name,
@@ -108,7 +118,7 @@ console.log('Final URL:', url.toString()); // Log the final URL
 
         const responseText = await response.data;
 
-        console.log('Data:', responseText);
+        // console.log('Data:', responseText);
         const router = useRouter();   
         let respuesta =  responseText;
         let codigoAprobado = 'response=1';
@@ -120,6 +130,7 @@ console.log('Final URL:', url.toString()); // Log the final URL
                 console.log('codigoAprobado')   
                 var items: Pedido[] = [
                   {
+                      order_id: orderID,
                       nombre: storePedido.pedido.cliente.nombre,
                       apellido: storePedido.pedido.cliente.apellido, 
                       email: storePedido.pedido.cliente.email,
@@ -138,6 +149,9 @@ console.log('Final URL:', url.toString()); // Log the final URL
                       extras: storePedido.pedido.extras, 
                       status: 'Pagado',
                       tipo_pago: 'Tarjeta',
+                      sub_total: subTotal,
+                      impuesto_aeropuerto: impuestoAeropuerto,
+                      impuesto: impuesto,
                       total: totalPedido
                   } ];   
                   createItems<Pedido>({ collection: "pedidos_hertz", items });
