@@ -138,6 +138,7 @@ declare global {
   const useTarjetaStore: typeof import('../../stores/tarjeta')['useTarjetaStore']
   const useTransitionState: typeof import('vue')['useTransitionState']
   const useVacantesStore: typeof import('../../stores/vacantes')['useVacantesStore']
+  const useWindowSize: typeof import('../../composables/useWindowSize')['useWindowSize']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
   const withCtx: typeof import('vue')['withCtx']
@@ -293,6 +294,7 @@ declare module 'vue' {
     readonly useTarjetaStore: UnwrapRef<typeof import('../../stores/tarjeta')['useTarjetaStore']>
     readonly useTransitionState: UnwrapRef<typeof import('vue')['useTransitionState']>
     readonly useVacantesStore: UnwrapRef<typeof import('../../stores/vacantes')['useVacantesStore']>
+    readonly useWindowSize: UnwrapRef<typeof import('../../composables/useWindowSize')['useWindowSize']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
     readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
     readonly withCtx: UnwrapRef<typeof import('vue')['withCtx']>

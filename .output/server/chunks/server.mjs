@@ -1,4 +1,4 @@
-import { version, getCurrentInstance, inject, reactive, ref, useSSRContext, watchEffect, watch, defineComponent, computed, h, resolveComponent, mergeProps, withCtx, createVNode, createTextVNode, createApp, shallowReactive, markRaw, effectScope, isRef, isReactive, toRaw, unref, getCurrentScope, onScopeDispose, nextTick, useSlots, toRef, onMounted, onUnmounted, openBlock, createElementBlock, normalizeClass, createSlots, renderList, renderSlot, normalizeProps, guardReactiveProps, createBlock, Teleport, createCommentVNode, provide, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, toRefs, shallowRef, isReadonly, withKeys, withModifiers, Transition, createElementVNode, Fragment as Fragment$1, normalizeStyle, toDisplayString, defineAsyncComponent, withDirectives, vShow, onBeforeUpdate, Suspense } from 'vue';
+import { version, getCurrentInstance, inject, reactive, ref, watchEffect, watch, defineComponent, computed, h, resolveComponent, useSSRContext, createApp, shallowReactive, markRaw, effectScope, isRef, isReactive, toRaw, unref, getCurrentScope, onScopeDispose, nextTick, useSlots, toRef, onMounted, onUnmounted, openBlock, createElementBlock, normalizeClass, createVNode, mergeProps, createSlots, renderList, withCtx, renderSlot, normalizeProps, guardReactiveProps, createBlock, Teleport, createCommentVNode, provide, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, toRefs, shallowRef, isReadonly, withKeys, withModifiers, Transition, createElementVNode, Fragment as Fragment$1, normalizeStyle, createTextVNode, toDisplayString, defineAsyncComponent, withDirectives, vShow, onBeforeUpdate, Suspense } from 'vue';
 import { $fetch as $fetch$1 } from 'ofetch';
 import { createHooks } from 'hookable';
 import { getContext, executeAsync } from 'unctx';
@@ -8,12 +8,12 @@ import { getActiveHead, createServerHead as createServerHead$1 } from 'unhead';
 import { defineHeadPlugin } from '@unhead/shared';
 import { createMemoryHistory, createRouter, RouterView } from 'vue-router';
 import { createError as createError$1, sendRedirect, setResponseStatus as setResponseStatus$1, appendHeader } from 'h3';
-import { hasProtocol, parseURL, parseQuery, withTrailingSlash, withoutTrailingSlash, joinURL, isEqual } from 'ufo';
+import { hasProtocol, parseURL, parseQuery, withTrailingSlash, withoutTrailingSlash, joinURL, isEqual as isEqual$1 } from 'ufo';
 import { parse, serialize } from 'cookie-es';
-import { isEqual as isEqual$1 } from 'ohash';
+import { isEqual } from 'ohash';
 import { format, getMonth, getDay, getYear, getHours, getMinutes, getSeconds, isValid, parseISO, startOfWeek, endOfWeek, setMonth, setYear, addDays, set, add, addMonths, subMonths, setHours, setMinutes, setSeconds, setMilliseconds, isBefore, isEqual as isEqual$2, isAfter, getISOWeek, parse as parse$1, differenceInCalendarDays, addYears, subYears, isDate, eachDayOfInterval, sub } from 'date-fns';
 import { defineRule } from 'vee-validate';
-import { ssrRenderAttrs, ssrRenderComponent, ssrRenderClass, ssrRenderAttr, ssrRenderSuspense, ssrRenderVNode } from 'vue/server-renderer';
+import { ssrRenderSuspense, ssrRenderComponent, ssrRenderVNode, ssrRenderAttrs, ssrRenderAttr } from 'vue/server-renderer';
 import { defu } from 'defu';
 import { a as useRuntimeConfig$1 } from './node-server.mjs';
 import 'node-fetch-native/polyfill';
@@ -767,7 +767,7 @@ function useCookie(name, _opts) {
   {
     const nuxtApp = useNuxtApp();
     const writeFinalCookieValue = () => {
-      if (!isEqual$1(cookie.value, cookies[name])) {
+      if (!isEqual(cookie.value, cookies[name])) {
         writeServerCookie(useRequestEvent(nuxtApp), name, cookie.value, opts);
       }
     };
@@ -989,7 +989,7 @@ function defineNuxtLink(options) {
     }
   });
 }
-const __nuxt_component_0$2 = /* @__PURE__ */ defineNuxtLink({ componentName: "NuxtLink" });
+const __nuxt_component_0$1 = /* @__PURE__ */ defineNuxtLink({ componentName: "NuxtLink" });
 const plugin_vue3_A0OWXRrUgq = /* @__PURE__ */ defineNuxtPlugin((nuxtApp) => {
   const pinia = createPinia();
   nuxtApp.vueApp.use(pinia);
@@ -1056,7 +1056,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_id_-fae07cc2.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-a82a7746.mjs').then((m) => m.default || m)
   },
   {
     name: "flota-reserva-checkout",
@@ -1064,7 +1064,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./checkout-a1324053.mjs').then((m) => m.default || m)
+    component: () => import('./checkout-fe0c51d1.mjs').then((m) => m.default || m)
   },
   {
     name: "flota",
@@ -1072,7 +1072,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./index-41b8faa6.mjs').then((m) => m.default || m)
+    component: () => import('./index-206644dc.mjs').then((m) => m.default || m)
   },
   {
     name: "index",
@@ -1080,7 +1080,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./index-15781909.mjs').then((m) => m.default || m)
+    component: () => import('./index-4fc403c7.mjs').then((m) => m.default || m)
   },
   {
     name: "maneja",
@@ -1088,7 +1088,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./maneja-bd29c816.mjs').then((m) => m.default || m)
+    component: () => import('./maneja-b3fb9845.mjs').then((m) => m.default || m)
   },
   {
     name: "orden-id",
@@ -1096,7 +1096,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_id_-d719be32.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-3fba93a4.mjs').then((m) => m.default || m)
   },
   {
     name: "paginas-id",
@@ -1104,7 +1104,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_id_-4700cc71.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-ac60a525.mjs').then((m) => m.default || m)
   },
   {
     name: "reserva",
@@ -1112,7 +1112,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./reserva-a2145745.mjs').then((m) => m.default || m)
+    component: () => import('./reserva-9c98460c.mjs').then((m) => m.default || m)
   },
   {
     name: "sucursales",
@@ -1120,7 +1120,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./sucursales-4a661a78.mjs').then((m) => m.default || m)
+    component: () => import('./sucursales-74f334cc.mjs').then((m) => m.default || m)
   },
   {
     name: "thanks",
@@ -1144,7 +1144,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./vacantes-b717f00c.mjs').then((m) => m.default || m)
+    component: () => import('./vacantes-c9256a01.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -1334,7 +1334,7 @@ const router_jmwsqit4Rs = /* @__PURE__ */ defineNuxtPlugin({
         })]);
       } else {
         const currentURL = to.fullPath || "/";
-        if (!isEqual(currentURL, initialURL, { trailingSlash: true })) {
+        if (!isEqual$1(currentURL, initialURL, { trailingSlash: true })) {
           const event = await callWithNuxt(nuxtApp, useRequestEvent);
           const options = { redirectCode: event.node.res.statusCode !== 200 ? event.node.res.statusCode || 302 : 302 };
           await callWithNuxt(nuxtApp, navigateTo, [currentURL, options]);
@@ -5257,170 +5257,14 @@ const _plugins = [
   vee_validate_K3WwmJMPDb,
   vee_validate_rules_WAudwGNGnr
 ];
-const __nuxt_component_0$1 = /* @__PURE__ */ defineComponent({
-  name: "ClientOnly",
-  inheritAttrs: false,
-  // eslint-disable-next-line vue/require-prop-types
-  props: ["fallback", "placeholder", "placeholderTag", "fallbackTag"],
-  setup(_, { slots, attrs }) {
-    const mounted = ref(false);
-    return (props) => {
-      var _a2;
-      if (mounted.value) {
-        return (_a2 = slots.default) == null ? void 0 : _a2.call(slots);
-      }
-      const slot = slots.fallback || slots.placeholder;
-      if (slot) {
-        return slot();
-      }
-      const fallbackStr = props.fallback || props.placeholder || "";
-      const fallbackTag = props.fallbackTag || props.placeholderTag || "span";
-      return createElementBlock(fallbackTag, attrs, fallbackStr);
-    };
-  }
-});
+function useWindowSize() {
+  const width = ref(0);
+  const height = ref(0);
+  onUnmounted(() => {
+  });
+  return { width, height };
+}
 const _imports_0$1 = "" + __buildAssetsURL("logo.e1e7add7.png");
-const useDirectusItems = () => {
-  const directus = useDirectus();
-  const getItems = async (data) => {
-    var _a2, _b;
-    if ((_a2 = data.params) == null ? void 0 : _a2.filter) {
-      data.params.filter = JSON.stringify(data.params.filter);
-    }
-    if ((_b = data.params) == null ? void 0 : _b.deep) {
-      data.params.deep = JSON.stringify(data.params.deep);
-    }
-    const items = await directus(`/items/${data.collection}`, {
-      method: "GET",
-      params: data.params
-    });
-    if (items.meta) {
-      return { meta: items.meta, data: items.data };
-    } else {
-      return items.data;
-    }
-  };
-  const getSingletonItem = async (data) => {
-    var _a2, _b;
-    if ((_a2 = data.params) == null ? void 0 : _a2.filter) {
-      data.params.filter = JSON.stringify(data.params.filter);
-    }
-    if ((_b = data.params) == null ? void 0 : _b.deep) {
-      data.params.deep = JSON.stringify(data.params.deep);
-    }
-    const items = await directus(`/items/${data.collection}`, {
-      method: "GET",
-      params: data.params
-    });
-    return items.data;
-  };
-  const getItemById = async (data) => {
-    var _a2, _b;
-    if ((_a2 = data.params) == null ? void 0 : _a2.filter) {
-      data.params.filter = JSON.stringify(data.params.filter);
-    }
-    if ((_b = data.params) == null ? void 0 : _b.deep) {
-      data.params.deep = JSON.stringify(data.params.deep);
-    }
-    const items = await directus(
-      `/items/${data.collection}/${data.id}`,
-      {
-        method: "GET",
-        params: data.params
-      }
-    );
-    return items.data;
-  };
-  const createItems = async (data) => {
-    const items = await directus(`/items/${data.collection}`, {
-      method: "POST",
-      body: data.items
-    });
-    return items.data;
-  };
-  const deleteItems = async (data) => {
-    await directus(`/items/${data.collection}`, {
-      method: "DELETE",
-      body: data.items
-    });
-  };
-  const updateItem = async (data) => {
-    const item = await directus(
-      `/items/${data.collection}/${data.id}`,
-      {
-        method: "PATCH",
-        body: data.item
-      }
-    );
-    return item.data;
-  };
-  return {
-    getItems,
-    getSingletonItem,
-    getItemById,
-    createItems,
-    deleteItems,
-    updateItem
-  };
-};
-const useLenguajesStore = defineStore("lenguajes", {
-  // a function that returns a fresh state - STATE ES COMO DATA
-  state: () => ({
-    lenguaje: "ES",
-    paginas: [],
-    traducciones: {
-      EN: {
-        titulo: "Ingles",
-        contenido: "Ingles"
-      },
-      ES: {
-        titulo: "Español",
-        contenido: "Español"
-      },
-      seleccionado: []
-    }
-  }),
-  // optional getters GETTER SON COMO COMPUTED 
-  getters: {
-    getPaginas: (state) => {
-      return state.paginas;
-    }
-  },
-  // optional actions ACTIONS SON COMO METHODS
-  actions: {
-    async fetchPaginas() {
-      try {
-        const { getItemById } = useDirectusItems();
-        const route = useRoute();
-        const pagina = await getItemById({
-          collection: "paginas",
-          id: route.params.id
-        });
-        const paginaTranslations = await getItemById({
-          collection: "paginas_translations",
-          id: pagina.translations
-        });
-        if (this.lenguaje === "EN") {
-          this.paginas = pagina;
-          this.paginas.contenido = paginaTranslations.contenido;
-          this.paginas.titulo = paginaTranslations.titulo;
-        } else {
-          this.paginas = pagina;
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    },
-    async setEN() {
-      this.lenguaje = "EN";
-      this.fetchPaginas();
-    },
-    async setES() {
-      this.lenguaje = "ES";
-      this.fetchPaginas();
-    }
-  }
-});
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -5428,119 +5272,122 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const __default__ = {
-  data() {
-    return {
-      showMobileMenu: false
+const _sfc_main$3 = {
+  setup() {
+    const isMenuVisible = ref(false);
+    const { width } = useWindowSize();
+    const isMobile = computed(() => width.value < 768);
+    const isDesktop = computed(() => width.value >= 768);
+    const toggleMenu = () => {
+      isMenuVisible.value = !isMenuVisible.value;
     };
-  },
-  methods: {
-    showMenu() {
-      if (this.showMobileMenu !== void 0) {
-        this.showMobileMenu = !this.showMobileMenu;
-      }
-    }
+    return {
+      isMenuVisible,
+      toggleMenu,
+      isMobile,
+      isDesktop
+    };
   }
 };
-const _sfc_main$3 = /* @__PURE__ */ Object.assign(__default__, {
-  __name: "TheNavigation",
-  __ssrInlineRender: true,
-  setup(__props) {
-    useLenguajesStore();
-    return (_ctx, _push, _parent, _attrs) => {
-      const _component_ClientOnly = __nuxt_component_0$1;
-      const _component_NuxtLink = __nuxt_component_0$2;
-      _push(`<header${ssrRenderAttrs(mergeProps({ class: "menu" }, _attrs))} data-v-35b772f8><nav data-v-35b772f8>`);
-      _push(ssrRenderComponent(_component_ClientOnly, null, {}, _parent));
-      _push(`<div class="${ssrRenderClass([_ctx.showMobileMenu ? "open-menu" : "closed-menu", "nav-content"])}" data-v-35b772f8><ul class="nav-items" data-v-35b772f8><li data-v-35b772f8>`);
-      _push(ssrRenderComponent(_component_NuxtLink, { to: "/" }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(`<img${ssrRenderAttr("src", _imports_0$1)} data-v-35b772f8${_scopeId}>`);
-          } else {
-            return [
-              createVNode("img", { src: _imports_0$1 })
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(`</li><li data-v-35b772f8>`);
-      _push(ssrRenderComponent(_component_NuxtLink, { to: "/flota" }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(`Flota`);
-          } else {
-            return [
-              createTextVNode("Flota")
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(`</li><li data-v-35b772f8>`);
-      _push(ssrRenderComponent(_component_NuxtLink, { to: "/sucursales" }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(`Sucursales`);
-          } else {
-            return [
-              createTextVNode("Sucursales")
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(`</li><li data-v-35b772f8><a href="#" data-v-35b772f8>Corporativo</a><ul class="dropdown" aria-label="submenu" data-v-35b772f8><li data-v-35b772f8>`);
-      _push(ssrRenderComponent(_component_NuxtLink, { to: "/paginas/operativo" }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(`Leasing Operativo`);
-          } else {
-            return [
-              createTextVNode("Leasing Operativo")
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(`</li><li data-v-35b772f8>`);
-      _push(ssrRenderComponent(_component_NuxtLink, { to: "/paginas/corporativo" }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(`Planes Corporativos`);
-          } else {
-            return [
-              createTextVNode("Planes Corporativos")
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(`</li></ul></li><li data-v-35b772f8>`);
-      _push(ssrRenderComponent(_component_NuxtLink, { to: "/clientes" }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(`Maneja tu Reserva`);
-          } else {
-            return [
-              createTextVNode("Maneja tu Reserva")
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(`</li><li data-v-35b772f8><button data-v-35b772f8> EN </button> | <button data-v-35b772f8> ES </button></li></ul></div></nav></header>`);
-    };
+function _sfc_ssrRender$2(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  const _component_NuxtLink = __nuxt_component_0$1;
+  _push(`<header${ssrRenderAttrs(mergeProps({ class: "menu" }, _attrs))} data-v-1ce28607><nav class="burger-menu" data-v-1ce28607>`);
+  _push(ssrRenderComponent(_component_NuxtLink, { to: "/" }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(`<img${ssrRenderAttr("src", _imports_0$1)} data-v-1ce28607${_scopeId}>`);
+      } else {
+        return [
+          createVNode("img", { src: _imports_0$1 })
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  if ($setup.isMobile) {
+    _push(`<button class="burger-btn" data-v-1ce28607><span data-v-1ce28607></span><span data-v-1ce28607></span><span data-v-1ce28607></span></button>`);
+  } else {
+    _push(`<!---->`);
   }
-});
+  if ($setup.isDesktop || $setup.isMenuVisible) {
+    _push(`<div class="menu-items" data-v-1ce28607><ul data-v-1ce28607><li data-v-1ce28607>`);
+    _push(ssrRenderComponent(_component_NuxtLink, { to: "/flota" }, {
+      default: withCtx((_, _push2, _parent2, _scopeId) => {
+        if (_push2) {
+          _push2(`Flota`);
+        } else {
+          return [
+            createTextVNode("Flota")
+          ];
+        }
+      }),
+      _: 1
+    }, _parent));
+    _push(`</li><li data-v-1ce28607>`);
+    _push(ssrRenderComponent(_component_NuxtLink, { to: "/sucursales" }, {
+      default: withCtx((_, _push2, _parent2, _scopeId) => {
+        if (_push2) {
+          _push2(`Sucursales`);
+        } else {
+          return [
+            createTextVNode("Sucursales")
+          ];
+        }
+      }),
+      _: 1
+    }, _parent));
+    _push(`</li><li data-v-1ce28607><a href="#" data-v-1ce28607>Corporativo</a><ul class="dropdown" aria-label="submenu" data-v-1ce28607><li data-v-1ce28607>`);
+    _push(ssrRenderComponent(_component_NuxtLink, { to: "/paginas/operativo" }, {
+      default: withCtx((_, _push2, _parent2, _scopeId) => {
+        if (_push2) {
+          _push2(`Leasing Operativo`);
+        } else {
+          return [
+            createTextVNode("Leasing Operativo")
+          ];
+        }
+      }),
+      _: 1
+    }, _parent));
+    _push(`</li><li data-v-1ce28607>`);
+    _push(ssrRenderComponent(_component_NuxtLink, { to: "/paginas/corporativo" }, {
+      default: withCtx((_, _push2, _parent2, _scopeId) => {
+        if (_push2) {
+          _push2(`Planes Corporativos`);
+        } else {
+          return [
+            createTextVNode("Planes Corporativos")
+          ];
+        }
+      }),
+      _: 1
+    }, _parent));
+    _push(`</li></ul></li><li data-v-1ce28607>`);
+    _push(ssrRenderComponent(_component_NuxtLink, { to: "/clientes" }, {
+      default: withCtx((_, _push2, _parent2, _scopeId) => {
+        if (_push2) {
+          _push2(`Maneja tu Reserva`);
+        } else {
+          return [
+            createTextVNode("Maneja tu Reserva")
+          ];
+        }
+      }),
+      _: 1
+    }, _parent));
+    _push(`</li><li data-v-1ce28607><button data-v-1ce28607>EN</button> | <button data-v-1ce28607>ES</button></li></ul></div>`);
+  } else {
+    _push(`<!---->`);
+  }
+  _push(`</nav></header>`);
+}
 const _sfc_setup$3 = _sfc_main$3.setup;
 _sfc_main$3.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/TheNavigation.vue");
   return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
 };
-const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["__scopeId", "data-v-35b772f8"]]);
+const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["ssrRender", _sfc_ssrRender$2], ["__scopeId", "data-v-1ce28607"]]);
 const interpolatePath = (route, match) => {
   return match.path.replace(/(:\w+)\([^)]+\)/g, "$1").replace(/(:\w+)[?+*]/g, "$1").replace(/:\w+/g, (r) => {
     var _a2;
@@ -5662,7 +5509,7 @@ const _imports_0 = "" + __buildAssetsURL("instagram.3347813e.svg");
 const _imports_1 = "data:image/png;base64,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";
 const _sfc_main$2 = {};
 function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs) {
-  const _component_NuxtLink = __nuxt_component_0$2;
+  const _component_NuxtLink = __nuxt_component_0$1;
   _push(`<footer${ssrRenderAttrs(mergeProps({ class: "footer" }, _attrs))} data-v-3906dc64><section data-v-3906dc64><h3 data-v-3906dc64>Contacto</h3><p data-v-3906dc64> Reservaciones: (507) 260-0000 <br data-v-3906dc64> Asistencia 24 H: (507) 204-9550<br data-v-3906dc64> Whatsapp: (507) 6768-9626 </p></section><section data-v-3906dc64><nav data-v-3906dc64><h3 data-v-3906dc64>Servicios</h3><p data-v-3906dc64>`);
   _push(ssrRenderComponent(_component_NuxtLink, { to: "/paginas/coberturas" }, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
@@ -5879,5 +5726,5 @@ const plugins = normalizePlugins(_plugins);
 }
 const entry$1 = (ctx) => entry(ctx);
 
-export { _export_sfc as _, __nuxt_component_0$2 as a, useRoute as b, createError as c, defineStore as d, entry$1 as default, useRouter as e, useHead as f, useLenguajesStore as g, useDirectusItems as u };
+export { _export_sfc as _, __nuxt_component_0$1 as a, useDirectus as b, createError as c, defineStore as d, entry$1 as default, useRouter as e, useHead as f, useRoute as u };
 //# sourceMappingURL=server.mjs.map

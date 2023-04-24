@@ -1,4 +1,4 @@
-import { _ as _export_sfc, a as __nuxt_component_0$2 } from './server.mjs';
+import { _ as _export_sfc, a as __nuxt_component_0$1 } from './server.mjs';
 import { mergeProps, withCtx, createTextVNode, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent } from 'vue/server-renderer';
 import 'ofetch';
@@ -30,7 +30,7 @@ import 'pathe';
 
 const _sfc_main = {};
 function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
-  const _component_NuxtLink = __nuxt_component_0$2;
+  const _component_NuxtLink = __nuxt_component_0$1;
   _push(`<main${ssrRenderAttrs(mergeProps({ class: "error" }, _attrs))} data-v-be5202f6><h5 data-v-be5202f6> Ha ocurrido un error en su compra, esto se debe a una de las siguientes opciones: </h5><p data-v-be5202f6>La Tarjeta ha sido declinada</p><p data-v-be5202f6>Informacion erronea en la tarjeta</p>`);
   _push(ssrRenderComponent(_component_NuxtLink, { to: "/clientes" }, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
