@@ -29,6 +29,8 @@
     "express": "^4.18.2",
     "http-proxy-middleware": "^3.0.0-beta.1",
     "latest": "^0.2.0",
+    "madlib-xml-objectifier": "^0.1.10",
+    "madlib-xmldom": "^0.1.3",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.40",
     "nuxt-directus": "^5.1.2",

@@ -45,7 +45,7 @@ export default defineNuxtConfig({
     plugins: [  
         '@/plugins/vue-datepicker.js', 
         '@/plugins/vee-validate.js',
-        '@/plugins/vue-gtm.client.js' 
+        '@/plugins/vue-gtm.client.js',  
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
@@ -76,10 +76,28 @@ export default defineNuxtConfig({
     vite: {
         server: {
             proxy: {
-            '/api/tarjeta': 'https://secure.networkmerchants.com/api/transact.php',
+            '/thrpanama/soap': 'https://rwwebe.barscloud.com:8716/thrpanama/soap',
             },
+ 
         }
     },
+
+
+    proxy: {
+        options: {
+            target: 'https://rwwebe.barscloud.com:8716/thrpanama/soap',
+            changeOrigin: true,
+            headers: {  
+                'Content-Type': 'text/xml',
+                'Accept': 'text/xml', 
+                'SOAPAction': 'otavehavailrate'
+            },
+            pathFilter: [
+                '/thrpanama/soap', 
+              ]
+        },
+    },
+ 
 
     // proxy: {
     //     options: {

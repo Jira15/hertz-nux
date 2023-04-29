@@ -89,6 +89,7 @@ declare global {
   const useAttrs: typeof import('vue')['useAttrs']
   const useAutosStore: typeof import('../../stores/autos')['useAutosStore']
   const useCandidatoStore: typeof import('../../stores/candidato')['useCandidatoStore']
+  const useCheckingStore: typeof import('../../stores/soaprequest')['useCheckingStore']
   const useCheckoutStore: typeof import('../../stores/checkout')['useCheckoutStore']
   const useCoberturasStore: typeof import('../../stores/coberturas')['useCoberturasStore']
   const useCookie: typeof import('../../node_modules/nuxt/dist/app')['useCookie']
@@ -121,6 +122,7 @@ declare global {
   const usePaypalStore: typeof import('../../stores/paypal')['usePaypalStore']
   const usePedidoStore: typeof import('../../stores/pedido')['usePedidoStore']
   const usePinia: typeof import('../../node_modules/@pinia/nuxt/dist/runtime/composables')['usePinia']
+  const usePrecheckingStore: typeof import('../../stores/prechecking')['usePrecheckingStore']
   const useRequestEvent: typeof import('../../node_modules/nuxt/dist/app')['useRequestEvent']
   const useRequestFetch: typeof import('../../node_modules/nuxt/dist/app')['useRequestFetch']
   const useRequestHeaders: typeof import('../../node_modules/nuxt/dist/app')['useRequestHeaders']
@@ -245,6 +247,7 @@ declare module 'vue' {
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useAutosStore: UnwrapRef<typeof import('../../stores/autos')['useAutosStore']>
     readonly useCandidatoStore: UnwrapRef<typeof import('../../stores/candidato')['useCandidatoStore']>
+    readonly useCheckingStore: UnwrapRef<typeof import('../../stores/soaprequest')['useCheckingStore']>
     readonly useCheckoutStore: UnwrapRef<typeof import('../../stores/checkout')['useCheckoutStore']>
     readonly useCoberturasStore: UnwrapRef<typeof import('../../stores/coberturas')['useCoberturasStore']>
     readonly useCookie: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useCookie']>
@@ -277,6 +280,7 @@ declare module 'vue' {
     readonly usePaypalStore: UnwrapRef<typeof import('../../stores/paypal')['usePaypalStore']>
     readonly usePedidoStore: UnwrapRef<typeof import('../../stores/pedido')['usePedidoStore']>
     readonly usePinia: UnwrapRef<typeof import('../../node_modules/@pinia/nuxt/dist/runtime/composables')['usePinia']>
+    readonly usePrecheckingStore: UnwrapRef<typeof import('../../stores/prechecking')['usePrecheckingStore']>
     readonly useRequestEvent: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRequestEvent']>
     readonly useRequestFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRequestFetch']>
     readonly useRequestHeaders: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useRequestHeaders']>
