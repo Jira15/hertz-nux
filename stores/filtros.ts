@@ -7,12 +7,12 @@ state: () => ({
         {
             tipo: '',
             marca: '',
-            precio_thrifty: 'precio_thrifty'
+            precio_hertz: 'precio_hertz'
         },
     opciones: {
         tipo: ['Sedan', 'SUV', 'Pick Up', 'Panel', 'Bus'],
         marca: ['Kia', 'Hyundai', 'Suzuki', 'Toyota', 'Mitsubishi', 'Nissan', 'Isuzu', 'Jeep'],
-        precio_thrifty: ['Menor a Mayor', 'Mayor a Menor'] 
+        precio_hertz: ['Menor a Mayor', 'Mayor a Menor'] 
     } 
 }),
 // optional getters GETTER SON COMO COMPUTED 

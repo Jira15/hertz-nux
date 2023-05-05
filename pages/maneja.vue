@@ -82,7 +82,7 @@ const fechaFormat = function(value) {
                                 {{ pedido.carro.tipo }} 
                             </dt> 
                             <dd>
-                                {{ pedido.carro.precio_thrifty }} 
+                                {{ pedido.carro.precio_hertz }} 
                             </dd>
                         </dl>
                 </section> 

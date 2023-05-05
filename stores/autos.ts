@@ -36,7 +36,7 @@ actions: {
                             } 
                                     
                 } 
-                const precio_thrifty = storeFiltro.filtros.precio_thrifty  
+                const precio_hertz = storeFiltro.filtros.precio_hertz 
                 const autos = await getItems(
             { 
                     collection: "flota", 
@@ -47,7 +47,7 @@ actions: {
                                 marca
                             },
                             fields: ["*"],
-                            sort: ["sort", precio_thrifty ]
+                            sort: ["sort", precio_hertz ]
                         }
                 }); 
                 this.autos = autos  

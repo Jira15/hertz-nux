@@ -32,7 +32,7 @@ function minimoDeHoras(date, horas) {
 
 const currentDate = new Date();
 const currentTime = currentDate.getTime();
-const oneDay = 24 * 60 * 60 * 1000;
+const oneDay = 4 * 60 * 60 * 1000;
 const newTime = currentTime + oneDay;
 const nextDay = new Date(newTime);
 
