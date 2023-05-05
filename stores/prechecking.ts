@@ -5,7 +5,8 @@ export const usePrecheckingStore = defineStore(
     { 
 // a function that returns a fresh state - STATE ES COMO DATA 
         state: () => ({  
-            prechecking: { 
+            prechecking: {
+                id: '', 
                 Res: '', 
                 Class: '', 
                 Renters_email: '',
@@ -30,9 +31,7 @@ export const usePrecheckingStore = defineStore(
                 Airline: '',
                 Flight_Number: '',
                 Flight_Date: '',
-                Flight_Time: '' 
-
-               
+                Flight_Time: ''  
             } 
         }), 
         // optional getters GETTER SON COMO COMPUTED 
@@ -42,11 +41,44 @@ export const usePrecheckingStore = defineStore(
     //             },   
   
     //         },      
-    //     actions: {    
-    //         addExtra(extra) { 
-    //                 this.pedido.extras.push(extra)
- 
-    //           },
+        actions: {     
+            async onPrechecking() {  
+                const { updateItem  } = useDirectusItems();    
+                // Submit values to API...   
+                try {
+                    var status = {  status: 'Prechecking Sin Pago'  }   // var newItem = { status: "Draft" };
+                    await updateItem({ 
+                        collection: "prechecking",
+                        id: this.id,
+                        item: status });  
+                        await refreshNuxtData()
+                        window.location.reload()
+                } catch (e) { 
+                        console.log('error') 
+                } 
+            },  
+            // async onCancelar() { 
+            //     const storePedido = usePedidoStore(); 
+            //     const { updateItem  } = useDirectusItems();    
+            //     // Submit values to API...   
+            //     try {
+            //         var status = {  status: 'Cancel'  }   // var newItem = { status: "Draft" };
+            //         await updateItem<Pedido>({ 
+            //             collection: "pedidos_hertz",
+            //             id: storePedido.pedido.pedidos_hertz_id,
+            //             item: status });  
+            //             await refreshNuxtData()
+            //             window.location.reload()
+            //     } catch (e) { 
+            //             console.log('error') 
+            //     } 
+            // }, 
+
+        //     addExtra(extra) { 
+        //         this.pedido.extras.push(extra)
+
+        //   },
+
     //           removeExtra(extra) {
     //             const index = this.pedido.extras.indexOf(extra)
     //             if (index !== -1) {
@@ -476,6 +508,6 @@ export const usePrecheckingStore = defineStore(
  
     //             return new Intl.NumberFormat('en-US').format(total); 
     //         }   
-    //     } 
+        } 
       }   
 )     

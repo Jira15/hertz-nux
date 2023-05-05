@@ -84,7 +84,7 @@ figure {
   button {
     background-color: #000000;
     padding: 5px 15px;
-    border-radius: 5px;
+    border-radius: 5px; 
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 600;
