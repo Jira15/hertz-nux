@@ -129,7 +129,7 @@ useHead({
           <dd>
             {{
               precioFormat(
-                pedido.carro.precio_thrifty *
+                pedido.carro.precio_hertz *
                   storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro)
               )
             }}

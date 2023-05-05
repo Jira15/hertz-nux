@@ -35,6 +35,7 @@ export const usePedidoStore = defineStore(
                     marca:String,
                     puertas:Number,
                     precio_thrifty: 0.00,
+                    precio_hertz: 0.00,
                     galeria:Array
                 }, 
                 cobertura: {
@@ -152,7 +153,19 @@ export const usePedidoStore = defineStore(
                     || sucursalDeRetiro === 'HALBROOK' && sucursalDeRetorno === 'HZ TORRE'  
                     || sucursalDeRetiro === 'HALBROOK' && sucursalDeRetorno === 'HZ TORRE' 
                     || sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HALBROOK' 
+
+
+
+                    || sucursalDeRetiro === 'HALBROOK' && sucursalDeRetorno === 'APOTOCUM' 
+                    || sucursalDeRetiro === 'APOTOCUM' && sucursalDeRetorno === 'HALBROOK' 
+
+                     
+
+
+
                     )
+
+
                     { dropoff = tier.dos; }  
 
                 // tier tres: 25.00
@@ -175,6 +188,11 @@ export const usePedidoStore = defineStore(
                     ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'HZ TORRE'  
                     ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HCHORRER' 
                     ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'HZ TORRE'  
+
+                    ||  sucursalDeRetiro === 'APOTOCUM' && sucursalDeRetorno === 'HCHORRER' 
+                    ||  sucursalDeRetiro === 'HCHORRER' && sucursalDeRetorno === 'APOTOCUM'  
+
+                     
                     ) 
                 { dropoff = tier.cuatro; } 
 
@@ -213,6 +231,10 @@ export const usePedidoStore = defineStore(
     
                     ||  sucursalDeRetiro === 'HCOLON' && sucursalDeRetorno === 'HZ TORRE'
                     ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HCOLON' 
+
+
+                    ||  sucursalDeRetiro === 'APOTOCUM' && sucursalDeRetorno === 'HCOLON'  
+                    ||  sucursalDeRetiro === 'HCOLON' && sucursalDeRetorno === 'APOTOCUM'  
                     )
                 {  dropoff = tier.siete; } 
 
@@ -292,9 +314,12 @@ export const usePedidoStore = defineStore(
                 ||  sucursalDeRetiro === 'HAPOCHI' && sucursalDeRetorno === 'HZ TORRE'
                 ||  sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HAPOCHI' 
  
+                ||  sucursalDeRetiro === 'APOTOCUM' && sucursalDeRetorno === 'HCHITRE'  
+                ||  sucursalDeRetiro === 'HCHITRE' && sucursalDeRetorno === 'APOTOCUM'   
 
 
-
+                ||  sucursalDeRetiro === 'APOTOCUM' && sucursalDeRetorno === 'HSANTIAG'  
+                ||  sucursalDeRetiro === 'HSANTIAG' && sucursalDeRetorno === 'APOTOCUM'   
 
 
  
@@ -377,6 +402,16 @@ export const usePedidoStore = defineStore(
                 ||  sucursalDeRetiro === 'VVENETTO' && sucursalDeRetorno === 'DAVIDC'  
                 ||  sucursalDeRetiro === 'EMALEK' && sucursalDeRetorno === 'VVENETTO'
                 ||  sucursalDeRetiro === 'VVENETTO' && sucursalDeRetorno === 'EMALEK'   
+
+ 
+
+                ||  sucursalDeRetiro === 'DAVIDC' && sucursalDeRetorno === 'APOTOCUM'
+                ||  sucursalDeRetiro === 'APOTOCUM' && sucursalDeRetorno === 'DAVIDC'  
+                ||  sucursalDeRetiro === 'EMALEK' && sucursalDeRetorno === 'APOTOCUM'
+                ||  sucursalDeRetiro === 'APOTOCUM' && sucursalDeRetorno === 'EMALEK'   
+
+
+
                 
                 )
                 { dropoff = tier.once; } 
@@ -403,14 +438,14 @@ export const usePedidoStore = defineStore(
                 let precioAuto = 0
                 let tipoReserva = this.pedido.reserva;
                     if(tipoReserva === 'prepago'){
-                        const precio = this.pedido.carro.precio_thrifty;  
+                        const precio = this.pedido.carro.precio_hertz;  
                         let descuento = 5;  
                         const descuentoCalculado = precio * (descuento / 100);  
                         const nuevoPrecio = precio - descuentoCalculado; 
                         precioAuto = nuevoPrecio 
                     }
                     else{
-                        precioAuto = this.pedido.carro.precio_thrifty ; 
+                        precioAuto = this.pedido.carro.precio_hertz ; 
                     } 
                 return precioAuto
             },
@@ -439,14 +474,14 @@ export const usePedidoStore = defineStore(
                 let precioAuto = this.precioAuto();
                 let tipoReserva = this.pedido.reserva;
                 if(tipoReserva === 'prepago'){
-                    const precio = this.pedido.carro.precio_thrifty;  
+                    const precio = this.pedido.carro.precio_hertz;  
                     let descuento = 5;  
                     const descuentoCalculado = precio * (descuento / 100);  
                     const nuevoPrecio = precio - descuentoCalculado; 
                     precioAuto = nuevoPrecio 
                 }
                 else{
-                    precioAuto = this.pedido.carro.precio_thrifty ; 
+                    precioAuto = this.pedido.carro.precio_hertz ; 
                 } 
 
                 let precioCobertura = this.precioCobertura();

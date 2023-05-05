@@ -1850,7 +1850,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/clientes-745374a6.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/clientes-c3af0035.js").then((m) => m.default || m)
   },
   {
     name: "error",
@@ -1866,7 +1866,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/_id_-a82a7746.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/_id_-7c657a50.js").then((m) => m.default || m)
   },
   {
     name: "flota-reserva-checkout",
@@ -1874,7 +1874,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/checkout-fe0c51d1.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/checkout-06780ed0.js").then((m) => m.default || m)
   },
   {
     name: "flota",
@@ -1882,7 +1882,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-206644dc.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-79ec9368.js").then((m) => m.default || m)
   },
   {
     name: "index",
@@ -1890,7 +1890,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-4fc403c7.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-6adee5f2.js").then((m) => m.default || m)
   },
   {
     name: "maneja",
@@ -1898,7 +1898,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/maneja-b3fb9845.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/maneja-b8122667.js").then((m) => m.default || m)
   },
   {
     name: "orden-id",
@@ -1906,7 +1906,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/_id_-3fba93a4.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/_id_-d1aae8f1.js").then((m) => m.default || m)
   },
   {
     name: "paginas-id",
@@ -1914,7 +1914,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/_id_-ac60a525.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/_id_-aac1dda7.js").then((m) => m.default || m)
   },
   {
     name: "reserva",
@@ -1922,7 +1922,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/reserva-9c98460c.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/reserva-1518c7d5.js").then((m) => m.default || m)
   },
   {
     name: "sucursales",
@@ -1930,7 +1930,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/sucursales-74f334cc.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/sucursales-88545177.js").then((m) => m.default || m)
   },
   {
     name: "thanks",
@@ -1938,7 +1938,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/thanks-8596f88b.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/thanks-c752a965.js").then((m) => m.default || m)
   },
   {
     name: "vacante-gracias",
