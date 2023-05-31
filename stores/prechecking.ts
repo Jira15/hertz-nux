@@ -4,7 +4,9 @@ export const usePrecheckingStore = defineStore(
     'prechecking', 
     { 
 // a function that returns a fresh state - STATE ES COMO DATA 
-        state: () => ({  
+        state: () => ({
+            step: 'Info',
+
             prechecking: {
                 id: '', 
                 Res: '', 

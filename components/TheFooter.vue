@@ -1,39 +1,43 @@
+<script setup> 
+const { locale } = useI18n() 
+</script>
+
+
 <template>
   <footer class="footer">
     <section>
       <!-- <router-link to="/"><img src="../assets/images/logo.png"/></router-link> --> 
-      <h3>Contacto</h3>
+      <h3>{{ $t('contacto') }}</h3>
       <p> 
-          Reservaciones: (507) 260-0000 <br /> 
-          Asistencia 24 H: (507) 204-9550<br /> 
+        {{ $t('reservaciones') }}: (507) 260-0000 <br /> 
+        {{ $t('asistencia') }}: (507) 204-9550<br /> 
           Whatsapp: (507) 6768-9626
       </p>  
     </section>
 
   <section>
-    <nav> 
-      
-      <h3>Servicios</h3>
+    <nav>  
+      <h3>{{ $t('servicios') }}</h3>
       <p>
-          <NuxtLink to="/paginas/coberturas">Coberturas</NuxtLink>
-          <NuxtLink to="/paginas/requisitos">Requisitos</NuxtLink>
-          <NuxtLink to="/vacantes">Bolsa de Trabajo</NuxtLink>
+          <NuxtLink to="/paginas/coberturas">{{ $t('coberturas') }}</NuxtLink>
+          <NuxtLink to="/paginas/requisitos">{{ $t('requisitos') }}</NuxtLink>
+          <NuxtLink to="/vacantes">{{ $t('bolsa') }}</NuxtLink>
       </p> 
     </nav> 
   </section>
 
     <section> 
-      <h3>Soporte</h3>
+      <h3>{{ $t('soporte') }}</h3>
       <p>
      
-        <NuxtLink to="/paginas/reembolso">Politica de Reembolso</NuxtLink>
-        <NuxtLink to="/paginas/tyc">Términos y Condiciones</NuxtLink>
-        <NuxtLink to="/paginas/privacidad">Política de Privacidad</NuxtLink>
+        <NuxtLink to="/paginas/reembolso">{{ $t('reembolso') }}</NuxtLink>
+        <NuxtLink to="/paginas/tyc">{{ $t('terminos') }}</NuxtLink>
+        <NuxtLink to="/paginas/privacidad">{{ $t('privacidad') }}</NuxtLink>
       </p> 
     </section> 
 
     <section class="sociales"> 
-      <h3>Siguenos en</h3> 
+      <h3>{{ $t('siguenos') }}</h3> 
       <span>
         <NuxtLink to="https://www.instagram.com/hertzpanama/" taget="_blank">
           <img class="social" src="../assets/images/instagram.svg"/>

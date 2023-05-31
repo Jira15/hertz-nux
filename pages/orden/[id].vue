@@ -41,12 +41,9 @@ const fechaFormat = function (value) {
     return moment(value).format("DD MMM YYYY hh:mm A");
   }
 };
-const precioFormat = function (value) {
-  if (value) {
-    return value.toLocaleString("en-US", { style: "currency", currency: "USD" });
-  }
-};
-
+ 
+const toUSDFormat = decimal => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(decimal);
+ 
 useHead({
   title: "Modificando Reserva | Hertz Rent a Car Panamá",
 });
@@ -115,7 +112,7 @@ useHead({
         <dl>
           <dt>Drop-off</dt>
           <dd>
-            {{ precioFormat(pedido.dropoff) }}
+            {{ toUSDFormat(pedido.dropoff) }}
           </dd>
         </dl>
       </section>
@@ -128,7 +125,7 @@ useHead({
           </dt>
           <dd>
             {{
-              precioFormat(
+              toUSDFormat(
                 pedido.carro.precio_hertz *
                   storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro)
               )
@@ -142,10 +139,7 @@ useHead({
           </dt>
           <dd>
             {{
-              precioFormat(
-                pedido.cobertura.precio_2 *
-                  storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro)
-              )
+              toUSDFormat( pedido.cobertura.precio_2 * storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro) )
             }}
           </dd>
         </dl>
@@ -154,23 +148,13 @@ useHead({
             {{ pedido.cobertura.nombre }}
           </dt>
           <dd>
-            {{
-              precioFormat(
-                pedido.cobertura.precio *
-                  storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro)
-              )
-            }}
+            {{ toUSDFormat(  pedido.cobertura.precio * storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro) )  }}
           </dd>
         </dl>
         <dl>
           <dt>Asistencia Vial(ERA)</dt>
           <dd>
-            {{
-              precioFormat(
-                pedido.era *
-                  storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro)
-              )
-            }}
+            {{ toUSDFormat(  pedido.era * storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro) )  }}
           </dd>
         </dl>
 
@@ -181,12 +165,7 @@ useHead({
               {{ extra.nombre }}
             </dt>
             <dd>
-              {{
-                precioFormat(
-                  extra.precio *
-                    storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro)
-                )
-              }}
+              {{ toUSDFormat(  extra.precio *  storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro)   )  }}
             </dd>
           </div>
         </dl>
@@ -195,7 +174,7 @@ useHead({
 
         <dl>
           <dt></dt>
-          <dd>B/. {{ pedido.sub_total }}</dd>
+          <dd> {{ toUSDFormat(pedido.sub_total) }}</dd>
         </dl>
 
         <div v-if="pedido.impuesto_aeropuerto > 0">
@@ -203,7 +182,7 @@ useHead({
 
           <dl>
             <dt></dt>
-            <dd>B/. {{ pedido.impuesto_aeropuerto }}</dd>
+            <dd> {{  toUSDFormat(pedido.impuesto_aeropuerto) }}</dd>
           </dl>
         </div>
 
@@ -211,14 +190,14 @@ useHead({
 
         <dl>
           <dt></dt>
-          <dd>B/. {{ pedido.impuesto }}</dd>
+          <dd> {{  toUSDFormat(pedido.impuesto) }}</dd>
         </dl>
 
         <h6>Total:</h6>
 
         <dl>
           <dt></dt>
-          <dd>B/. {{ pedido.total }}</dd>
+          <dd> {{ toUSDFormat(pedido.total) }}</dd>
         </dl>
       </section>
       <footer>

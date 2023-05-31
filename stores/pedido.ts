@@ -8,10 +8,10 @@ export const usePedidoStore = defineStore(
     'pedido', 
     { 
 // a function that returns a fresh state - STATE ES COMO DATA 
-        state: () => ({  
+state: () => ({
             pedido: {
                 reserva: '',
-                precio_prepago: Number,
+                precio_prepago: 0,
                 pedidos_id: '',
                 pedidos_hertz_id: '',
                 cliente: {
@@ -19,86 +19,87 @@ export const usePedidoStore = defineStore(
                     apellido: '',
                     email: '',
                     telefono: '',
-                    licencia: '', 
-                    nacimiento: Date
+                    licencia: '',
+                    nacimiento: new Date(),
                 },
-                carro:  {
-                    id: Number,
-                    modelo: String,
-                    clasificacion:String,
-                    imagen: String,
-                    tipo: String,
-                    pasajeros: Number,
-                    maletas: Number,
-                    transmision:String,
-                    combustible:String,
-                    marca:String,
-                    puertas:Number,
-                    precio_thrifty: 0.00,
-                    precio_hertz: 0.00,
-                    galeria:Array
-                }, 
+                carro: {
+                    id: 0,
+                    modelo: '',
+                    clasificacion: '',
+                    imagen: '',
+                    tipo: '',
+                    pasajeros: 0,
+                    maletas: 0,
+                    transmision: '',
+                    combustible: '',
+                    marca: '',
+                    puertas: 0,
+                    precio_thrifty: 0.0,
+                    precio_hertz: 0.0,
+                    descuento_prepago: 0.0,
+                    galeria: [],
+                },
                 cobertura: {
-                    nombre: String,
-                    explicacion: String,
-                    precio: 0.00,
-                    precio_2: 0.00,
-                    precio_3: Number
-                }, 
+                    nombre: '',
+                    explicacion: '',
+                    precio: 0.0,
+                    precio_2: 0.0,
+                    precio_3: 0,
+                },
                 cobertura_e: {
                     nombre: '',
-                    explicacion: String,
-                    precio: 0.00,
-                    precio_2: 0.00,
-                    precio_3: Number
+                    explicacion: '',
+                    precio: 0.0,
+                    precio_2: 0.0,
+                    precio_3: 0,
                 },
-                extras: [], 
-                sucursal: { 
-                            id: Number,
-                            mapa: Object,
-                            imagen: String,
-                            name: String,
-                            telefono_1: String,
-                            telefono_2: null,
-                            horario_cierre: Number,
-                            LocationCode: String,
-                            horario_apertura: Number,
-                            horario_cierre_sabado: Number,
-                            horario_cierre_domingo: Number,    
-                            horario_apertura_sabado: Number,
-                            horario_apertura_domingo: Number,
-                            impuesto: 0
-                        },
-                sucursalRetorno: { 
-                            id: Number,
-                            mapa: Object,
-                            imagen: String,
-                            name: String,
-                            telefono_1: String,
-                            telefono_2: null,
-                            horario_cierre: Number,
-                            LocationCode: String,
-                            horario_apertura: Number,
-                            horario_cierre_sabado: Number,
-                            horario_cierre_domingo: Number,
-                            horario_apertura_sabado: Number,
-                            horario_apertura_domingo: Number,
-                            impuesto: Number
-                        },
-                diaRetiro: String,  
-                diaRetorno: String,  
-                dropoff:number,
+                extras: [],
+                sucursal: {
+                    id: 0,
+                    mapa: {},
+                    imagen: '',
+                    name: '',
+                    telefono_1: '',
+                    telefono_2: null,
+                    horario_cierre: 0,
+                    LocationCode: '',
+                    horario_apertura: 0,
+                    horario_cierre_sabado: 0,
+                    horario_cierre_domingo: 0,
+                    horario_apertura_sabado: 0,
+                    horario_apertura_domingo: 0,
+                    impuesto: 0,
+                },
+                sucursalRetorno: {
+                    id: 0,
+                    mapa: {},
+                    imagen: '',
+                    name: '',
+                    telefono_1: '',
+                    telefono_2: null,
+                    horario_cierre: 0,
+                    LocationCode: '',
+                    horario_apertura: 0,
+                    horario_cierre_sabado: 0,
+                    horario_cierre_domingo: 0,
+                    horario_apertura_sabado: 0,
+                    horario_apertura_domingo: 0,
+                    impuesto: 0,
+                },
+                diaRetiro: '',
+                diaRetorno: '',
+                dropoff: 0,
                 era: 3.99,
                 cupon: null,
                 prepago: null,
-                totalDeDias: number,
-                sub_total: number,
-                impuesto: number,
-                impuesto_aeropuerto: number, 
+                totalDeDias: 0,
+                sub_total: 0,
+                impuesto: 0,
+                impuesto_aeropuerto: 0,
                 total: '',
-                order_id:String,
-                status:String
-            } 
+                order_id: '',
+                status: '',
+            },
         }), 
         // optional getters GETTER SON COMO COMPUTED 
         getters: {
@@ -145,8 +146,35 @@ export const usePedidoStore = defineStore(
                     nueve: 125.00,
                     diez: 177.00,  
                     once: 190.00, 
-                    doce: 290.00
-                }  
+                    doce: 290.00,
+                    trece: 15.00
+            }  
+
+             // tier 13 
+             if (  
+                sucursalDeRetiro === 'VPORRAS' && sucursalDeRetorno === 'APOTOCUM' 
+                || sucursalDeRetiro === 'APOTOCUM' && sucursalDeRetorno === 'VPORRAS'  
+
+
+                || sucursalDeRetiro === 'HZCDELESTE' && sucursalDeRetorno === 'APOTOCUM' 
+                || sucursalDeRetiro === 'APOTOCUM' && sucursalDeRetorno === 'HZCDELESTE' 
+
+                || sucursalDeRetiro === 'ALBROOK' && sucursalDeRetorno === 'APOTOCUM' 
+                || sucursalDeRetiro === 'APOTOCUM' && sucursalDeRetorno === 'ALBROOK' 
+
+
+                || sucursalDeRetiro === 'VVENETTO' && sucursalDeRetorno === 'APOTOCUM' 
+                || sucursalDeRetiro === 'APOTOCUM' && sucursalDeRetorno === 'VVENETTO' 
+
+
+
+
+                )
+                { dropoff = tier.trece; }  
+
+
+
+
                 // tier 2  
                 if (  
                     sucursalDeRetiro === 'HZ TORRE' && sucursalDeRetorno === 'HALBROOK' 
@@ -439,7 +467,7 @@ export const usePedidoStore = defineStore(
                 let tipoReserva = this.pedido.reserva;
                     if(tipoReserva === 'prepago'){
                         const precio = this.pedido.carro.precio_hertz;  
-                        let descuento = 5;  
+                        let descuento = this.pedido.carro.descuento_prepago;  
                         const descuentoCalculado = precio * (descuento / 100);  
                         const nuevoPrecio = precio - descuentoCalculado; 
                         precioAuto = nuevoPrecio 
@@ -475,7 +503,7 @@ export const usePedidoStore = defineStore(
                 let tipoReserva = this.pedido.reserva;
                 if(tipoReserva === 'prepago'){
                     const precio = this.pedido.carro.precio_hertz;  
-                    let descuento = 5;  
+                    let descuento = this.pedido.carro.descuento_prepago;  
                     const descuentoCalculado = precio * (descuento / 100);  
                     const nuevoPrecio = precio - descuentoCalculado; 
                     precioAuto = nuevoPrecio 

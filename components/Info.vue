@@ -1,166 +1,81 @@
 <script setup>
-import { getAssetURL } from "@/utils/get-asset-url";
-import { storeToRefs } from "pinia";
 import { usePrecheckingStore } from "@/stores/prechecking";
-import { useActualizarStore } from "@/stores/actualizar";
-import { useTarjetaStore } from "@/stores/tarjeta";
-import { usePaypalStore } from "@/stores/paypal";
-import moment from "moment";
-
-const storePaypal = usePaypalStore();
-const storeActualizar = useActualizarStore();
-const storeTarjeta = useTarjetaStore();
 const storePrechecking = usePrecheckingStore();
-const { getItemById, getItems } = useDirectusItems();
 
-// const getPedido = computed(() => {
-//   return storePedido.getPedido;
-// });
-
-const route = useRoute();
-// const pedido = await getItemById({
-//         collection: "pedidos",
-//         id:  route.params.id,
-//         // id: route.params.id,
-//     });
-let filters = { Res: route.params.id };
-const prechecking = await getItems({
-  collection: "prechecking",
-  params: {
-    filter: filters,
-  },
-});
-const order = prechecking[0];
-onBeforeMount(() => {
-  storePrechecking.prechecking = order;
-});
-const fechaFormat = function (value) {
-  if (value) {
-    return moment(value).format("DD MMM YYYY hh:mm A");
-  }
-};
-const precioFormat = function (value) {
-  if (value) {
-    return value.toLocaleString("en-US", { style: "currency", currency: "USD" });
-  }
-};
-
-const baseUrl = "@/assets/images/modelos/";
-useHead({
-  title: "Prechecking | Hertz Rent a Car Panamá",
-});
+const order = storePrechecking.prechecking;
 </script>
 <template>
-  <article class="manage-pedido">
-    <h3>Mi reserva: {{ order.Res }}</h3>
 
-    <ThePrechecking />
+  <section class="status-pedido">
+    <div>
+      <div class="status" v-if="order.status === 'Pendiente de Pago'">
+        <h4>Estatus: Esta reserva aun no esta paga</h4>
+      </div>
+      <div class="status" v-if="order.status === 'Pendiente de Prechecking'">
+        <h4>Estatus: Pendiente de Prechecking</h4>
+      </div>
+      <div class="status" v-if="order.status === 'Prechecking Pagado'">
+        <h4>Estatus:Esta reserva ya esta paga y en Prechecking</h4>
+      </div>
+      <div class="status" v-if="order.status === 'Prechecking Sin Pago'">
+        <h4>Estatus:Ya hiciste tu prechecking</h4>
+      </div>
 
-    <!-- <Info />
+      <figure>
+        <img
+          :src="'../_nuxt/assets/images/modelos/' + order.Class + '.png'"
+          loading="lazy"
+        />
+        <!-- <img :src="getAssetURL(order.Class)" loading="lazy" /> -->
+      </figure>
+    </div>
 
-    <Datos /> -->
 
-    <!--   <section class="info-coberturas">
-      <Coberturas />
-
-      <h6>Coberturas:</h6>
-        <dl v-if="pedido.carro.tipo != 'Sedan'">
-          <dt>
-            {{ pedido.cobertura.nombre }}
-          </dt>
-          <dd>
-            {{
-              precioFormat(
-                pedido.cobertura.precio_2 *
-                  storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro)
-              )
-            }}
-          </dd>
-        </dl>
-        <dl v-else>
-          <dt>
-            {{ pedido.cobertura.nombre }}
-          </dt>
-          <dd>
-            {{
-              precioFormat(
-                pedido.cobertura.precio *
-                  storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro)
-              )
-            }}
-          </dd>
-        </dl>
-        <dl>
-          <dt>Asistencia Vial(ERA)</dt>
-          <dd>
-            {{
-              precioFormat(
-                pedido.era *
-                  storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro)
-              )
-            }}
-          </dd>
-        </dl> 
-    </section>  
-    <section class="info-extras">
- 
+    
   
-        <h6>Extras:</h6>
-        <dl v-if="pedido.extras" class="extras">
-          <div v-for="extra in pedido.extras">
-            <dt>
-              {{ extra.nombre }}
-            </dt>
-            <dd>
-              {{
-                precioFormat(
-                  extra.precio *
-                    storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro)
-                )
-              }}
-            </dd>
-          </div>
-        </dl>
+  <section class="info-pedido">
+    <h6>Detalles:</h6>
+    <dl>
+      <dt>Categoria:</dt>
+      <dd>
+        {{ order.Class }}
+      </dd>
+    </dl>
+    <div>
+      <dl>
+        <dt>Retiro:</dt>
+        <dd>{{ order.Pickup_Location }}</dd>
+      </dl>
 
-    </section>
--->
-    <!-- <section class="metodos" v-if="order.status === 'Pendiente de Prechecking'">
-      <section class="tarjeta">
-        <p>
-          <label>Número de la Tarjeta</label>
-          <input
-            type="text"
-            placeholder="0000 0000 0000 000"
-            name="ccnumber"
-            v-model="storeTarjeta.tarjeta.ccnumber"
-          />
-        </p>
-        <p>
-          <label>Fecha de Expiración</label>
-          <input
-            type="text"
-            placeholder="01 / 26"
-            name="ccexp"
-            class="ccexp"
-            v-model="storeTarjeta.tarjeta.ccexp"
-          />
-        </p>
-        <p>
-          <label>CCV</label>
-          <input
-            type="text"
-            placeholder="123"
-            name="cvv"
-            class="cvv"
-            v-model="storeTarjeta.tarjeta.cvv"
-          />
-        </p>
-        <button type="submit" @click="storeTarjeta.onSubmit">Pagar</button>
-      </section>
+      <dl>
+        <dt>Día de Retiro:</dt>
+        <dd>{{ order.Pickup_Date }} {{ order.Pickup_Time }}:00</dd>
+      </dl>
+    </div>
 
-      <div id="paypal-button"></div>
-    </section> -->
-  </article>
+    <div>
+      <dl>
+        <dt>Retorno:</dt>
+        <dd>{{ order.Due_Back_Location }}</dd>
+      </dl>
+      <dl>
+        <dt>Día de Retorno:</dt>
+        <dd>{{ order.Due_Date }} {{ order.Due_Time }}:00</dd>
+      </dl>
+    </div>
+    <dl>
+      <dt>Total:</dt>
+      <dd>B/. {{ order.Est_Total }}</dd>
+    </dl>
+  </section>
+
+
+
+ 
+  </section>
+
+
+ 
 </template>
 
 <style scoped lang="scss">

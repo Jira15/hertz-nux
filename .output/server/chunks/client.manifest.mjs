@@ -4,6 +4,11 @@ const client_manifest = {
     "file": "Desglose.ac52ee89.css",
     "src": "Desglose.css"
   },
+  "Extras.css": {
+    "resourceType": "style",
+    "file": "Extras.b4579217.css",
+    "src": "Extras.css"
+  },
   "ThePrompt.css": {
     "resourceType": "style",
     "file": "ThePrompt.5aec3d05.css",
@@ -14,17 +19,17 @@ const client_manifest = {
     "file": "TheSearch.428b8139.css",
     "src": "TheSearch.css"
   },
-  "_Desglose.c2af3c8b.js": {
+  "_Desglose.ca6b9a1b.js": {
     "resourceType": "script",
     "module": true,
     "css": [
       "Desglose.ac52ee89.css"
     ],
-    "file": "Desglose.c2af3c8b.js",
+    "file": "Desglose.ca6b9a1b.js",
     "imports": [
-      "_ac.7222318b.js",
+      "_ac.575a3757.js",
       "_get-asset-url.2ad900aa.js",
-      "_pedido.c13ba931.js",
+      "_pedido.ba401ed8.js",
       "node_modules/nuxt/dist/app/entry.js",
       "_moment.fbc5633a.js"
     ]
@@ -33,17 +38,34 @@ const client_manifest = {
     "file": "Desglose.ac52ee89.css",
     "resourceType": "style"
   },
-  "_ThePrompt.e6365938.js": {
+  "_Extras.ccf39b5d.js": {
+    "resourceType": "script",
+    "module": true,
+    "css": [
+      "Extras.b4579217.css"
+    ],
+    "file": "Extras.ccf39b5d.js",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js",
+      "_useDirectusItems.53bd9dee.js",
+      "_pedido.ba401ed8.js"
+    ]
+  },
+  "Extras.b4579217.css": {
+    "file": "Extras.b4579217.css",
+    "resourceType": "style"
+  },
+  "_ThePrompt.b0f56610.js": {
     "resourceType": "script",
     "module": true,
     "css": [
       "ThePrompt.5aec3d05.css"
     ],
-    "file": "ThePrompt.e6365938.js",
+    "file": "ThePrompt.b0f56610.js",
     "imports": [
-      "_TheSearch.6bfe6824.js",
+      "_TheSearch.46ecb569.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_pedido.c13ba931.js",
+      "_pedido.ba401ed8.js",
       "_moment.fbc5633a.js"
     ]
   },
@@ -51,17 +73,17 @@ const client_manifest = {
     "file": "ThePrompt.5aec3d05.css",
     "resourceType": "style"
   },
-  "_TheSearch.6bfe6824.js": {
+  "_TheSearch.46ecb569.js": {
     "resourceType": "script",
     "module": true,
     "css": [
       "TheSearch.428b8139.css"
     ],
-    "file": "TheSearch.6bfe6824.js",
+    "file": "TheSearch.46ecb569.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_pedido.c13ba931.js",
-      "_useDirectusItems.23889d1a.js"
+      "_pedido.ba401ed8.js",
+      "_useDirectusItems.53bd9dee.js"
     ]
   },
   "TheSearch.428b8139.css": {
@@ -81,13 +103,13 @@ const client_manifest = {
     "module": true,
     "file": "_commonjsHelpers.edff4021.js"
   },
-  "_ac.7222318b.js": {
+  "_ac.575a3757.js": {
     "resourceType": "script",
     "module": true,
     "assets": [
       "pasajeros.f900f86a.png"
     ],
-    "file": "ac.7222318b.js",
+    "file": "ac.575a3757.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
@@ -97,14 +119,23 @@ const client_manifest = {
     "resourceType": "image",
     "mimeType": "image/png"
   },
-  "_actualizar.25c2246b.js": {
+  "_actualizar.ddefb288.js": {
     "resourceType": "script",
     "module": true,
-    "file": "actualizar.25c2246b.js",
+    "file": "actualizar.ddefb288.js",
     "imports": [
-      "_useDirectusItems.23889d1a.js",
+      "_useDirectusItems.53bd9dee.js",
+      "_asyncData.353d2339.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_pedido.c13ba931.js"
+      "_pedido.ba401ed8.js"
+    ]
+  },
+  "_asyncData.353d2339.js": {
+    "resourceType": "script",
+    "module": true,
+    "file": "asyncData.353d2339.js",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
     ]
   },
   "_get-asset-url.2ad900aa.js": {
@@ -112,51 +143,79 @@ const client_manifest = {
     "module": true,
     "file": "get-asset-url.2ad900aa.js"
   },
+  "_index.d9621b3c.js": {
+    "resourceType": "script",
+    "module": true,
+    "file": "index.d9621b3c.js",
+    "imports": [
+      "__commonjsHelpers.edff4021.js",
+      "____vite-browser-external.bfa11e9f.js"
+    ]
+  },
   "_moment.fbc5633a.js": {
     "resourceType": "script",
     "module": true,
     "file": "moment.fbc5633a.js"
   },
-  "_paypal.a6f247f0.js": {
+  "_paypal.d7a21aa3.js": {
     "resourceType": "script",
     "module": true,
-    "file": "paypal.a6f247f0.js",
+    "file": "paypal.d7a21aa3.js",
     "imports": [
-      "_useDirectusItems.23889d1a.js",
+      "_useDirectusItems.53bd9dee.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_pedido.c13ba931.js",
+      "_pedido.ba401ed8.js",
       "_moment.fbc5633a.js"
     ]
   },
-  "_pedido.c13ba931.js": {
+  "_pedido.ba401ed8.js": {
     "resourceType": "script",
     "module": true,
-    "file": "pedido.c13ba931.js",
+    "file": "pedido.ba401ed8.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
       "__commonjsHelpers.edff4021.js"
     ]
   },
-  "_promo.e1137e5e.js": {
+  "_prechecking.b47a738d.js": {
+    "resourceType": "script",
+    "module": true,
+    "file": "prechecking.b47a738d.js",
+    "imports": [
+      "_useDirectusItems.53bd9dee.js",
+      "_asyncData.353d2339.js",
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "_promo.d78cbe28.js": {
     "resourceType": "script",
     "module": true,
     "css": [
       "promo.3fe5fee9.css"
     ],
-    "file": "promo.e1137e5e.js",
+    "file": "promo.d78cbe28.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_useDirectusItems.23889d1a.js"
+      "_useDirectusItems.53bd9dee.js"
     ]
   },
   "promo.3fe5fee9.css": {
     "file": "promo.3fe5fee9.css",
     "resourceType": "style"
   },
-  "_useDirectusItems.23889d1a.js": {
+  "_tarjeta.38c24637.js": {
     "resourceType": "script",
     "module": true,
-    "file": "useDirectusItems.23889d1a.js",
+    "file": "tarjeta.38c24637.js",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js",
+      "_useDirectusItems.53bd9dee.js"
+    ]
+  },
+  "_useDirectusItems.53bd9dee.js": {
+    "resourceType": "script",
+    "module": true,
+    "file": "useDirectusItems.53bd9dee.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
@@ -197,6 +256,12 @@ const client_manifest = {
     "file": "pasajeros.f900f86a.png",
     "src": "assets/images/pasajeros.png"
   },
+  "assets/images/prechecking2.jpg": {
+    "resourceType": "image",
+    "mimeType": "image/jpeg",
+    "file": "prechecking2.9d93e9cc.jpg",
+    "src": "assets/images/prechecking2.jpg"
+  },
   "assets/images/usa1.jpg": {
     "resourceType": "image",
     "mimeType": "image/jpeg",
@@ -206,13 +271,26 @@ const client_manifest = {
   "middleware/proxy.js": {
     "resourceType": "script",
     "module": true,
-    "file": "proxy.fa9558ae.js",
+    "file": "proxy.b76b3366.js",
     "imports": [
+      "_index.d9621b3c.js",
       "__commonjsHelpers.edff4021.js",
       "____vite-browser-external.bfa11e9f.js"
     ],
     "isDynamicEntry": true,
     "src": "middleware/proxy.js"
+  },
+  "middleware/rentworks.js": {
+    "resourceType": "script",
+    "module": true,
+    "file": "rentworks.38608984.js",
+    "imports": [
+      "_index.d9621b3c.js",
+      "__commonjsHelpers.edff4021.js",
+      "____vite-browser-external.bfa11e9f.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "middleware/rentworks.js"
   },
   "node_modules/@nuxt/ui-templates/dist/templates/error-404.css": {
     "resourceType": "style",
@@ -223,7 +301,7 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error-404.e2f71bd5.js",
+    "file": "error-404.6e8c21f8.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -243,7 +321,7 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error-500.befdff28.js",
+    "file": "error-500.4f160847.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -272,9 +350,10 @@ const client_manifest = {
     ],
     "dynamicImports": [
       "middleware/proxy.js",
+      "middleware/rentworks.js",
       "virtual:nuxt:C:/laragon/www/hertz-nux/.nuxt/error-component.mjs"
     ],
-    "file": "entry.a38ffb54.js",
+    "file": "entry.6dd03756.js",
     "isEntry": true,
     "src": "node_modules/nuxt/dist/app/entry.js"
   },
@@ -309,10 +388,10 @@ const client_manifest = {
       "paga2.08930589.png"
     ],
     "css": [],
-    "file": "clientes.52c96267.js",
+    "file": "clientes.ee3bb6b3.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_pedido.c13ba931.js",
+      "_pedido.ba401ed8.js",
       "__commonjsHelpers.edff4021.js"
     ],
     "isDynamicEntry": true,
@@ -336,7 +415,7 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error.4afdbb4a.js",
+    "file": "error.4380956e.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -349,20 +428,21 @@ const client_manifest = {
   },
   "pages/flota/[reserva]/[id].css": {
     "resourceType": "style",
-    "file": "_id_.e75e10d6.css",
+    "file": "_id_.8f7113ae.css",
     "src": "pages/flota/[reserva]/[id].css"
   },
   "pages/flota/[reserva]/[id].vue": {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "_id_.016a8a96.js",
+    "file": "_id_.74cb2b95.js",
     "imports": [
-      "_Desglose.c2af3c8b.js",
+      "_Desglose.ca6b9a1b.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_useDirectusItems.23889d1a.js",
-      "_pedido.c13ba931.js",
-      "_ac.7222318b.js",
+      "_Extras.ccf39b5d.js",
+      "_useDirectusItems.53bd9dee.js",
+      "_pedido.ba401ed8.js",
+      "_ac.575a3757.js",
       "_get-asset-url.2ad900aa.js",
       "_moment.fbc5633a.js",
       "__commonjsHelpers.edff4021.js"
@@ -370,37 +450,37 @@ const client_manifest = {
     "isDynamicEntry": true,
     "src": "pages/flota/[reserva]/[id].vue"
   },
-  "_id_.e75e10d6.css": {
-    "file": "_id_.e75e10d6.css",
+  "_id_.8f7113ae.css": {
+    "file": "_id_.8f7113ae.css",
     "resourceType": "style"
   },
   "pages/flota/[reserva]/checkout.css": {
     "resourceType": "style",
-    "file": "checkout.ac74ce70.css",
+    "file": "checkout.53dfafdd.css",
     "src": "pages/flota/[reserva]/checkout.css"
   },
   "pages/flota/[reserva]/checkout.vue": {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "checkout.44c663f4.js",
+    "file": "checkout.5683d067.js",
     "imports": [
-      "_Desglose.c2af3c8b.js",
+      "_Desglose.ca6b9a1b.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_pedido.c13ba931.js",
-      "_useDirectusItems.23889d1a.js",
+      "_pedido.ba401ed8.js",
+      "_useDirectusItems.53bd9dee.js",
       "_moment.fbc5633a.js",
       "____vite-browser-external.bfa11e9f.js",
-      "_paypal.a6f247f0.js",
-      "_ac.7222318b.js",
+      "_paypal.d7a21aa3.js",
+      "_ac.575a3757.js",
       "_get-asset-url.2ad900aa.js",
       "__commonjsHelpers.edff4021.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/flota/[reserva]/checkout.vue"
   },
-  "checkout.ac74ce70.css": {
-    "file": "checkout.ac74ce70.css",
+  "checkout.53dfafdd.css": {
+    "file": "checkout.53dfafdd.css",
     "resourceType": "style"
   },
   "pages/flota/index.css": {
@@ -412,18 +492,18 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "index.648ed283.js",
+    "file": "index.317f4d5d.js",
     "imports": [
-      "_ThePrompt.e6365938.js",
-      "_promo.e1137e5e.js",
+      "_ThePrompt.b0f56610.js",
+      "_promo.d78cbe28.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_ac.7222318b.js",
+      "_ac.575a3757.js",
       "_get-asset-url.2ad900aa.js",
-      "_TheSearch.6bfe6824.js",
-      "_pedido.c13ba931.js",
+      "_TheSearch.46ecb569.js",
+      "_pedido.ba401ed8.js",
       "__commonjsHelpers.edff4021.js",
       "_moment.fbc5633a.js",
-      "_useDirectusItems.23889d1a.js"
+      "_useDirectusItems.53bd9dee.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/flota/index.vue"
@@ -434,7 +514,7 @@ const client_manifest = {
   },
   "pages/index.css": {
     "resourceType": "style",
-    "file": "index.0766fa35.css",
+    "file": "index.144a9bb0.css",
     "src": "pages/index.css"
   },
   "pages/index.vue": {
@@ -445,22 +525,22 @@ const client_manifest = {
       "usa1.da7d731b.jpg"
     ],
     "css": [
-      "index.0766fa35.css"
+      "index.144a9bb0.css"
     ],
-    "file": "index.5afef92a.js",
+    "file": "index.9740d2eb.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_useDirectusItems.23889d1a.js",
+      "_useDirectusItems.53bd9dee.js",
       "_get-asset-url.2ad900aa.js",
-      "_TheSearch.6bfe6824.js",
-      "_pedido.c13ba931.js",
+      "_TheSearch.46ecb569.js",
+      "_pedido.ba401ed8.js",
       "__commonjsHelpers.edff4021.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/index.vue"
   },
-  "index.0766fa35.css": {
-    "file": "index.0766fa35.css",
+  "index.144a9bb0.css": {
+    "file": "index.144a9bb0.css",
     "resourceType": "style"
   },
   "corpo1.0779bdda.jpg": {
@@ -482,14 +562,15 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "maneja.683106d7.js",
+    "file": "maneja.4140787f.js",
     "imports": [
-      "_useDirectusItems.23889d1a.js",
+      "_useDirectusItems.53bd9dee.js",
       "node_modules/nuxt/dist/app/entry.js",
       "_get-asset-url.2ad900aa.js",
-      "_actualizar.25c2246b.js",
-      "_pedido.c13ba931.js",
+      "_actualizar.ddefb288.js",
+      "_pedido.ba401ed8.js",
       "_moment.fbc5633a.js",
+      "_asyncData.353d2339.js",
       "__commonjsHelpers.edff4021.js"
     ],
     "isDynamicEntry": true,
@@ -501,29 +582,31 @@ const client_manifest = {
   },
   "pages/orden/[id].css": {
     "resourceType": "style",
-    "file": "_id_.b7f143f8.css",
+    "file": "_id_.a7e0adee.css",
     "src": "pages/orden/[id].css"
   },
   "pages/orden/[id].vue": {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "_id_.580a8449.js",
+    "file": "_id_.1925c8b9.js",
     "imports": [
-      "_useDirectusItems.23889d1a.js",
+      "_useDirectusItems.53bd9dee.js",
       "node_modules/nuxt/dist/app/entry.js",
       "_get-asset-url.2ad900aa.js",
-      "_pedido.c13ba931.js",
-      "_actualizar.25c2246b.js",
-      "_paypal.a6f247f0.js",
+      "_pedido.ba401ed8.js",
+      "_actualizar.ddefb288.js",
+      "_tarjeta.38c24637.js",
+      "_paypal.d7a21aa3.js",
       "_moment.fbc5633a.js",
-      "__commonjsHelpers.edff4021.js"
+      "__commonjsHelpers.edff4021.js",
+      "_asyncData.353d2339.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/orden/[id].vue"
   },
-  "_id_.b7f143f8.css": {
-    "file": "_id_.b7f143f8.css",
+  "_id_.a7e0adee.css": {
+    "file": "_id_.a7e0adee.css",
     "resourceType": "style"
   },
   "pages/paginas/[id].css": {
@@ -535,14 +618,14 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "_id_.9ca12b1f.js",
+    "file": "_id_.13733f0f.js",
     "imports": [
-      "_ThePrompt.e6365938.js",
+      "_ThePrompt.b0f56610.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_useDirectusItems.23889d1a.js",
+      "_useDirectusItems.53bd9dee.js",
       "_get-asset-url.2ad900aa.js",
-      "_TheSearch.6bfe6824.js",
-      "_pedido.c13ba931.js",
+      "_TheSearch.46ecb569.js",
+      "_pedido.ba401ed8.js",
       "__commonjsHelpers.edff4021.js",
       "_moment.fbc5633a.js"
     ],
@@ -553,33 +636,94 @@ const client_manifest = {
     "file": "_id_.de7152e7.css",
     "resourceType": "style"
   },
+  "pages/prechecking/[id].css": {
+    "resourceType": "style",
+    "file": "_id_.824b1d3d.css",
+    "src": "pages/prechecking/[id].css"
+  },
+  "pages/prechecking/[id].vue": {
+    "resourceType": "script",
+    "module": true,
+    "css": [],
+    "file": "_id_.068d4c6e.js",
+    "imports": [
+      "_prechecking.b47a738d.js",
+      "node_modules/nuxt/dist/app/entry.js",
+      "_Extras.ccf39b5d.js",
+      "_useDirectusItems.53bd9dee.js",
+      "_actualizar.ddefb288.js",
+      "_tarjeta.38c24637.js",
+      "_paypal.d7a21aa3.js",
+      "_moment.fbc5633a.js",
+      "_asyncData.353d2339.js",
+      "_pedido.ba401ed8.js",
+      "__commonjsHelpers.edff4021.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "pages/prechecking/[id].vue"
+  },
+  "_id_.824b1d3d.css": {
+    "file": "_id_.824b1d3d.css",
+    "resourceType": "style"
+  },
+  "pages/prechecking/index.css": {
+    "resourceType": "style",
+    "file": "index.4aee6b97.css",
+    "src": "pages/prechecking/index.css"
+  },
+  "pages/prechecking/index.vue": {
+    "resourceType": "script",
+    "module": true,
+    "assets": [
+      "prechecking2.9d93e9cc.jpg"
+    ],
+    "css": [],
+    "file": "index.95e65503.js",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js",
+      "_prechecking.b47a738d.js",
+      "_useDirectusItems.53bd9dee.js",
+      "_asyncData.353d2339.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "pages/prechecking/index.vue"
+  },
+  "index.4aee6b97.css": {
+    "file": "index.4aee6b97.css",
+    "resourceType": "style"
+  },
+  "prechecking2.9d93e9cc.jpg": {
+    "file": "prechecking2.9d93e9cc.jpg",
+    "resourceType": "image",
+    "mimeType": "image/jpeg"
+  },
   "pages/reserva.css": {
     "resourceType": "style",
-    "file": "reserva.fa24708d.css",
+    "file": "reserva.58c4a52d.css",
     "src": "pages/reserva.css"
   },
   "pages/reserva.vue": {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "reserva.222e74b0.js",
+    "file": "reserva.9debe586.js",
     "imports": [
-      "_ThePrompt.e6365938.js",
-      "_promo.e1137e5e.js",
+      "_ThePrompt.b0f56610.js",
+      "_promo.d78cbe28.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_ac.7222318b.js",
+      "_ac.575a3757.js",
       "_get-asset-url.2ad900aa.js",
-      "_TheSearch.6bfe6824.js",
-      "_pedido.c13ba931.js",
+      "_TheSearch.46ecb569.js",
+      "_pedido.ba401ed8.js",
       "__commonjsHelpers.edff4021.js",
       "_moment.fbc5633a.js",
-      "_useDirectusItems.23889d1a.js"
+      "_useDirectusItems.53bd9dee.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/reserva.vue"
   },
-  "reserva.fa24708d.css": {
-    "file": "reserva.fa24708d.css",
+  "reserva.58c4a52d.css": {
+    "file": "reserva.58c4a52d.css",
     "resourceType": "style"
   },
   "pages/sucursales.css": {
@@ -591,16 +735,16 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "sucursales.fbc3f0c8.js",
+    "file": "sucursales.4fb30cfe.js",
     "imports": [
-      "_ThePrompt.e6365938.js",
+      "_ThePrompt.b0f56610.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_TheSearch.6bfe6824.js",
+      "_TheSearch.46ecb569.js",
       "_get-asset-url.2ad900aa.js",
-      "_pedido.c13ba931.js",
+      "_pedido.ba401ed8.js",
       "__commonjsHelpers.edff4021.js",
       "_moment.fbc5633a.js",
-      "_useDirectusItems.23889d1a.js"
+      "_useDirectusItems.53bd9dee.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/sucursales.vue"
@@ -618,10 +762,10 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "thanks.85352df4.js",
+    "file": "thanks.d5a7a8f3.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_pedido.c13ba931.js",
+      "_pedido.ba401ed8.js",
       "__commonjsHelpers.edff4021.js"
     ],
     "isDynamicEntry": true,
@@ -640,7 +784,7 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "vacante-gracias.597d72c1.js",
+    "file": "vacante-gracias.32544e5c.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -660,10 +804,10 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "vacantes.7b47a8e3.js",
+    "file": "vacantes.f695cfea.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_useDirectusItems.23889d1a.js"
+      "_useDirectusItems.53bd9dee.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/vacantes.vue"
@@ -684,7 +828,7 @@ const client_manifest = {
       "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
       "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
     ],
-    "file": "error-component.e1412fa8.js",
+    "file": "error-component.16b69b93.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],

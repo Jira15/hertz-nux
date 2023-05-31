@@ -1,22 +1,26 @@
 <script setup>
-import { useSearchStore } from "@/stores/search";
-import { storeToRefs } from "pinia";
-import { useSucursalStore } from "@/stores/sucursal";
-import { defineRule, Form, Field, ErrorMessage, configure } from "vee-validate";
-import { ref, computed } from "vue";
+import { useSearchStore } from "@/stores/search"; 
+import { useSucursalStore } from "@/stores/sucursal"; 
+import moment from 'moment';
+// import { defineRule, Form, Field, ErrorMessage, configure } from "vee-validate"; 
 const date = ref(new Date());
+const { locale } = useI18n()
 
-const storeSearch = useSearchStore();
-
+ 
+const storeSearch = useSearchStore(); 
 const storeSucursal = useSucursalStore();
 
 const sucursales = computed(() => {
   return storeSucursal.sucursales;
 });
+ 
 onMounted(() => {
   storeSucursal.fetchSucursales();
   // storeSearch.options = sucursales;
-});
+}); 
+
+const fechaFormat = value => {  return moment(value).format('yyyy MMM DD') }
+
 
 function minimoDeDias(date, days) {
   const newDate = new Date(date);
@@ -24,12 +28,7 @@ function minimoDeDias(date, days) {
   return newDate;
 }
 
-function minimoDeHoras(date, horas) {
-  const newDate = new Date(date);
-  newDate.setDate(newDate.getDate() + horas);
-  return newDate;
-}
-
+ 
 const currentDate = new Date();
 const currentTime = currentDate.getTime();
 const oneDay = 4 * 60 * 60 * 1000;
@@ -53,14 +52,7 @@ function domingoCerrados(domingoApertura, domingoCierre) {
   }
 }
 
-function horarioFines(openingTime, closingTime) {
-  let fines = [];
-  for (let i = openingTime; i < closingTime; i++) {
-    fines.push({ text: `${i}`, value: i });
-  }
-  return fines;
-}
-
+ 
 const minutesArray = [
   { text: "00", value: 0 },
   { text: "15", value: 15 },
@@ -71,10 +63,10 @@ const minutesArray = [
 <template>
   <form class="reservador" @submit="storeSearch.siguiente">
     <article>
-      <h2>Reserva tu vehículo</h2>
+      <h2>{{ $t('reservador') }}</h2>
       <div class="sucursales">
         <section>
-          <legend>sucursal de retiro</legend>
+          <legend>{{ $t('pickup') }}</legend>
           <label class="sucursal">
             <select
               v-model="storeSearch.sucursal"
@@ -82,7 +74,7 @@ const minutesArray = [
               as="select"
               rules="required"
             >
-              <option disabled value="">Selecciona una sucursal</option>
+              <option disabled value="">{{ $t('select') }}</option>
               <option v-for="option in sucursales" :key="option" :value="option">
                 {{ option.name }}
               </option>
@@ -90,7 +82,7 @@ const minutesArray = [
           </label>
         </section>
         <section>
-          <legend>sucursal de retorno</legend>
+          <legend>{{ $t('return') }}</legend>
           <label class="sucursal">
             <select
               v-model="storeSearch.sucursalRetorno"
@@ -98,7 +90,7 @@ const minutesArray = [
               as="select"
               rules="required"
             >
-              <option disabled value="">Selecciona una sucursal</option>
+              <option disabled value="">{{ $t('select') }}</option>
               <option v-for="option in sucursales" :key="option" :value="option">
                 {{ option.name }}
               </option>
@@ -108,7 +100,7 @@ const minutesArray = [
       </div>
       <section class="fechas">
         <div v-if="storeSearch.sucursal">
-          <label>Fecha de Retiro </label>
+          <label>{{ $t('pickupDate') }} </label>
           <date-picker
             :start-time="startTime"
             locale="es"
@@ -158,7 +150,7 @@ const minutesArray = [
         </div>
 
         <div v-if="storeSearch.sucursalRetorno">
-          <label>Fecha de Retorno</label>
+          <label>{{ $t('returnDate') }}</label>
           <date-picker
             locale="es"
             :start-time="startTime"
@@ -218,7 +210,7 @@ const minutesArray = [
           type="submit"
           @click="storeSearch.searchIs = 'TheProgress'"
         >
-          Siguiente
+        {{ $t('nextButton') }}
         </button>
       </div>
 
@@ -360,16 +352,7 @@ const minutesArray = [
       display: flex;
       justify-content: space-between;
       flex-direction: row;
-      .dpicker {
-        padding-right: 20px;
-      }
-      div {
-        display: flex;
-        flex-direction: column;
-      }
-      input {
-        width: 100%;
-      }
+ 
     }
     footer {
       align-self: end;

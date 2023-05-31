@@ -52,60 +52,69 @@ useHead({
 </script>
 <template>
   <article class="manage-pedido">
-    <h3>Mi reserva: {{ order.Res }}</h3>
+    <h3>Mi reserva: {{ order.Res }}</h3> 
+    <Info />  
 
-    <ThePrechecking />
-
-    <!-- <Info />
-
-    <Datos /> -->
-
-    <!--   <section class="info-coberturas">
-      <Coberturas />
-
-      <h6>Coberturas:</h6>
-        <dl v-if="pedido.carro.tipo != 'Sedan'">
-          <dt>
-            {{ pedido.cobertura.nombre }}
-          </dt>
+    <section class="detalles-conductor">
+        <h6>Detalles:</h6>
+        <dl>
+          <dt>Nombre:</dt>
           <dd>
-            {{
-              precioFormat(
-                pedido.cobertura.precio_2 *
-                  storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro)
-              )
-            }}
-          </dd>
-        </dl>
-        <dl v-else>
-          <dt>
-            {{ pedido.cobertura.nombre }}
-          </dt>
-          <dd>
-            {{
-              precioFormat(
-                pedido.cobertura.precio *
-                  storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro)
-              )
-            }}
+            {{order.Name}}
           </dd>
         </dl>
         <dl>
+          <dt>Correo:</dt>
+          <dd>
+          {{order.Renters_Email }} 
+          </dd>
+        </dl>
+        <dl>
+          <dt>Telefono:</dt>
+          <dd>
+            {{ order.Phone_Number }} 
+          </dd>
+        </dl>
+        <dl>
+          <dt>Licencia:</dt>
+          {{ order.Licencia }} 
+        </dl>
+      </section>
+
+
+
+      <section class="info-coberturas">  
+        <!-- <h6>Coberturas:</h6>
+        <dl >
+          <dt>
+            {{ order.cobertura.nombre }}
+          </dt>
+          <dd>
+            {{
+              precioFormat(
+                order.cobertura.precio_2 *
+                  storePrechecking.diffDias(order.fecha_retorno, order.fecha_retiro)
+              )
+            }}
+          </dd>
+        </dl> -->
+        
+        <!-- <dl>
           <dt>Asistencia Vial(ERA)</dt>
           <dd>
             {{
               precioFormat(
-                pedido.era *
-                  storePedido.diffDias(pedido.fecha_retorno, pedido.fecha_retiro)
+                order.era *
+                  storePrechecking.diffDias(order.fecha_retorno, order.fecha_retiro)
               )
             }}
           </dd>
-        </dl> 
+        </dl>   -->
     </section>  
     <section class="info-extras">
  
   
-        <h6>Extras:</h6>
+        <!-- <h6>Extras:</h6>
         <dl v-if="pedido.extras" class="extras">
           <div v-for="extra in pedido.extras">
             <dt>
@@ -120,11 +129,10 @@ useHead({
               }}
             </dd>
           </div>
-        </dl>
+        </dl> -->
 
-    </section>
--->
-    <!-- <section class="metodos" v-if="order.status === 'Pendiente de Prechecking'">
+    </section> 
+    <section class="metodos" v-if="order.status === 'Pendiente de Prechecking'">
       <section class="tarjeta">
         <p>
           <label>Número de la Tarjeta</label>
@@ -159,7 +167,7 @@ useHead({
       </section>
 
       <div id="paypal-button"></div>
-    </section> -->
+    </section>
   </article>
 </template>
 

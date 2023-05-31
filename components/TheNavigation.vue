@@ -1,11 +1,15 @@
-<script>
+ <script>
 import { useWindowSize } from "@/composables/useWindowSize";
 import { ref, computed } from "vue";
 // import { useLenguajesStore } from "@/stores/lenguajes";
-// const storeLenguaje = useLenguajesStore();
-
+// const storeLenguaje = useLenguajesStore(); 
 export default {
   setup() {
+    const { locale } = useI18n()
+
+ 
+
+
     const isMenuVisible = ref(false);
     const { width } = useWindowSize();
 
@@ -20,7 +24,8 @@ export default {
       isMenuVisible,
       toggleMenu,
       isMobile,
-      isDesktop,
+      isDesktop, 
+      locale
     };
   },
 };
@@ -40,22 +45,28 @@ export default {
       <transition name="slide-fade">
         <div v-if="isDesktop || isMenuVisible" class="menu-items">
           <ul>
-            <li><NuxtLink to="/flota">Flota</NuxtLink></li>
-            <li><NuxtLink to="/sucursales">Sucursales</NuxtLink></li>
+            <li><NuxtLink to="/flota">{{ $t('flota') }}</NuxtLink></li>
+            <li><NuxtLink to="/sucursales">{{ $t('sucursales') }}</NuxtLink></li>
             <li>
-              <a href="#">Corporativo</a>
+              <a href="#">{{ $t('corporativo') }}</a>
               <ul class="dropdown" aria-label="submenu">
-                <li><NuxtLink to="/paginas/operativo">Leasing Operativo</NuxtLink></li>
+                <li>
+                  <NuxtLink to="/paginas/operativo">Leasing Operativo</NuxtLink>
+                </li>
                 <li>
                   <NuxtLink to="/paginas/corporativo">Planes Corporativos</NuxtLink>
                 </li>
               </ul>
             </li>
-            <li><NuxtLink to="/clientes">Maneja tu Reserva</NuxtLink></li>
+            <li><NuxtLink to="/clientes">{{ $t('maneja') }}</NuxtLink></li>
             <li>
-              <button @click="storeLenguaje.setEN()">EN</button> |
-              <button @click="storeLenguaje.setES()">ES</button>
-            </li>
+              <form class="lenguaje">
+                <select v-model="locale">
+                  <option value="en">EN</option>
+                  <option value="es">ES</option>
+                </select> 
+              </form>
+            </li> 
           </ul>
         </div>
       </transition>
@@ -70,6 +81,18 @@ export default {
   display: flex;
   box-shadow: 0px 5px 5px rgba(32, 32, 32, 0.788);
 
+  .lenguaje{  
+    select {  
+      border-style: none;
+      padding: 5px;
+      background-color: #FFD115;
+      option:hover { 
+          border-style: none;
+          padding: 5px;
+          background-color: #FFD115; 
+      }
+    }
+  }
   .router-link-active {
     color: rgb(112, 112, 112);
   }

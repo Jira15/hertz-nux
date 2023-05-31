@@ -51,20 +51,27 @@ const precioFormat = function (value) {
     return value.toLocaleString("en-US", { style: "currency", currency: "USD" });
   }
 };
-const prepago = function (precio) {
-  let descuento = 5;
+
+function toUSDFormat(decimal) {
+  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(
+    decimal
+  );
+}
+
+const prepago = function (precio, descuentoPrepago) {
+  let descuento = descuentoPrepago;
   const descuentoCalculado = precio * (descuento / 100);
   const nuevoPrecio = precio - descuentoCalculado;
-  console.log(
-    "precio" +
-      precio +
-      "descuento" +
-      descuento +
-      "descuento calculado" +
-      descuentoCalculado +
-      "nuevo precio" +
-      nuevoPrecio
-  );
+  // console.log(
+  //   "precio" +
+  //     precio +
+  //     "descuento" +
+  //     descuento +
+  //     "descuento calculado" +
+  //     descuentoCalculado +
+  //     "nuevo precio" +
+  //     nuevoPrecio
+  // );
   // // Calculate tax due
   // const impuestoADeber = nuevoSubtotal * (impuesto / 100);
   // // Calculate final price
@@ -117,7 +124,7 @@ export default {
     <dl v-if="precioDropoff > 0">
       <dt>Drop-off</dt>
       <dd>
-        {{ precioFormat(precioDropoff) }}
+        {{ toUSDFormat(precioDropoff) }}
       </dd>
     </dl>
 
@@ -128,7 +135,8 @@ export default {
         {{
           prepago(
             pedido.carro.precio_hertz *
-              pedidoStore.diffDias(pedido.diaRetorno, pedido.diaRetiro)
+              pedidoStore.diffDias(pedido.diaRetorno, pedido.diaRetiro),
+            pedido.carro.descuento_prepago
           )
         }}
       </dd>
@@ -149,7 +157,7 @@ export default {
       </dt>
       <dd>
         {{
-          precioFormat(
+          toUSDFormat(
             pedido.cobertura.precio_2 *
               pedidoStore.diffDias(pedido.diaRetorno, pedido.diaRetiro)
           )
@@ -162,7 +170,7 @@ export default {
       </dt>
       <dd>
         {{
-          precioFormat(
+          toUSDFormat(
             pedido.cobertura.precio *
               pedidoStore.diffDias(pedido.diaRetorno, pedido.diaRetiro)
           )
@@ -173,7 +181,7 @@ export default {
       <dt>Asistencia Vial(ERA)</dt>
       <dd>
         {{
-          precioFormat(
+          toUSDFormat(
             pedido.era * pedidoStore.diffDias(pedido.diaRetorno, pedido.diaRetiro)
           )
         }}
@@ -188,7 +196,7 @@ export default {
         </dt>
         <dd>
           {{
-            precioFormat(
+            toUSDFormat(
               extra.precio * pedidoStore.diffDias(pedido.diaRetorno, pedido.diaRetiro)
             )
           }}
@@ -200,25 +208,25 @@ export default {
     <dl>
       <dt>Sub-Total</dt>
       <dd>
-        {{ precioFormat(subTotal) }}
+        {{ toUSDFormat(subTotal) }}
       </dd>
     </dl>
     <dl v-if="impuestoAeropuerto > 0">
       <dt>Impuesto de Aeropuerto</dt>
       <dd>
-        {{ precioFormat(impuestoAeropuerto) }}
+        {{ toUSDFormat(impuestoAeropuerto) }}
       </dd>
     </dl>
     <dl>
       <dt>ITBMS</dt>
       <dd>
-        {{ precioFormat(impuestoPedido) }}
+        {{ toUSDFormat(impuestoPedido) }}
       </dd>
     </dl>
     <h6>Total:</h6>
     <dl v-if="totalPedido">
       <dt></dt>
-      <dd>B/. {{ precioFormat(totalPedido) }}</dd>
+      <dd>$ {{ totalPedido  }}</dd>
     </dl>
 
     <dl v-if="!pedido.cobertura.precio">

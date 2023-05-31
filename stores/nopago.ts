@@ -11,7 +11,7 @@ export const useNoPagoStore = defineStore('nopago',  () => {
 
     const { createItems } = useDirectusItems(); 
     const storePedido = usePedidoStore();
-    
+    const $gtm = useGTM();
         
     const orderID = getUniqueOrderID();
     
@@ -40,7 +40,8 @@ export const useNoPagoStore = defineStore('nopago',  () => {
         'nacimiento'
         ]); 
 
-    async function onSubmit(values) {
+    async function onSubmit(values) { 
+        $gtm.trackEvent({event: 'checkout', ecommerce: {checkout: {actionField: {step: 1, option: 'Sin Pago'}, products: storePedido.pedido.carro}}});
       // Submit values to API...  
     //   console.log("Values", values);    
             const router = useRouter();   

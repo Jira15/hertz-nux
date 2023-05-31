@@ -5,7 +5,7 @@ import { useCheckoutStore } from '@/stores/checkout';
 import { Form, Field, ErrorMessage } from 'vee-validate';  
 import { useNoPagoStore } from "@/stores/nopago"; 
 import moment from 'moment'
-
+ 
 const storeNoPago = useNoPagoStore();
 const storePedido = usePedidoStore(); 
 const storeCheckout = useCheckoutStore();

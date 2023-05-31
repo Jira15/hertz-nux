@@ -1,24 +1,24 @@
 <script setup>
 import { storeToRefs } from "pinia";
-import { usePedidoStore } from "~~/stores/pedido";
+import { usePrecheckingStore } from "@/stores/prechecking";
 
-const storePedido = usePedidoStore();
+const storePrechecking = usePrecheckingStore();
 </script>
 
 <template>
   <figure>
-    <img src="@/assets/images/paga2.png" loading="lazy" />
+    <img src="@/assets/images/prechecking2.jpg" loading="lazy" />
   </figure>
   <article class="pagar-pedido">
-    <h2>Para pagar o ver tu reserva, sólo ingresa el número de la reserva:</h2>
+    <h2>Para Comenzar tu Prechecking, sólo ingresa el número de la reserva:</h2>
     <form @submit="toReserva">
-      <input type="text" v-model="storePedido.order_id" required />
-      <NuxtLink :to="'/orden/' + storePedido.order_id">
-        <button>Prechecking</button>
+      <input type="text" v-model="storePrechecking.Res" required />
+      <NuxtLink :to="'/prechecking/' + storePrechecking.Res">
+        <button>Siguiente</button>
       </NuxtLink>
     </form>
 
-    <p>
+    <!-- <p>
       Al retirar el vehículo, al conductor principal se le bloqueará un depósito de
       seguridad en su tarjeta de crédito dependiendo de la categoría del auto. No se
       aceptarán tarjetas de débito ni dinero en metálico. El personal de la oficina
@@ -29,7 +29,7 @@ const storePedido = usePedidoStore();
     <em>
       Importante: No se aceptan tarjetas virtuales, ni cualquier otro tipo de tarjeta que
       no tenga el estampado en relieve.
-    </em>
+    </em> -->
   </article>
 </template>
 <style scoped lang="scss">
@@ -37,7 +37,6 @@ figure {
   img {
     object-fit: cover;
     width: 100%;
-    height: 320px;
     padding: 0;
     margin: 0;
   }
@@ -84,7 +83,7 @@ figure {
   button {
     background-color: #000000;
     padding: 5px 15px;
-    border-radius: 5px; 
+    border-radius: 5px;
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 600;

@@ -4,6 +4,8 @@
   "private": true,
   "bundledDependencies": {
     "@babel/parser": "7.21.4",
+    "@gtm-support/core": "2.0.0",
+    "@gtm-support/vue-gtm": "2.0.0",
     "@paypal/paypal-js": "5.1.4",
     "@unhead/dom": "1.1.25",
     "@unhead/shared": "1.1.25",

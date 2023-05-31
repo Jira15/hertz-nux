@@ -1040,7 +1040,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./clientes-c3af0035.mjs').then((m) => m.default || m)
+    component: () => import('./clientes-a5269192.mjs').then((m) => m.default || m)
   },
   {
     name: "error",
@@ -1056,7 +1056,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_id_-7c657a50.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-7d55e44d.mjs').then((m) => m.default || m)
   },
   {
     name: "flota-reserva-checkout",
@@ -1064,7 +1064,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./checkout-06780ed0.mjs').then((m) => m.default || m)
+    component: () => import('./checkout-872ec133.mjs').then((m) => m.default || m)
   },
   {
     name: "flota",
@@ -1072,7 +1072,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./index-79ec9368.mjs').then((m) => m.default || m)
+    component: () => import('./index-1b333d0f.mjs').then((m) => m.default || m)
   },
   {
     name: "index",
@@ -1080,7 +1080,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./index-6adee5f2.mjs').then((m) => m.default || m)
+    component: () => import('./index-b3686f23.mjs').then((m) => m.default || m)
   },
   {
     name: "maneja",
@@ -1088,7 +1088,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./maneja-b8122667.mjs').then((m) => m.default || m)
+    component: () => import('./maneja-ccf7e187.mjs').then((m) => m.default || m)
   },
   {
     name: "orden-id",
@@ -1096,7 +1096,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_id_-d1aae8f1.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-da6226e4.mjs').then((m) => m.default || m)
   },
   {
     name: "paginas-id",
@@ -1104,7 +1104,23 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_id_-aac1dda7.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-128a2b31.mjs').then((m) => m.default || m)
+  },
+  {
+    name: "prechecking-id",
+    path: "/prechecking/:id()",
+    meta: {},
+    alias: [],
+    redirect: void 0,
+    component: () => import('./_id_-8eb22c09.mjs').then((m) => m.default || m)
+  },
+  {
+    name: "prechecking",
+    path: "/prechecking",
+    meta: {},
+    alias: [],
+    redirect: void 0,
+    component: () => import('./index-36702ffa.mjs').then((m) => m.default || m)
   },
   {
     name: "reserva",
@@ -1112,7 +1128,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./reserva-1518c7d5.mjs').then((m) => m.default || m)
+    component: () => import('./reserva-4636d869.mjs').then((m) => m.default || m)
   },
   {
     name: "sucursales",
@@ -1120,7 +1136,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./sucursales-88545177.mjs').then((m) => m.default || m)
+    component: () => import('./sucursales-0540dcac.mjs').then((m) => m.default || m)
   },
   {
     name: "thanks",
@@ -1128,7 +1144,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./thanks-c752a965.mjs').then((m) => m.default || m)
+    component: () => import('./thanks-13ad3ca1.mjs').then((m) => m.default || m)
   },
   {
     name: "vacante-gracias",
@@ -1220,7 +1236,8 @@ const globalMiddleware = [
   validate
 ];
 const namedMiddleware = {
-  proxy: () => import('./proxy-d8f1f544.mjs')
+  proxy: () => import('./proxy-d8f1f544.mjs'),
+  rentworks: () => import('./rentworks-ccebc729.mjs')
 };
 const router_jmwsqit4Rs = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:router",

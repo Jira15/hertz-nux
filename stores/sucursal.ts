@@ -5,23 +5,23 @@ export const useSucursalStore = defineStore('sucursal', {
 state: () => ({ 
     sucursales: [
             {
-                sucursal: { 
-                id: Number,
-                mapa: Object,
-                imagen: String,
-                name: String,
-                telefono_1: String,
-                telefono_2: null,
-                horario_cierre: Number,
-                LocationCode: String,
-                horario_apertura: Number,
-                horario_cierre_sabado: Number,
-                horario_cierre_domingo: Number,
-                horario_apertura_sabado: Number,
-                horario_apertura_domingo: Number,
-                festivo: Number,
-                dias_festivos: String
-            }
+                sucursal: {
+                    id: 0,
+                    mapa: {},
+                    imagen: '',
+                    name: '',
+                    telefono_1: '',
+                    telefono_2: null,
+                    horario_cierre: 0,
+                    LocationCode: '',
+                    horario_apertura: 0,
+                    horario_cierre_sabado: 0,
+                    horario_cierre_domingo: 0,
+                    horario_apertura_sabado: 0,
+                    horario_apertura_domingo: 0,
+                    festivo: 0,
+                    dias_festivos: '',
+                  },
         }
     ]
 }),

@@ -50,8 +50,9 @@ export default defineNuxtConfig({
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [ 
-            'nuxt-directus', 
-            '@nuxt/devtools',
+            'nuxt-directus',  
+            '@nuxtjs/i18n', 
+
             // 'nuxt-proxy',  
             [
                 '@pinia/nuxt',
@@ -66,7 +67,12 @@ export default defineNuxtConfig({
                 },
             ],
         ],
+    i18n: {
+        locales: ['en', 'es'],
+        defaultLocale: 'es',
+        vueI18n: '@plugins/i18n.config.ts'
 
+    },
     // serverMiddleware: [
     //     {
     //         path: '/api/tarjeta',
@@ -120,5 +126,5 @@ export default defineNuxtConfig({
         transpile: ['@vuepic/vue-datepicker', 'moment' ]
     },
 
-    devtools: true
+    devtools: false
 })
