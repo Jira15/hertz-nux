@@ -6338,7 +6338,7 @@ vue-i18n-routing@^0.13.0:
     ufo "^1.0.0"
     vue-demi "^0.13.11"
 
-vue-i18n@*, "vue-i18n@^8.26.1 || ^9.2.0 || ^9.3.0-beta.10", "vue-i18n@^8.26.1 || ^9.2.0-beta.25 || ^9.3.0-beta.5", vue-i18n@^8.28.2:
+vue-i18n@*, "vue-i18n@^8.26.1 || ^9.2.0 || ^9.3.0-beta.10", "vue-i18n@^8.26.1 || ^9.2.0-beta.25 || ^9.3.0-beta.5":
   version "8.28.2"
   resolved "https://registry.npmjs.org/vue-i18n/-/vue-i18n-8.28.2.tgz"
   integrity sha512-C5GZjs1tYlAqjwymaaCPDjCyGo10ajUphiwA922jKt9n7KPpqR7oM1PCwYzhB/E7+nT3wfdG3oRre5raIT1rKA==

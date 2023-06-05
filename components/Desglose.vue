@@ -53,9 +53,7 @@ const precioFormat = function (value) {
 };
 
 function toUSDFormat(decimal) {
-  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(
-    decimal
-  );
+  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(decimal);
 }
 
 const prepago = function (precio, descuentoPrepago) {
@@ -226,7 +224,7 @@ export default {
     <h6>Total:</h6>
     <dl v-if="totalPedido">
       <dt></dt>
-      <dd>$ {{ totalPedido  }}</dd>
+      <dd>$ {{  totalPedido  }}</dd>
     </dl>
 
     <dl v-if="!pedido.cobertura.precio">
