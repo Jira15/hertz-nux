@@ -26,7 +26,7 @@ onMounted(() => {
             </article>
             <span class="siguiente" v-if="storePedido.pedido.cobertura.precio > 0"> 
                 <NuxtLink :to="'/flota/' +  'reserva/' + 'checkout/'" >
-                    <button>Siguiente</button>
+                    <button> {{ $t('nextButton') }} </button>
                 </NuxtLink>  
             </span>  
             <section class="addons">

@@ -18,9 +18,9 @@ const opciones = computed(() => {
 <template> 
     <fieldset class="filtros"> 
         <p>
-            <label for="marca">Marca</label>
+            <label for="marca">{{ $t('marca') }}:</label>
             <select  name="marca"  v-model="storeFiltro.filtros.marca"> 
-                <option value="">Todas </option>
+                <option value=""> Todas </option>
                 <option v-for="option in opciones.marca" :key="option" :value="option">
                     {{ option }}
                 </option> 
@@ -34,16 +34,16 @@ const opciones = computed(() => {
             </select>  
         </p> -->
         <p>
-            <label for="ciudad">Categoria</label>
+            <label for="ciudad"> {{ $t('categoria') }}: </label>
             <select  name="ciudad"  v-model="storeFiltro.filtros.tipo" > 
-                <option value="">Todas </option>
+                <option value=""> Todas </option>
                 <option v-for="option in opciones.tipo" :key="option" :value="option">
                     {{ option  }}
                 </option> 
             </select>   
         </p>
 
-        <button v-on:click="storeAutos.fetchAutos()"> Filtrar</button>
+        <button v-on:click="storeAutos.fetchAutos()"> {{ $t('filtrar') }} </button>
     </fieldset> 
 </template> 
 <style lang="scss"> 

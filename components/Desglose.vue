@@ -96,10 +96,10 @@ export default {
 </script>
 <template>
   <section class="desglose">
-    <h6>Detalles:</h6>
+    <h6> {{ $t('detalles') }}:</h6>
     <dl>
-      <dt>Retiro:<br />{{ pedido.sucursal.name }}</dt>
-      <dd>Retorno: <br />{{ pedido.sucursalRetorno.name }}</dd>
+      <dt> {{ $t('retiro') }}:<br />{{ pedido.sucursal.name }}</dt>
+      <dd> {{ $t('retorno') }}: <br />{{ pedido.sucursalRetorno.name }}</dd>
     </dl>
     <!-- <dl>
                 <dt>
@@ -110,13 +110,13 @@ export default {
                 </dd>
             </dl>   -->
     <dl>
-      <dt>Día de Retiro:</dt>
+      <dt>{{ $t('diaDeRetiro') }}:</dt>
       <dd>
         {{ fechaFormat(pedido.diaRetiro) }}
       </dd>
     </dl>
     <dl>
-      <dt>Día de Retorno:</dt>
+      <dt>{{ $t('diaDeRetorno') }}:</dt>
       <dd>
         {{ fechaFormat(pedido.diaRetorno) }}
       </dd>
@@ -128,7 +128,7 @@ export default {
       </dd>
     </dl>
 
-    <h6>Modelo:</h6>
+    <h6>{{ $t('modelo') }}:</h6>
     <dl>
       <dt>{{ pedido.carro.marca }} {{ pedido.carro.modelo }}</dt>
       <dd v-if="pedido.reserva === 'prepago'">
@@ -149,7 +149,7 @@ export default {
         }}
       </dd>
     </dl>
-    <h6>Coberturas:</h6>
+    <h6>{{ $t('coberturasTitle') }}:</h6>
 
     <dl v-if="pedido.carro.tipo != 'Sedan'">
       <dt v-if="pedido.cobertura.nombre">
@@ -178,7 +178,7 @@ export default {
       </dd>
     </dl>
     <dl>
-      <dt>Asistencia Vial(ERA)</dt>
+      <dt>{{ $t('eraTitle') }}</dt>
       <dd>
         {{
           toUSDFormat(
@@ -212,7 +212,7 @@ export default {
       </dd>
     </dl>
     <dl v-if="impuestoAeropuerto > 0">
-      <dt>Impuesto de Aeropuerto</dt>
+      <dt>{{ $t('impuestoAeropuertos') }}</dt>
       <dd>
         {{ toUSDFormat(impuestoAeropuerto) }}
       </dd>
@@ -230,7 +230,7 @@ export default {
     </dl>
 
     <dl v-if="!pedido.cobertura.precio">
-      <dt class="warn">Te Falta elegir un tipo de cobertura para poder continuar</dt>
+      <dt class="warn">{{ $t('warningCobertura') }} </dt>
       <dd></dd>
     </dl>
   </section>

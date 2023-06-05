@@ -11,20 +11,19 @@ const storePedido = usePedidoStore();
         <img src="@/assets/images/paga2.png" loading="lazy" />  
     </figure>
     <article class="pagar-pedido">
-        <h2> Para pagar o ver tu reserva,  sólo ingresa el número de la reserva:</h2>
+        <h2> {{ $t('clientesTitle') }} </h2>
         <form  @submit="toReserva">  
             <input  type="text"  v-model="storePedido.order_id" required > 
             <NuxtLink :to="'/orden/' + storePedido.order_id">
-                <button>Verificar</button>
+                <button>{{ $t('clientesButton') }}</button>
             </NuxtLink>
         </form>
 
         <p>
-            Al retirar el vehículo, al conductor principal se le bloqueará un depósito de seguridad en su tarjeta de crédito dependiendo de la categoría del auto. No se aceptarán tarjetas de débito ni dinero en metálico. El personal de la oficina confirmará la cantidad exacta del depósito. Tarjetas aceptadas para el deposito: American Express, MasterCard y Visa.
-        </p>
-           
+            {{ $t('clientesDescription') }}
+        </p> 
         <em>
-            Importante: No se aceptan tarjetas virtuales, ni cualquier otro tipo de tarjeta que no tenga el estampado en relieve.
+            {{ $t('clientesWarning') }}
         </em>
     </article>
     

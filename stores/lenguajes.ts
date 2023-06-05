@@ -43,7 +43,7 @@ actions: {
                     if(this.lenguaje === 'EN'){
                         
                         this.paginas = pagina 
-                        this.paginas.contenido = paginaTranslations.contenido
+                        this.paginas.contenido = paginaTranslations.contenido_hertz
                         this.paginas.titulo = paginaTranslations.titulo 
                     }
                     else {

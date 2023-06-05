@@ -6,6 +6,9 @@ import moment from 'moment';
 const storeSearch = useSearchStore(); 
 const storePedido = usePedidoStore();
 
+const { locale } = useI18n() 
+
+
 function tiempoMinimoAntesDeReserva(date, hours){
         const newDate = new Date(date);
         newDate.setHours(newDate.getHours() + hours);
@@ -54,7 +57,7 @@ const horaFormat = function(value) {
     </div>
     <div class="siguiente">
         <NuxtLink    @click="storeSearch.searchIs = 'TheSearch'">
-            Cambiar
+            {{ $t('cambiar') }}
         </NuxtLink> 
     </div>
 </aside>   

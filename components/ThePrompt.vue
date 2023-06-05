@@ -1,7 +1,7 @@
 <script setup> 
 import { useSearchStore } from '@/stores/search';
 const route = useRoute();
-const storeSearch = useSearchStore(); 
+const storeSearch = useSearchStore();  
 
 onMounted(() => { 
     storeSearch.searchIs = 'ThePrompt';
@@ -13,8 +13,8 @@ onMounted(() => {
 <aside class="prompt"> 
     <Transition mode="out-in"> 
         <header  v-if="storeSearch.searchIs === 'ThePrompt'">
-            <h2  @click="storeSearch.searchIs = 'TheSearch'"> 
-                Haz Tu reserva
+            <h2  @click="storeSearch.searchIs = 'TheSearch'">  
+                {{ $t('prompt') }}
             </h2> 
         </header>  
         <div v-else-if="storeSearch.searchIs === 'TheSearch' "><TheSearch /></div> 

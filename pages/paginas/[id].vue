@@ -32,7 +32,7 @@ useHead({
             <h2>
                 {{pagina.titulo }}
             </h2> 
-            <div class="format-content"  v-html="pagina.contenido_hertz"></div> 
+            <div class="format-content"  v-html="pagina.contenido"></div> 
     </article> 
 </template>
 

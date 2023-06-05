@@ -14,7 +14,7 @@ const auto = computed(() => {
             <h3>
                 {{ auto.marca }} {{ auto.modelo }}  
             </h3>   
-            <em>o similar</em> 
+            <em> {{ $t('similar') }} </em> 
         </div> 
         <figure> 
             <img :src="getAssetURL(auto.imagen)"  loading="lazy" /> 

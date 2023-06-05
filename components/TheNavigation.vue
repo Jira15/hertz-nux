@@ -1,14 +1,23 @@
  <script>
 import { useWindowSize } from "@/composables/useWindowSize";
 import { ref, computed } from "vue";
-// import { useLenguajesStore } from "@/stores/lenguajes";
-// const storeLenguaje = useLenguajesStore(); 
+import { useLenguajesStore } from "@/stores/lenguajes";
+ 
 export default {
   setup() {
+    const storeLenguaje = useLenguajesStore();
     const { locale } = useI18n()
 
  
+    const enLocale = () => { 
+      storeLenguaje.setEN(); 
+      locale.value = 'en'
+    };
 
+    const esLocale = () => { 
+      storeLenguaje.setES(); 
+      locale.value = 'es'
+    };
 
     const isMenuVisible = ref(false);
     const { width } = useWindowSize();
@@ -25,6 +34,8 @@ export default {
       toggleMenu,
       isMobile,
       isDesktop, 
+      enLocale,
+      esLocale,
       locale
     };
   },
@@ -51,22 +62,25 @@ export default {
               <a href="#">{{ $t('corporativo') }}</a>
               <ul class="dropdown" aria-label="submenu">
                 <li>
-                  <NuxtLink to="/paginas/operativo">Leasing Operativo</NuxtLink>
+                  <NuxtLink to="/paginas/operativo">{{ $t('leasing') }}</NuxtLink>
                 </li>
                 <li>
-                  <NuxtLink to="/paginas/corporativo">Planes Corporativos</NuxtLink>
+                  <NuxtLink to="/paginas/corporativo">{{ $t('planes') }}</NuxtLink>
                 </li>
               </ul>
             </li>
-            <li><NuxtLink to="/clientes">{{ $t('maneja') }}</NuxtLink></li>
+            <li><NuxtLink to="/clientes">{{ $t('maneja') }}</NuxtLink></li> 
             <li>
-              <form class="lenguaje">
-                <select v-model="locale">
-                  <option value="en">EN</option>
-                  <option value="es">ES</option>
-                </select> 
-              </form>
+              <button @click="enLocale()">EN</button> |
+              <button @click="esLocale()">ES</button>
             </li> 
+              <!-- <form class="lenguaje">
+                <select v-model="locale">
+                  <option value="en" >EN</option>
+                  <option value="es">ES</option>
+                </select>  
+              </form> -->
+        
           </ul>
         </div>
       </transition>

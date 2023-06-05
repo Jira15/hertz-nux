@@ -12,8 +12,7 @@ const storeCheckout = useCheckoutStore();
 
 const pedido = computed(() => {
     return storePedido.pedido
-})    
-
+})     
 
 onMounted(() => { 
     storeCheckout.metodos = 'none';
@@ -28,61 +27,61 @@ onMounted(() => {
     </article> 
     
     <section class="detalles-conductor"> 
-        <h3>Finaliza tu reserva</h3> 
+        <h3>{{ $t('finaliza') }}</h3> 
         <!-- <Form  > -->
             <div class="forma">
             <!-- <Form @submit="storeCheckout.metodos = 'metodos'"> -->
         <fieldset>
             <p>
-                <label for="nombre">Nombre</label>
+                <label for="nombre">{{ $t('nombre') }}</label>
                 <Field v-model="pedido.cliente.nombre" type="text" id="nombre" name="nombre" rules="required" placeholder="Nombre" />  
                 <ErrorMessage name="nombre" >
-                    <p class="warning">Todos los Campos son requeridos</p> 
+                    <p class="warning">{{ $t('warningRequeridos') }}</p> 
                 </ErrorMessage>
             </p> 
             <p>
-                <label for="apellido">Apellido</label>
+                <label for="apellido">{{ $t('apellido') }}</label>
                 <Field v-model="pedido.cliente.apellido"  type="text" id="apellido" name="apellido" rules="required"   placeholder="Apellido"/> 
                 <ErrorMessage name="apellido" >
-                    <p class="warning">Todos los Campos son requeridos</p> 
+                    <p class="warning">{{ $t('warningRequeridos') }}</p> 
                 </ErrorMessage>
             </p>  
             <p>
-                <label for="telefono">Teléfono</label>
+                <label for="telefono">{{ $t('telefono') }}</label>
                 <Field  v-model="pedido.cliente.telefono"  type="text" id="telefono" name="telefono"   placeholder="Teléfono" rules="required"   />
                 <ErrorMessage name="telefono" > 
-                    <p class="warning">Todos los Campos son requeridos</p> 
+                    <p class="warning">{{ $t('warningRequeridos') }}</p> 
                 </ErrorMessage> 
             </p>  
             <p>
-                <label for="email">Correo electrónico</label>
+                <label for="email">{{ $t('correo') }}</label>
                 <Field   v-model="pedido.cliente.email"  type="text" id="email" name="email" rules="required"   placeholder="Correo" /> 
                 <ErrorMessage name="email" > 
-                    <p class="warning">Todos los Campos son requeridos</p> 
+                    <p class="warning">{{ $t('warningRequeridos') }}</p> 
                 </ErrorMessage> 
         
             </p>  
             <p>
-                <label for="licencia">Licencia</label>
+                <label for="licencia">{{ $t('licencia') }}</label>
                 <Field  v-model="pedido.cliente.licencia"  type="text" id="licencia" name="licencia" rules="required"  placeholder="Licencia" /> 
                 <ErrorMessage name="licencia" > 
-                    <p class="warning">Todos los Campos son requeridos</p> 
+                    <p class="warning">{{ $t('warningRequeridos') }}</p> 
                 </ErrorMessage> 
         
             </p>  
             <p>
-                <label for="nacimiento">Fecha de Nacimiento</label> 
+                <label for="nacimiento">{{ $t('fecha') }}</label> 
                 <date-picker  :enableTimePicker="false" v-model="pedido.cliente.nacimiento"
                 locale="es" name="nacimiento" rules="required" id="nacimiento" />   
                 <ErrorMessage name="nacimiento" > 
-                    <p class="warning">Todos los Campos son requeridos</p> 
+                    <p class="warning">{{ $t('warningRequeridos') }}</p> 
                 </ErrorMessage> 
             </p> 
             </fieldset>
 
 
             <div class="reserva" v-if="storePedido.pedido.reserva === 'reserva'"> 
-                <button type="submit"  @click="storeNoPago.onSubmit" >Reservar</button>
+                <button type="submit"  @click="storeNoPago.onSubmit" >{{ $t('reservar') }}</button>
             </div>
 
 
@@ -94,13 +93,13 @@ onMounted(() => {
             <div class="reserva"  v-if="storePedido.pedido.reserva === 'prepago' " > 
                 <button type="submit" @click="storeCheckout.metodos = 'metodos'" > 
                     <!-- <button type="submit" @click="storeCheckout.metodos = 'metodos'" >  -->
-                    Siguiente
+                        {{ $t('nextButton') }} 
                 </button>  
             </div>
 
             <div  v-if="storeCheckout.metodos === 'metodos'">
                 
-    <h2>Metodos de Pago</h2>
+                <h2>{{ $t('metodos') }} </h2>
                 <FormaPago />
             </div>  
         </div>   
@@ -214,8 +213,7 @@ onMounted(() => {
     .auto {
         display: flex;
         flex-direction: column;
-        .detalles-conductor{
-            
+        .detalles-conductor{ 
             border-radius: 2px;  
             border: 1px solid rgb(145, 145, 145); 
             background-color: white; 
@@ -240,8 +238,7 @@ onMounted(() => {
                     box-sizing: border-box;
                     background-color: rgb(245, 245, 245); 
                     border-radius: 2px;  
-                    border: 1px solid rgb(145, 145, 145); 
-               
+                    border: 1px solid rgb(145, 145, 145);  
                 } 
                 p {
                     flex: 1 0 calc(50% - 10px);

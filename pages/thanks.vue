@@ -17,8 +17,8 @@ onMounted(() => {
 
 <template>
 <main class="gracias"> 
-    <h2>Gracias por tu reserva</h2>
-    <p>Tu Reserva esta siendo procesada pronto recibiras un correo con los detalles.</p> 
+    <h2>{{ $t('gracias') }} </h2>
+    <p>{{ $t('graciasDescription') }} </p> 
 </main> 
 </template>
 

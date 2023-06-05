@@ -11,7 +11,7 @@
                         </header>  
                         <footer> 
                             <input type="checkbox" :value="extra" v-model="pedidoStore.pedido.extras"  >
-                            <h4>B/.{{ extra.precio }} / por día</h4>  
+                            <h4>B/.{{ extra.precio }} / {{ $t('porDia') }}</h4>  
                         </footer> 
                     </article>
                 </li>  

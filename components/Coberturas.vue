@@ -14,7 +14,7 @@ onMounted(() => {
 </script> 
 <template>
 <main class="coberturas">   
-<h2>Coberturas</h2>
+<h2>{{ $t('coberturasTitle') }}</h2>
 <section >  
     <ul>
         <li v-for="cobertura in coberturas" :key="cobertura.id">
@@ -33,11 +33,11 @@ onMounted(() => {
                
                 <footer v-if="storePedido.pedido.carro.tipo != 'Sedan'"> 
                  
-                    <h4>B/. {{ cobertura.precio_2 }} / por día</h4>  
+                    <h4>B/. {{ cobertura.precio_2 }} / {{ $t('porDia') }}</h4>  
                     <input required  type="radio" name="cobertura" v-model="storePedido.pedido.cobertura" :value="cobertura">
                 </footer>
                 <footer  v-else> 
-                    <h4>B/. {{ cobertura.precio }} / por día</h4>  
+                    <h4>B/. {{ cobertura.precio }} / {{ $t('porDia') }}</h4>  
                     
                     <input required  type="radio" name="cobertura" v-model="storePedido.pedido.cobertura" :value="cobertura">
                 </footer>
@@ -48,14 +48,14 @@ onMounted(() => {
             <article>
                 <div>
                 <header>  
-                    <h3>Asistencia Vial(ERA)</h3>
+                    <h3>{{ $t('eraTitle') }}</h3>
                 </header> 
                     <p>
-                        ERA | ASISTENCIA VIAL Esta cobertura ofrece a EL ARRENDATARIO los siguientes servicios de asistencia en carretera sin cargo alguno: Pérdida de llave del automóvil, servicio de grúa, reemplazo de neumático, asistencia al quedarse sin combustible o sin batería. El tiempo de respuesta por parte de LA ARRENDADORA está sujeto al día, hora y ubicación del incidente.
+                        {{ $t('eraDescription') }}
                     </p>
                 </div>
                 <footer> 
-                    <h4>B/. 3.99 / por día</h4>  
+                    <h4>B/. 3.99 / {{ $t('porDia') }}</h4>  
                 </footer>
             </article>
         </li> 

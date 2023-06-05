@@ -40,7 +40,7 @@ useHead({
 <template>
 <main class="auto"  id="prompt">
     <ThePrompt /> 
-    <h2>Flota</h2>
+    <h2> {{ $t('flota') }} </h2>
 
     <Filtros></Filtros>
     <div class="wrapper">
@@ -58,7 +58,7 @@ useHead({
                 <h3>
                     {{ auto.marca }} {{ auto.modelo }}  
                 </h3>   
-                <em>o similar</em> 
+                <em> {{ $t('similar') }} </em> 
             </header>
                 <dl class="specs">
                     <div v-if="auto.pasajeros">
@@ -115,14 +115,14 @@ useHead({
  
             <div class="disponibilidad" v-if="auto.status === 'disponibilidad' "> 
                 <NuxtLink to="https://api.whatsapp.com/send?phone=50766785406" target="_blank"   >
-                        Consulta disponibilidad 
+                    {{ $t('disponibilidad') }} 
                     </NuxtLink> 
             </div>
 
             <div  class="verificar"  v-if="auto.status === 'published' || auto.status === 'promocion'"> 
                 <NuxtLink to="#prompt"   
                     @click="storeSearch.searchIs = 'TheSearch'">
-                        Reservar    
+                    {{ $t('reservar') }}     
                     </NuxtLink> 
             </div>
                     

@@ -1,8 +1,3 @@
-<script setup> 
-const { locale } = useI18n() 
-</script>
-
-
 <template>
   <footer class="footer">
     <section>
@@ -10,7 +5,7 @@ const { locale } = useI18n()
       <h3>{{ $t('contacto') }}</h3>
       <p> 
         {{ $t('reservaciones') }}: (507) 260-0000 <br /> 
-        {{ $t('asistencia') }}: (507) 204-9550<br /> 
+        {{ $t('asistencia') }}: (507) 204-9550 <br /> 
           Whatsapp: (507) 6768-9626
       </p>  
     </section>
@@ -28,8 +23,7 @@ const { locale } = useI18n()
 
     <section> 
       <h3>{{ $t('soporte') }}</h3>
-      <p>
-     
+      <p> 
         <NuxtLink to="/paginas/reembolso">{{ $t('reembolso') }}</NuxtLink>
         <NuxtLink to="/paginas/tyc">{{ $t('terminos') }}</NuxtLink>
         <NuxtLink to="/paginas/privacidad">{{ $t('privacidad') }}</NuxtLink>

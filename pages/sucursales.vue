@@ -22,11 +22,12 @@ const sucursalABuscador = function(value) {
 useHead({
         title: 'Sucursales | Hertz Rent a Car Panamá'
     });
-</script> 
+</script>  
+
 <template>
 <main class="sucursal" id="prompt">
     <ThePrompt />
-    <h2>Sucursales</h2>
+    <h2> {{ $t('sucursales') }}</h2>
     <div>
         <article v-for="sucursal in sucursales" :key="sucursal.id">
             <figure> 
@@ -37,27 +38,26 @@ useHead({
                     {{ sucursal.name }}  
                 </h3> 
                 <p>
-                    Telefonos:  {{ sucursal.telefono_1 }} <br />
-                    {{ sucursal.telefono_2 }} 
+                    {{ $t('telefonos') }}:  {{ sucursal.PhoneNumber }}  
                 </p>
                 <p v-if="sucursal.horario_apertura === 0 && sucursal.horario_apertura_domingo === 0 ">
-                    Abierto 24 horas
+                    {{ $t('abierto') }} 
                 </p> 
                 <p v-if="sucursal.horario_apertura != 24 && sucursal.horario_apertura != 0">
-                    Lunes a Viernes: {{ sucursal.horario_apertura }}:00 a {{ sucursal.horario_cierre }}:00 
+                    {{ $t('lunesAViernes') }} : {{ sucursal.horario_apertura }}:00 a {{ sucursal.horario_cierre }}:00 
                 </p> 
                 <p v-if="sucursal.horario_apertura_sabado > 0 && sucursal.horario_cierre_sabado != 24">
-                    Sabados: {{ sucursal.horario_apertura_sabado }}:00 a {{ sucursal.horario_cierre_sabado }}:00 
+                    {{ $t('sabados') }} : {{ sucursal.horario_apertura_sabado }}:00 a {{ sucursal.horario_cierre_sabado }}:00 
                 </p>
                 <p  v-if="sucursal.horario_apertura_sabado === 24 ">
-                    Sabados: Cerrados 
+                    {{ $t('sabadosCerrados') }}
                 </p>
                 <!-- hacer un if si apertura en cero, es mayor o 24-->
                 <p  v-if="sucursal.horario_apertura_domingo === 24">
-                    Domingos: Cerrados 
+                    {{ $t('domingosCerrados') }}
                 </p>
                 <p  v-if="sucursal.horario_apertura_domingo > 0  && sucursal.horario_apertura_domingo != 24">
-                    Domingos: {{ sucursal.horario_apertura_domingo }}:00 a {{ sucursal.horario_cierre_domingo }}:00 
+                    {{ $t('domingos') }}: {{ sucursal.horario_apertura_domingo }}:00 a {{ sucursal.horario_cierre_domingo }}:00 
                 </p> 
             </section> 
 
@@ -74,8 +74,8 @@ useHead({
             </aside>   
 
             <NuxtLink to="#prompt"   class="verificar" 
-              @click="sucursalABuscador(sucursal)">
-                Reservar Aqui  
+              @click="sucursalABuscador(sucursal)"> 
+              {{ $t('reservarAqui') }} 
             </NuxtLink> 
 
         </article> 

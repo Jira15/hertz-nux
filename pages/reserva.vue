@@ -69,7 +69,7 @@ useHead({
         </div>
 
         <header class="title">
-          <h1>{{ auto.marca }} {{ auto.modelo }} <em>o similar</em></h1>
+          <h1>{{ auto.marca }} {{ auto.modelo }} <em> {{ $t('similar') }} </em></h1>
         </header>
 
         <figure class="modelo">
@@ -124,16 +124,16 @@ useHead({
         <section class="disponibilidad" v-if="auto.status === 'disponibilidad'">
           <section>
             <div>
-              <em>Por día</em>
+              <em>{{ $t('porDia') }}</em>
               <h4>{{ precioFormat(auto.precio_hertz) }}</h4>
             </div>
             <div>
-              <em>Prepago </em>
+              <em> {{ $t('prepago') }}  </em>
               <h4>{{ precioPrepago(auto.precio_hertz, auto.descuento_prepago) }}</h4>
             </div>
           </section>
           <NuxtLink to="https://api.whatsapp.com/send?phone=50767689626" target="_blank">
-            Consulta disponibilidad
+            {{ $t('disponibilidad') }} 
           </NuxtLink>
         </section>
 
@@ -153,7 +153,8 @@ useHead({
                 )
               "
             >
-              Reservar
+            
+            {{ $t('reservar') }} 
 
               <h4>{{ precioFormat(auto.precio_hertz) }}</h4>
             </NuxtLink>
@@ -161,13 +162,13 @@ useHead({
 
           <div>
             <NuxtLink :to="'/flota/' + 'prepago/' + auto.id">
-              Reservar y pagar
+              {{ $t('reservarYPagar') }} 
               <h4>{{ precioPrepago(auto.precio_hertz, auto.descuento_prepago) }}</h4>
             </NuxtLink>
           </div>
           <section class="warning" v-if="storeSearch.mostrarWarning === true">
-            <!-- {{ storeSearch.sucursal }} -->
-            <strong>Necesitas especificar la fecha y sucursal antes de continuar</strong>
+            <!-- {{ storeSearch.sucursal }} --> 
+            <strong>{{ $t('warningReserva') }} </strong>
             <!-- {{ storeSearch.fechaRetiro }} -->
           </section>
         </section>

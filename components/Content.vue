@@ -3,19 +3,19 @@
     <article class="servicios">
         <figure><img src="@/assets/images/corpo1.jpg"/></figure>
         <section>
-            <h2>Conoce nuestros Planes Corporativos</h2>
-            <p>Contamos con planes corporativos que se ajustan a las necesidades de las Empresas, con una flota amplia, renovada y variada.  </p> 
-            <NuxtLink to="/paginas/corporativo" >VER MÁS</NuxtLink> 
+            <h2>{{ $t('corporatePlans') }}</h2>
+            <p>{{ $t('corporatePlansDescription') }}</p> 
+            <NuxtLink to="/paginas/corporativo" >{{ $t('seeMore') }}</NuxtLink> 
         </section>
     </article>  
 
     <article class="servicios">
         <figure><img src="@/assets/images/usa1.jpg"/></figure>
         <section> 
-            <h2> Reservas a Estados Unidos</h2>
-            <p>Ahora puedes hacer tu reserva desde Panamá y te mueves en Estados Unidos. </p>
+            <h2>{{ $t('aEstadosUnidos') }}</h2>
+            <p>{{ $t('aEstadosUnidosDescription') }}</p>
    
-          <NuxtLink href="https://wa.link/n4yy20" target="_blank">RESERVACIONES</NuxtLink> 
+          <NuxtLink href="https://wa.link/n4yy20" target="_blank">{{ $t('reservaciones') }}</NuxtLink> 
         </section>
     </article>   
 </main>
