@@ -87,20 +87,20 @@ export default defineNuxtConfig({
     },
 
 
-    proxy: {
-        options: {
-            target: 'https://rwwebe.barscloud.com:8716/thrpanama/soap',
-            changeOrigin: true,
-            headers: {  
-                'Content-Type': 'text/xml',
-                'Accept': 'text/xml', 
-                'SOAPAction': 'otavehavailrate'
-            },
-            pathFilter: [
-                '/thrpanama/soap', 
-              ]
-        },
-    },
+    // proxy: {
+    //     options: {
+    //         target: 'https://rwwebe.barscloud.com:8716/thrpanama/soap',
+    //         changeOrigin: true,
+    //         headers: {  
+    //             'Content-Type': 'text/xml',
+    //             'Accept': 'text/xml', 
+    //             'SOAPAction': 'otavehavailrate'
+    //         },
+    //         pathFilter: [
+    //             '/thrpanama/soap', 
+    //           ]
+    //     },
+    // },
  
 
     // proxy: {

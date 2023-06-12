@@ -2,24 +2,60 @@
 import { useSearchStore } from "@/stores/search"; 
 import { useSucursalStore } from "@/stores/sucursal"; 
 import moment from 'moment';
-// import { defineRule, Form, Field, ErrorMessage, configure } from "vee-validate"; 
-const date = ref(new Date());
-const { locale } = useI18n()
-
+import { usePedidoStore } from '@/stores/pedido';    
  
+// import { defineRule, Form, Field, ErrorMessage, configure } from "vee-validate";
+
+  
 const storeSearch = useSearchStore(); 
 const storeSucursal = useSucursalStore();
+const storePedido = usePedidoStore(); 
+   
+ 
 
+
+ 
+// const time = ref({
+//   hours: new Date().getHours(),
+//   minutes: new Date().getMinutes()
+// });
+ 
+// const datePick = ref( new Date() );
+// const timePick = ref();
+// const minutePick = ref();
+// const dateBack = ref( );
+// const timeBack = ref();
+// const minuteBack = ref();
+
+ 
+// const fechaRetiroConstruida = computed(() => {
+
+//         // Your data
+//       const datePick = storeSearch.datePick;
+//       const timePick = storeSearch.timePick; // change this to your desired hour
+//       const minutePick = storeSearch.minutePick; // change this to your desired minute
+
+//       // Creating new date with the new hour and minute
+//       const newDate = new Date(datePick.setHours(timePick, minutePick));
+
+//       // Converting to string
+//       const newDateString = newDate.toString(); 
+
+//       return storeSearch.fechaRetiro = newDateString;
+// });
+
+const fechaFormat = value => {  return moment(value).format('yyyy MMM DD') }
+
+
+onMounted(() => {
+  storeSucursal.fetchSucursales();
+  // storeSearch.options = useSucursalStore.fetchSucursales();
+}); 
+ 
+ 
 const sucursales = computed(() => {
   return storeSucursal.sucursales;
 });
- 
-onMounted(() => {
-  storeSucursal.fetchSucursales();
-  // storeSearch.options = sucursales;
-}); 
-
-const fechaFormat = value => {  return moment(value).format('yyyy MMM DD') }
 
 
 function minimoDeDias(date, days) {
@@ -28,14 +64,25 @@ function minimoDeDias(date, days) {
   return newDate;
 }
 
- 
+// function minimoDeHoras(date, horas) {
+//   const newDate = new Date(date);
+//   newDate.setDate(newDate.getDate() + horas);
+//   return newDate;
+// }
+
 const currentDate = new Date();
 const currentTime = currentDate.getTime();
 const oneDay = 4 * 60 * 60 * 1000;
 const newTime = currentTime + oneDay;
 const nextDay = new Date(newTime);
 
-const startTime = ref({ hours: 10, minutes: 30 });
+
+// const retornoStartDay = new Date(newTime);
+
+
+
+
+const startTime = ref({ hours: 10, minutes: 15 });
 
 function getWorkingHours(openingTime, closingTime) {
   let workingHours = [];
@@ -52,7 +99,14 @@ function domingoCerrados(domingoApertura, domingoCierre) {
   }
 }
 
- 
+// function horarioFines(openingTime, closingTime) {
+//   let fines = [];
+//   for (let i = openingTime; i < closingTime; i++) {
+//     fines.push({ text: `${i}`, value: i });
+//   }
+//   return fines;
+// }
+
 const minutesArray = [
   { text: "00", value: 0 },
   { text: "15", value: 15 },
@@ -61,48 +115,92 @@ const minutesArray = [
 ];
 </script>
 <template>
-  <form class="reservador" @submit="storeSearch.siguiente">
-    <article>
-      <h2>{{ $t('reservador') }}</h2>
-      <div class="sucursales">
-        <section>
-          <legend>{{ $t('pickup') }}</legend>
+  <!-- <form class="reservador" @submit="storeSearch.siguiente"> -->
+  <form class="reservador"> 
+    <h2> {{ $t('prompt') }}</h2>
+    <article>   
+ 
+      <section class="retiro">  
+
+        <div class="retiro-sucursal">
+          <legend>{{ $t('sucursalRetiro') }}</legend>
           <label class="sucursal">
-            <select
-              v-model="storeSearch.sucursal"
-              name="sucursal"
-              as="select"
-              rules="required"
-            >
-              <option disabled value="">{{ $t('select') }}</option>
+            <select  v-model="storeSearch.sucursal"  name="sucursal"  as="select" rules="required" >
+              <option disabled value="">Selecciona una sucursal</option>
               <option v-for="option in sucursales" :key="option" :value="option">
                 {{ option.name }}
               </option>
             </select>
           </label>
-        </section>
-        <section>
-          <legend>{{ $t('return') }}</legend>
-          <label class="sucursal">
-            <select
-              v-model="storeSearch.sucursalRetorno"
-              name="sucursalRetorno"
-              as="select"
-              rules="required"
-            >
-              <option disabled value="">{{ $t('select') }}</option>
-              <option v-for="option in sucursales" :key="option" :value="option">
-                {{ option.name }}
-              </option>
-            </select>
-          </label>
-        </section>
-      </div>
-      <section class="fechas">
-        <div v-if="storeSearch.sucursal">
-          <label>{{ $t('pickupDate') }} </label>
-          <date-picker
-            :start-time="startTime"
+        </div>  
+
+        <div class="fechas"  v-if="storeSearch.sucursal"> 
+
+          <div class="dia">
+            <legend>{{ $t('fechaRetiro') }}</legend> 
+ 
+            <date-picker 
+              class="picker"
+              :partial-range="false"
+              :enable-time-picker="false" 
+              
+              :minDate="nextDay" 
+              v-model="storeSearch.datePick"
+              locale="es" 
+              :start-time="startTime"
+              :disabled-week-days="
+              domingoCerrados(
+                storeSearch.sucursal.horario_apertura_domingo,
+                storeSearch.sucursal.horario_cierre_domingo
+              )
+            " 
+              :highlight="storeSearch.sucursal.dias_festivos"
+              :disabled-dates="storeSearch.sucursal.dias_festivos"
+              highlight-disabled-days 
+              > 
+                <template #trigger>
+                  <p class="pick"  > {{  fechaFormat(storeSearch.datePick)  }}  </p>
+                </template>
+            </date-picker>
+          </div>  
+    
+          <div class="horas"> 
+            <legend>{{ $t('hora') }}</legend>
+
+            <div class="horas-select">
+              <select  v-model="storeSearch.timePick"  name="sucursal"   as="select"  rules="required" >
+                <option 
+                  v-for="h in getWorkingHours(storeSearch.sucursal.horario_apertura,  storeSearch.sucursal.horario_cierre)"
+                  :key="h.value"
+                  :value="h.value" >
+                  {{ h.text }}
+                </option>
+              </select>
+
+              <select v-model="storeSearch.minutePick" >
+                <option v-for="m in minutesArray" :key="m.value" :value="m.value">
+                  {{ m.text }}
+                </option>
+              </select>  
+            </div> 
+
+          </div>
+          
+        </div>
+        
+      </section>
+
+
+          <!-- <date-picker
+            v-model="timePick"   
+            time-picker 
+            disable-time-range-validation  
+            placeholder="Hora de Retiro"
+          />  -->
+
+      <!-- <section class="fechas">
+      <date-picker
+                    :start-time="startTime"
             locale="es"
             v-model="storeSearch.fechaRetiro"
             :minDate="nextDay"
@@ -115,108 +213,99 @@ const minutesArray = [
             :highlight="storeSearch.sucursal.dias_festivos"
             :disabled-dates="storeSearch.sucursal.dias_festivos"
             highlight-disabled-days
-          >
-            <template #time-picker="{ time, updateTime }">
-              <div class="custom-time-picker-component">
-                <select
-                  class="select-input"
-                  :value="time.hours"
-                  @change="updateTime(+$event.target.value)"
-                >
-                  <option
-                    v-for="h in getWorkingHours(
-                      storeSearch.sucursal.horario_apertura,
-                      storeSearch.sucursal.horario_cierre
-                    )"
-                    :key="h.value"
-                    :value="h.value"
-                  >
-                    {{ h.text }}
-                  </option>
-                </select>
+                    />   
+                    
+      <date-picker v-model="storeSearch.fechas" minutesIncrement="30" time-picker disable-time-range-validation range placeholder="Select Time" />
+      </section> -->
 
-                <select
-                  class="select-input"
-                  :value="time.minutes"
-                  @change="updateTime(+$event.target.value, false)"
-                >
-                  <option v-for="m in minutesArray" :key="m.value" :value="m.value">
-                    {{ m.text }}
-                  </option>
-                </select>
-              </div>
-            </template>
-          </date-picker>
-        </div>
 
-        <div v-if="storeSearch.sucursalRetorno">
-          <label>{{ $t('returnDate') }}</label>
-          <date-picker
-            locale="es"
-            :start-time="startTime"
-            v-model="storeSearch.fechaRetorno"
-            :minDate="
-              minimoDeDias(
-                storeSearch.fechaRetiro,
-                storeSearch.sucursalRetorno.minimo_dias
-              )
-            "
-            :disabled-week-days="
-              domingoCerrados(
-                storeSearch.sucursalRetorno.horario_apertura_domingo,
-                storeSearch.sucursalRetorno.horario_cierre_domingo
-              )
-            "
-            :highlight="storeSearch.sucursalRetorno.dias_festivos"
-            :disabled-dates="storeSearch.sucursalRetorno.dias_festivos"
-            highlight-disabled-days
-          >
-            <template #time-picker="{ time, updateTime }">
-              <div class="custom-time-picker-component">
-                <select
-                  class="select-input"
-                  :value="time.hours"
-                  @change="updateTime(+$event.target.value)"
-                >
-                  <option
-                    v-for="h in getWorkingHours(
-                      storeSearch.sucursalRetorno.horario_apertura,
-                      storeSearch.sucursalRetorno.horario_cierre
-                    )"
-                    :key="h.value"
-                    :value="h.value"
-                  >
-                    {{ h.text }}
-                  </option>
-                </select>
-
-                <select
-                  class="select-input"
-                  :value="time.minutes"
-                  @change="updateTime(+$event.target.value, false)"
-                >
-                  <option v-for="m in minutesArray" :key="m.value" :value="m.value">
-                    {{ m.text }}
-                  </option>
-                </select>
-              </div>
-            </template>
-          </date-picker>
-        </div>
-      </section>
-      <div class="verificar-wrap">
-        <button
-          class="verificar"
-          type="submit"
-          @click="storeSearch.searchIs = 'TheProgress'"
-        >
-        {{ $t('nextButton') }}
-        </button>
+ 
+ 
+    <section class="retiro">    
+      <div class="retorno-sucursal">
+          <legend>{{ $t('sucursalRetorno') }}</legend>
+          <label class="sucursal">
+            <select  v-model="storeSearch.sucursalRetorno"  name="sucursalRetorno"   as="select"  rules="required" >
+              <option disabled value="">Selecciona una sucursal</option>
+              <option v-for="option in sucursales" :key="option" :value="option">
+                {{ option.name }}
+              </option>
+            </select>
+          </label>
       </div>
+      
+      <div class="fechas" v-if="storeSearch.sucursalRetorno">
+        <div class="dia">
+          <legend>{{ $t('fechaRetorno') }}</legend> 
 
+
+          <date-picker
+          class="picker"
+          locale="es"
+          
+          :partial-range="false"
+          :enable-time-picker="false" 
+          :start-time="startTime"
+          v-model="storeSearch.dateBack"
+          :minDate="
+            minimoDeDias(
+              storeSearch.datePick,
+              storeSearch.sucursalRetorno.minimo_dias
+            )
+          " 
+          :disabled-week-days="
+            domingoCerrados(
+              storeSearch.sucursalRetorno.horario_apertura_domingo,
+              storeSearch.sucursalRetorno.horario_cierre_domingo
+            )
+          "
+          :highlight="storeSearch.sucursalRetorno.dias_festivos"
+          :disabled-dates="storeSearch.sucursalRetorno.dias_festivos"
+          highlight-disabled-days
+        > 
+
+            <template #trigger>
+              <p class="pick"> {{ fechaFormat(storeSearch.dateBack) }}  </p>
+            </template>
+          </date-picker>
+        </div>  
+        <div class="horas"> 
+          <legend>{{ $t('hora') }}</legend>  
+          <div class="horas-select">
+            <select  v-model="storeSearch.timeBack"  name="sucursalRetorno"   as="select"  rules="required" >
+              <option 
+                v-for="h in getWorkingHours(storeSearch.sucursalRetorno.horario_apertura,  storeSearch.sucursalRetorno.horario_cierre)"
+                :key="h.value"
+                :value="h.value" >
+                {{ h.text }}
+              </option>
+            </select>  
+
+            <select v-model="storeSearch.minuteBack" >
+              <option v-for="m in minutesArray" :key="m.value" :value="m.value">
+                {{ m.text }}
+              </option>
+            </select>    
+          </div>  
+        </div>
+              
+      </div> 
+    </section> 
+      <div class="verificar-wrap"> 
+ 
+        <div  class="verificar"  @click="storeSearch.siguiente"  :class="{ disabled: !storeSearch.isAllFilled }" > 
+        {{ $t('buscar') }} 
+        </div>
+
+
+        <!-- <button class="verificar" type="submit" @click="storeSearch.searchIs = 'TheProgress'" >
+          Buscar
+        </button> -->
+      </div>
       <!-- <ErrorMessage name="sucursal" >
                 <p class="warn">Todos los Campos son requeridos</p> 
             </ErrorMessage>   -->
+
     </article>
   </form>
 </template>
@@ -257,7 +346,43 @@ const minutesArray = [
   outline: none;
   -webkit-appearance: menulist;
 }
-
+.fechas {
+  margin-top: 5px; 
+  display: flex; 
+  width: 100%;
+  justify-content: space-between;
+  .picker {  
+    border-radius: 3px; 
+    color: #212121;   
+    margin: 5px 5px 5px 0px;
+    background-color: white;
+    height: 40px;
+    p { 
+      text-align: center;
+      padding: 10px;
+    }
+  } 
+  .dia {
+    display: flex; 
+    flex-direction: column;  
+    width: 100%;
+    padding: 5px;
+  } 
+  .horas {
+    display: flex;
+    flex-direction: column;   
+    width: 100%; 
+    padding: 5px;
+    justify-content: space-between;
+  }
+  .horas-select {
+    padding: 5px;
+    padding-left: 0px;
+    display: flex;  
+    justify-content: space-between;
+  } 
+ 
+}
 .warn {
   font-size: 12px;
 }
@@ -290,28 +415,20 @@ const minutesArray = [
   }
 
   section {
-    padding: 0.5rem;
-    font-weight: bold;
+    padding: 0.5rem; 
     font-size: 14px;
   }
   select {
     width: 100%;
     height: 40px;
+    margin-left: 5px;
   }
-}
-.fechas {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  .hora {
-    margin-left: 30px;
-    width: 150px;
-  }
-}
+} 
 .sucursales {
   width: 100%;
   h2 {
+    
+    font-weight: bold;
     font-size: 16px;
   }
 }
@@ -326,10 +443,16 @@ const minutesArray = [
   font-size: 14px;
   background: #ffd115;
   color: rgb(0, 0, 0);
-  margin-top: 5px;
+  margin-top: 25px;
   align-self: end;
   cursor: pointer;
   border-radius: 3px;
+ 
+}
+.verificar.disabled {
+  pointer-events: none;
+  cursor: default;
+  color: gray;
 }
 .verificar-wrap {
   width: 100%;
@@ -340,23 +463,18 @@ const minutesArray = [
 @media screen and (min-width: 768px) {
   .siguiente {
     align-self: flex-end;
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
   }
-  .reservador {
-    justify-content: space-around;
-    .sucursales {
+  .reservador { 
+    .verificar-wrap {
+      width: auto;
+      min-height: 100%;
+      place-content: end;
+      margin-bottom: 20px;
+    }
+    article {
       display: flex;
-      justify-content: space-around;
-    }
-    .fechas {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
- 
-    }
-    footer {
-      align-self: end;
-    }
+    } 
   }
 }
 </style>

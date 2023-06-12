@@ -18,6 +18,8 @@ export default defineNuxtPlugin(({ vueApp }) => {
                 maneja: 'Manage your Reservation', 
                 leasing: 'Operative Leasing',
                 planes: 'Corporate Plans',
+                reservaUSA: 'Reservations to the US',
+            
 
                 // reservador
                 reservador: 'Book your car',
@@ -56,9 +58,16 @@ export default defineNuxtPlugin(({ vueApp }) => {
                 aEstadosUnidos: 'Reservations to the United States',
                 aEstadosUnidosDescription: ' Now you can make your reservation from Panama and you move in the United States.',
 
-                // the progress
+                // the search
                 prompt: 'Make your reservation',
                 cambiar: 'Change',  
+                sucursalRetiro: 'Pick Up Location',
+                sucursalRetorno: 'Return Location',
+                fechaRetiro: 'Pick Up Date',
+                fechaRetorno: 'Return Date',
+                hora: 'Time',
+                buscar: 'Search',
+ 
                 
                 // Filtros
                 marca: 'Brand',
@@ -137,6 +146,8 @@ export default defineNuxtPlugin(({ vueApp }) => {
                 maneja: 'Maneja tu Reserva', 
                 leasing: 'Leasing Operativo',
                 planes: 'Planes Corporativos',
+                reservaUSA: 'Reservas a USA',
+            
 
 
                 // reservador
@@ -178,9 +189,16 @@ export default defineNuxtPlugin(({ vueApp }) => {
                 aEstadosUnidosDescription: 'Ahora puedes hacer tu reserva desde Panamá y te mueves en Estados Unidos.',
 
 
-                // the progress
-                prompt: 'Haz tu reserva',
-                cambiar: 'Cambiar',  
+            // the search
+            prompt: 'Haz tu reserva',
+            cambiar: 'Cambiar',  
+            sucursalRetiro: 'sucursal de retiro',
+            sucursalRetorno: 'sucursal de devolución',
+            fechaRetiro: 'Fecha Retiro',
+            fechaRetorno: 'Devolución',
+            hora: 'Hora',
+            buscar: 'Buscar',
+            
 
                 // Filtros
                 marca: 'Marca',
@@ -212,7 +230,7 @@ export default defineNuxtPlugin(({ vueApp }) => {
                 coberturasTitle: 'Coberturas',
                 porDia: 'Por día',
                 eraTitle: 'Asistencia Vial(ERA)',
-                eraDescription: 'ERA | ASISTENCIA VIAL Esta cobertura ofrece a EL ARRENDATARIO los siguientes servicios de asistencia en carretera sin cargo alguno: Pérdida de llave del automóvil, servicio de grúa, reemplazo de neumático, asistencia al quedarse sin combustible o sin batería. El tiempo de respuesta por parte de LA ARRENDADORA está sujeto al día, hora y ubicación del incidente.',
+                eraDescription: ' ASISTENCIA VIAL Esta cobertura ofrece a EL ARRENDATARIO los siguientes servicios de asistencia en carretera sin cargo alguno: Pérdida de llave del automóvil, servicio de grúa, reemplazo de neumático, asistencia al quedarse sin combustible o sin batería. El tiempo de respuesta por parte de LA ARRENDADORA está sujeto al día, hora y ubicación del incidente.',
 
 
                 // Warnings

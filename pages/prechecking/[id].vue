@@ -56,11 +56,11 @@ useHead({
 
     <ThePrechecking />
 
-    <!-- <Info />
+    <Info />  
 
-    <Datos /> -->
+    <Datos /> 
 
-    <!--   <section class="info-coberturas">
+    <section class="info-coberturas">
       <Coberturas />
 
       <h6>Coberturas:</h6>
@@ -122,9 +122,8 @@ useHead({
           </div>
         </dl>
 
-    </section>
--->
-    <!-- <section class="metodos" v-if="order.status === 'Pendiente de Prechecking'">
+    </section> 
+    <section class="metodos" v-if="order.status === 'Pendiente de Prechecking'">
       <section class="tarjeta">
         <p>
           <label>Número de la Tarjeta</label>
@@ -159,7 +158,7 @@ useHead({
       </section>
 
       <div id="paypal-button"></div>
-    </section> -->
+    </section>  
   </article>
 </template>
 

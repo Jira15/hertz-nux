@@ -5,17 +5,17 @@ import { usePrecheckingStore } from "@/stores/prechecking";
 const storePrechecking = usePrecheckingStore();
 </script>
 
-<template>
-  <figure>
-    <img src="@/assets/images/prechecking2.jpg" loading="lazy" />
-  </figure>
+<template> 
   <article class="pagar-pedido">
-    <h2>Para Comenzar tu Prechecking, sólo ingresa el número de la reserva:</h2>
+    
     <form @submit="toReserva">
-      <input type="text" v-model="storePrechecking.Res" required />
-      <NuxtLink :to="'/prechecking/' + storePrechecking.Res">
-        <button>Siguiente</button>
-      </NuxtLink>
+      <h2>Para Empezar sólo ingresa el número de la reserva:</h2>
+      <fieldset> 
+        <input type="text" v-model="storePrechecking.Res" required />
+        <NuxtLink :to="'/prechecking/' + storePrechecking.Res">
+          <button>Siguiente</button>
+        </NuxtLink>
+      </fieldset>
     </form>
 
     <!-- <p>
@@ -42,16 +42,15 @@ figure {
   }
 }
 .pagar-pedido {
+  background-image: url("@/assets/images/prechecking2.jpg");
+  background-size:contain;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  background-color: white;
-  box-shadow: 5px 5px 5px rgba(65, 65, 65, 0.308);
-  border-radius: 5px;
+  padding: 20px;   
   line-height: 1;
+  width: 100%;
+  min-height: 90vh;
+  background-repeat:no-repeat;
   h2 {
     margin: 20px;
     font-size: 24px;
@@ -71,26 +70,37 @@ figure {
   form {
     padding: 20px;
     margin: 0 auto;
+    margin-top: 200px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.308);
+    border-radius: 20px; 
+    fieldset {
+      display: flex; 
+      justify-content: space-around;
+      input {
+        padding: 5px 0px 5px 0px; 
+        height: 40px;
+        text-align: center;
+        border-radius: 8px;
+        border: 1px solid darkgray;
+        margin-bottom: 10px; 
+        width: 200px;
+      }
+      button {
+        background-color: #458EFF; 
+        height: 50px;
+        width: 200px;
+        padding: 5px 15px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff; 
+        text-align: center;  
+      }
+    }
   }
-  input {
-    padding: 5px 0px 5px 0px;
-    width: 100%;
-    text-align: center;
-    border-radius: 8px;
-    border: 1px solid darkgray;
-    margin-bottom: 10px;
-  }
-  button {
-    background-color: #000000;
-    padding: 5px 15px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: 600;
-    color: #ffd115;
-    width: 100%;
-    text-align: center;
-  }
+   
   em {
     font-style: italic;
     font-size: 14px;
@@ -100,11 +110,7 @@ figure {
 @media screen and (min-width: 768px) {
   .pagar-pedido {
     display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    max-width: 1000px;
+    flex-direction: column; 
 
     h2 {
       margin: 20px;
