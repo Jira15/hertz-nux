@@ -13,9 +13,9 @@ const storeTarjeta = useTarjetaStore();
 const storePrechecking = usePrecheckingStore();
 const { getItemById, getItems } = useDirectusItems();
 
-// const getPedido = computed(() => {
-//   return storePedido.getPedido;
-// });
+const getPedido = computed(() => {
+  return storePedido.getPedido;
+});
 
 const route = useRoute();
 // const pedido = await getItemById({
@@ -52,15 +52,15 @@ useHead({
 </script>
 <template>
   <article class="manage-pedido">
-    <h3>Mi reserva: {{ order.Res }}</h3>
+    <!-- <h3>Mi reserva: {{ order.Res }}</h3> -->
 
     <ThePrechecking />
 
-    <Info />  
+    <!-- <Info />  
 
-    <Datos /> 
+    <Datos />  -->
 
-    <section class="info-coberturas">
+    <!-- <section class="info-coberturas">
       <Coberturas />
 
       <h6>Coberturas:</h6>
@@ -158,7 +158,7 @@ useHead({
       </section>
 
       <div id="paypal-button"></div>
-    </section>  
+    </section>   -->
   </article>
 </template>
 
